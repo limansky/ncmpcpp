@@ -1,0 +1,817 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Andrzej Rybczak
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ncmpcpp 0.5.8_pre\n"
+"Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
+"POT-Creation-Date: 2011-07-30 01:04+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/help.cpp:137
+msgid ""
+"Keys - Movement\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:138
+msgid "Move Cursor up\n"
+msgstr ""
+
+#: src/help.cpp:139
+msgid "Move Cursor down\n"
+msgstr ""
+
+#: src/help.cpp:140
+msgid "Move Cursor up one album\n"
+msgstr ""
+
+#: src/help.cpp:141
+msgid "Move Cursor down one album\n"
+msgstr ""
+
+#: src/help.cpp:142
+msgid "Move Cursor up one artist\n"
+msgstr ""
+
+#: src/help.cpp:143
+msgid "Move Cursor down one artist\n"
+msgstr ""
+
+#: src/help.cpp:144
+msgid "Page up\n"
+msgstr ""
+
+#: src/help.cpp:145
+msgid "Page down\n"
+msgstr ""
+
+#: src/help.cpp:146
+msgid "Home\n"
+msgstr ""
+
+#: src/help.cpp:147
+msgid "End\n"
+msgstr ""
+
+#: src/help.cpp:150
+msgid "Switch between current and last screen\n"
+msgstr ""
+
+#: src/help.cpp:153
+msgid "Switch to next screen in sequence\n"
+msgstr ""
+
+#: src/help.cpp:154
+msgid "Switch to previous screen in sequence\n"
+msgstr ""
+
+#: src/help.cpp:156
+msgid "Help screen\n"
+msgstr ""
+
+#: src/help.cpp:157
+msgid "Playlist screen\n"
+msgstr ""
+
+#: src/help.cpp:158
+msgid "Browse screen\n"
+msgstr ""
+
+#: src/help.cpp:159
+msgid "Search engine\n"
+msgstr ""
+
+#: src/help.cpp:160
+msgid "Media library\n"
+msgstr ""
+
+#: src/help.cpp:161
+msgid "Playlist editor\n"
+msgstr ""
+
+#: src/help.cpp:163
+msgid "Tag editor\n"
+msgstr ""
+
+#: src/help.cpp:166
+msgid "Outputs\n"
+msgstr ""
+
+#: src/help.cpp:169
+msgid "Music visualizer\n"
+msgstr ""
+
+#: src/help.cpp:172
+msgid "Clock screen\n"
+msgstr ""
+
+#: src/help.cpp:175
+msgid "MPD server info\n"
+msgstr ""
+
+#: src/help.cpp:178
+msgid "Stop\n"
+msgstr ""
+
+#: src/help.cpp:179
+msgid "Pause\n"
+msgstr ""
+
+#: src/help.cpp:180
+msgid "Next track\n"
+msgstr ""
+
+#: src/help.cpp:181
+msgid "Previous track\n"
+msgstr ""
+
+#: src/help.cpp:182
+msgid "Play current track from the beginning\n"
+msgstr ""
+
+#: src/help.cpp:183
+msgid "Seek forward\n"
+msgstr ""
+
+#: src/help.cpp:184
+msgid "Seek backward\n"
+msgstr ""
+
+#: src/help.cpp:185
+msgid "Decrease volume\n"
+msgstr ""
+
+#: src/help.cpp:186
+msgid "Increase volume\n"
+msgstr ""
+
+#: src/help.cpp:188
+msgid "Toggle space mode (select/add)\n"
+msgstr ""
+
+#: src/help.cpp:189
+msgid "Toggle add mode\n"
+msgstr ""
+
+#: src/help.cpp:190
+msgid "Toggle mouse support\n"
+msgstr ""
+
+#: src/help.cpp:191
+msgid "Reverse selection\n"
+msgstr ""
+
+#: src/help.cpp:192
+msgid "Deselect all items\n"
+msgstr ""
+
+#: src/help.cpp:193
+msgid "Select songs of album around cursor\n"
+msgstr ""
+
+#: src/help.cpp:194
+msgid "Add selected items to playlist/m3u file\n"
+msgstr ""
+
+#: src/help.cpp:196
+msgid "Toggle repeat mode\n"
+msgstr ""
+
+#: src/help.cpp:197
+msgid "Toggle random mode\n"
+msgstr ""
+
+#: src/help.cpp:198
+msgid "Toggle single mode\n"
+msgstr ""
+
+#: src/help.cpp:199
+msgid "Toggle consume mode\n"
+msgstr ""
+
+#: src/help.cpp:201
+msgid "Toggle replay gain mode\n"
+msgstr ""
+
+#: src/help.cpp:202
+msgid "Toggle bitrate visibility\n"
+msgstr ""
+
+#: src/help.cpp:203
+msgid "Shuffle playlist\n"
+msgstr ""
+
+#: src/help.cpp:204
+msgid "Toggle crossfade mode\n"
+msgstr ""
+
+#: src/help.cpp:205
+msgid "Set crossfade\n"
+msgstr ""
+
+#: src/help.cpp:206
+msgid "Start a music database update\n"
+msgstr ""
+
+#: src/help.cpp:208
+msgid "Apply filter\n"
+msgstr ""
+
+#: src/help.cpp:209
+msgid "Forward find\n"
+msgstr ""
+
+#: src/help.cpp:210
+msgid "Backward find\n"
+msgstr ""
+
+#: src/help.cpp:211
+msgid "Go to previous found position\n"
+msgstr ""
+
+#: src/help.cpp:212
+msgid "Go to next found position\n"
+msgstr ""
+
+#: src/help.cpp:213
+msgid "Toggle find mode (normal/wrapped)\n"
+msgstr ""
+
+#: src/help.cpp:214
+msgid "Locate song in browser\n"
+msgstr ""
+
+#: src/help.cpp:215
+msgid "Locate current song in media library\n"
+msgstr ""
+
+#: src/help.cpp:217
+msgid "Locate current song in tag editor\n"
+msgstr ""
+
+#: src/help.cpp:219
+msgid "Toggle display mode\n"
+msgstr ""
+
+#: src/help.cpp:220
+msgid "Toggle user interface\n"
+msgstr ""
+
+#: src/help.cpp:221
+msgid "Toggle displaying separators between albums\n"
+msgstr ""
+
+#: src/help.cpp:222
+msgid "Go to given position in current song (in % by default)\n"
+msgstr ""
+
+#: src/help.cpp:223
+msgid "Show song info\n"
+msgstr ""
+
+#: src/help.cpp:225
+msgid "Show artist info\n"
+msgstr ""
+
+#: src/help.cpp:226
+msgid "Toggle lyrics database\n"
+msgstr ""
+
+#: src/help.cpp:228
+msgid "Show/hide song's lyrics\n"
+msgstr ""
+
+#: src/help.cpp:230
+msgid "Quit\n"
+msgstr ""
+
+#: src/help.cpp:234
+msgid "Play\n"
+msgstr ""
+
+#: src/help.cpp:235
+msgid "Add random songs/artists/albums to playlist\n"
+msgstr ""
+
+#: src/help.cpp:236
+msgid "Delete item/selected items from playlist\n"
+msgstr ""
+
+#: src/help.cpp:237
+msgid "Clear playlist\n"
+msgstr ""
+
+#: src/help.cpp:238
+msgid "Clear playlist but hold currently playing/selected items\n"
+msgstr ""
+
+#: src/help.cpp:239 src/help.cpp:304
+msgid "Move item(s) up\n"
+msgstr ""
+
+#: src/help.cpp:240 src/help.cpp:305
+msgid "Move item(s) down\n"
+msgstr ""
+
+#: src/help.cpp:241
+msgid "Move selected item(s) to cursor position\n"
+msgstr ""
+
+#: src/help.cpp:242
+msgid "Move selected item(s) before cursor position\n"
+msgstr ""
+
+#: src/help.cpp:243
+msgid "Move selected item(s) after cursor position\n"
+msgstr ""
+
+#: src/help.cpp:244
+msgid "Add url/file/directory to playlist\n"
+msgstr ""
+
+#: src/help.cpp:246 src/help.cpp:275
+msgid "Edit song's tags\n"
+msgstr ""
+
+#: src/help.cpp:248
+msgid "Save playlist\n"
+msgstr ""
+
+#: src/help.cpp:249
+msgid "Sort/reverse playlist\n"
+msgstr ""
+
+#: src/help.cpp:250
+msgid "Go to currently playing position\n"
+msgstr ""
+
+#: src/help.cpp:251
+msgid "Toggle auto center mode\n"
+msgstr ""
+
+#: src/help.cpp:255
+msgid "Enter directory/Add item to playlist and play\n"
+msgstr ""
+
+#: src/help.cpp:256 src/help.cpp:273
+msgid "Add item to playlist\n"
+msgstr ""
+
+#: src/help.cpp:258
+msgid "Edit song's tags/Rename playlist/directory\n"
+msgstr ""
+
+#: src/help.cpp:260
+msgid "Rename playlist/directory\n"
+msgstr ""
+
+#: src/help.cpp:263
+msgid "Browse MPD database/local filesystem\n"
+msgstr ""
+
+#: src/help.cpp:264
+msgid "Toggle sort order\n"
+msgstr ""
+
+#: src/help.cpp:265
+msgid "Locate currently playing song\n"
+msgstr ""
+
+#: src/help.cpp:266
+msgid "Go to parent directory\n"
+msgstr ""
+
+#: src/help.cpp:267
+msgid "Delete playlist/file/directory\n"
+msgstr ""
+
+#: src/help.cpp:268
+msgid "Jump to playlist editor (playlists only)\n"
+msgstr ""
+
+#: src/help.cpp:272
+msgid "Add item to playlist and play/change option\n"
+msgstr ""
+
+#: src/help.cpp:277
+msgid "Start searching immediately\n"
+msgstr ""
+
+#: src/help.cpp:278
+msgid "Reset search engine\n"
+msgstr ""
+
+#: src/help.cpp:283
+msgid "Switch between two/three columns\n"
+msgstr ""
+
+#: src/help.cpp:284 src/help.cpp:295 src/help.cpp:330
+msgid "Previous column\n"
+msgstr ""
+
+#: src/help.cpp:285 src/help.cpp:296 src/help.cpp:331
+msgid "Next column\n"
+msgstr ""
+
+#: src/help.cpp:286
+msgid "Add to playlist and play song/album/artist's songs\n"
+msgstr ""
+
+#: src/help.cpp:287
+msgid "Add to playlist song/album/artist's songs\n"
+msgstr ""
+
+#: src/help.cpp:289
+msgid "Edit main tag/album/song's tags\n"
+msgstr ""
+
+#: src/help.cpp:291
+msgid "Tag type list switcher (left column)\n"
+msgstr ""
+
+#: src/help.cpp:297
+msgid "Add item to playlist and play\n"
+msgstr ""
+
+#: src/help.cpp:298
+msgid "Add to playlist/select item\n"
+msgstr ""
+
+#: src/help.cpp:300
+msgid "Edit playlist's name/song's tags\n"
+msgstr ""
+
+#: src/help.cpp:302
+msgid "Edit playlist's name\n"
+msgstr ""
+
+#: src/help.cpp:306
+msgid "Clear current playlist\n"
+msgstr ""
+
+#: src/help.cpp:310
+msgid "Switch for following lyrics of now playing song\n"
+msgstr ""
+
+#: src/help.cpp:311
+msgid "Open lyrics in external editor\n"
+msgstr ""
+
+#: src/help.cpp:312
+msgid "Refetch lyrics\n"
+msgstr ""
+
+#: src/help.cpp:316
+msgid "Refetch artist info\n"
+msgstr ""
+
+#: src/help.cpp:321
+msgid "Edit tag\n"
+msgstr ""
+
+#: src/help.cpp:322
+msgid "Save\n"
+msgstr ""
+
+#: src/help.cpp:326
+msgid "Change tag/filename for one song (left column)\n"
+msgstr ""
+
+#: src/help.cpp:327
+msgid "Perform operation on all/selected songs (middle column)\n"
+msgstr ""
+
+#: src/help.cpp:328
+msgid "Switch to albums/directories view (left column)\n"
+msgstr ""
+
+#: src/help.cpp:329
+msgid "Select/deselect song (right column)\n"
+msgstr ""
+
+#: src/help.cpp:332
+msgid "Go to parent directory (left column, directories view)\n"
+msgstr ""
+
+#: src/help.cpp:338
+msgid "Enable/disable output\n"
+msgstr ""
+
+#: src/help.cpp:343
+msgid ""
+"Keys - Music visualizer\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:344
+msgid "Toggle visualization type\n"
+msgstr ""
+
+#: src/help.cpp:348
+msgid ""
+"Mouse - Global\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:349
+msgid ": Play/pause\n"
+msgstr ""
+
+#: src/help.cpp:350
+msgid "\tLeft click on progressbar\t"
+msgstr ""
+
+#: src/help.cpp:350
+msgid ": Go to chosen position in played track\n"
+msgstr ""
+
+#: src/help.cpp:352
+msgid ": Change volume\n"
+msgstr ""
+
+#: src/help.cpp:353
+msgid "\tMouse wheel on main window\t"
+msgstr ""
+
+#: src/help.cpp:353
+msgid ": Scroll\n"
+msgstr ""
+
+#: src/help.cpp:356
+msgid ""
+"Mouse - Playlist\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:357 src/help.cpp:370 src/help.cpp:396 src/help.cpp:417
+msgid "\tLeft click\t\t\t"
+msgstr ""
+
+#: src/help.cpp:357 src/help.cpp:376 src/help.cpp:386 src/help.cpp:396
+#: src/help.cpp:406 src/help.cpp:410 src/help.cpp:417
+msgid ": Highlight\n"
+msgstr ""
+
+#: src/help.cpp:358 src/help.cpp:371 src/help.cpp:397 src/help.cpp:418
+msgid "\tRight click\t\t\t"
+msgstr ""
+
+#: src/help.cpp:358
+msgid ": Play\n"
+msgstr ""
+
+#: src/help.cpp:361
+msgid ""
+"Mouse - Browser\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:362
+msgid "\tLeft click on directory\t\t"
+msgstr ""
+
+#: src/help.cpp:362
+msgid ": Enter directory\n"
+msgstr ""
+
+#: src/help.cpp:363
+msgid "\tRight click on directory\t"
+msgstr ""
+
+#: src/help.cpp:363 src/help.cpp:365 src/help.cpp:377 src/help.cpp:380
+#: src/help.cpp:387 src/help.cpp:390
+msgid ": Add to playlist\n"
+msgstr ""
+
+#: src/help.cpp:365
+msgid "\tLeft click on song/playlist\t"
+msgstr ""
+
+#: src/help.cpp:366
+msgid "\tRight click on song/playlist\t"
+msgstr ""
+
+#: src/help.cpp:366 src/help.cpp:381 src/help.cpp:391
+msgid ": Add to playlist and play\n"
+msgstr ""
+
+#: src/help.cpp:369
+msgid ""
+"Mouse - Search engine\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:370
+msgid ": Highlight/switch value\n"
+msgstr ""
+
+#: src/help.cpp:371 src/help.cpp:411
+msgid ": Change value\n"
+msgstr ""
+
+#: src/help.cpp:374
+msgid ""
+"Mouse - Media library\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:375
+msgid "\tLeft/middle column:\n"
+msgstr ""
+
+#: src/help.cpp:376 src/help.cpp:380 src/help.cpp:386 src/help.cpp:390
+#: src/help.cpp:402 src/help.cpp:406 src/help.cpp:410
+msgid "\t\tLeft Click\t\t"
+msgstr ""
+
+#: src/help.cpp:377 src/help.cpp:381 src/help.cpp:387 src/help.cpp:391
+#: src/help.cpp:403 src/help.cpp:407 src/help.cpp:411
+msgid "\t\tRight Click\t\t"
+msgstr ""
+
+#: src/help.cpp:379 src/help.cpp:389 src/help.cpp:409
+msgid "\tRight column:\n"
+msgstr ""
+
+#: src/help.cpp:384
+msgid ""
+"Mouse - Playlist editor\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:385 src/help.cpp:401
+msgid "\tLeft column:\n"
+msgstr ""
+
+#: src/help.cpp:395
+msgid ""
+"Mouse - Tiny tag editor\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:397 src/help.cpp:407
+msgid ": Change value/execute command\n"
+msgstr ""
+
+#: src/help.cpp:400
+msgid ""
+"Mouse - Tag editor\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:402
+msgid ": Enter directory/highlight album\n"
+msgstr ""
+
+#: src/help.cpp:403
+msgid ": Switch to directories/albums view\n"
+msgstr ""
+
+#: src/help.cpp:405
+msgid "\tMiddle column:\n"
+msgstr ""
+
+#: src/help.cpp:416
+msgid ""
+"Mouse - Outputs\n"
+" -----------------------------------------\n"
+msgstr ""
+
+#: src/help.cpp:418
+msgid ": Enable/disable output\n"
+msgstr ""
+
+#: src/status.cpp:340
+msgid "[unknown]"
+msgstr ""
+
+#: src/status.cpp:347
+msgid "[playing]"
+msgstr ""
+
+#: src/status.cpp:347
+msgid "Playing:"
+msgstr ""
+
+#: src/status.cpp:528
+#, c-format
+msgid "Repeat mode is %s"
+msgstr ""
+
+#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+msgid "off"
+msgstr ""
+
+#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+msgid "on"
+msgstr ""
+
+#: src/status.cpp:533
+#, c-format
+msgid "Random mode is %s"
+msgstr ""
+
+#: src/status.cpp:538
+#, c-format
+msgid "Single mode is %s"
+msgstr ""
+
+#: src/status.cpp:543
+#, c-format
+msgid "Consume mode is %s"
+msgstr ""
+
+#: src/status.cpp:549
+#, c-format
+msgid "Crossfade set to %d seconds"
+msgstr ""
+
+#: src/status.cpp:557
+msgid "Database update started!"
+msgstr ""
+
+#: src/status.cpp:557
+msgid "Database update finished!"
+msgstr ""
+
+#: src/status.cpp:561
+msgid "Database has changed, you need to select your item(s) once again!"
+msgstr ""
+
+#: src/status.cpp:622
+msgid " Vol: "
+msgstr ""
+
+#: src/status.cpp:622
+msgid " Volume: "
+msgstr ""
+
+#: src/status.cpp:625
+msgid "n/a"
+msgstr ""
+
+#: src/playlist.cpp:69
+msgid "Sort songs by..."
+msgstr ""
+
+#: src/playlist.cpp:74
+msgid "Artist"
+msgstr ""
+
+#: src/playlist.cpp:75
+msgid "Album"
+msgstr ""
+
+#: src/playlist.cpp:76
+msgid "Disc"
+msgstr ""
+
+#: src/playlist.cpp:77
+msgid "Track"
+msgstr ""
+
+#: src/playlist.cpp:78
+msgid "Genre"
+msgstr ""
+
+#: src/playlist.cpp:79
+msgid "Year"
+msgstr ""
+
+#: src/playlist.cpp:80
+msgid "Composer"
+msgstr ""
+
+#: src/playlist.cpp:81
+msgid "Performer"
+msgstr ""
+
+#: src/playlist.cpp:82
+msgid "Title"
+msgstr ""
+
+#: src/playlist.cpp:83
+msgid "Filename"
+msgstr ""
+
+#: src/playlist.cpp:85
+msgid "Sort"
+msgstr ""
+
+#: src/playlist.cpp:86
+msgid "Reverse"
+msgstr ""
+
+#: src/playlist.cpp:87
+msgid "Cancel"
+msgstr ""

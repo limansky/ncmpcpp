@@ -28,6 +28,8 @@
 #include "song.h"
 #include "status.h"
 
+#include "i18n.h"
+
 using Global::MainHeight;
 using Global::MainStartY;
 
@@ -64,25 +66,25 @@ void Playlist::Init()
 	{
 		SortDialogHeight = std::min(int(MainHeight), 18);
 		
-		SortDialog = new Menu< std::pair<std::string, MPD::Song::GetFunction> >((COLS-SortDialogWidth)/2, (MainHeight-SortDialogHeight)/2+MainStartY, SortDialogWidth, SortDialogHeight, "Sort songs by...", Config.main_color, Config.window_border);
+		SortDialog = new Menu< std::pair<std::string, MPD::Song::GetFunction> >((COLS-SortDialogWidth)/2, (MainHeight-SortDialogHeight)/2+MainStartY, SortDialogWidth, SortDialogHeight, _("Sort songs by..."), Config.main_color, Config.window_border);
 		SortDialog->CyclicScrolling(Config.use_cyclic_scrolling);
 		SortDialog->CenteredCursor(Config.centered_cursor);
 		SortDialog->SetItemDisplayer(Display::Pairs);
 		
-		SortDialog->AddOption(std::make_pair("Artist", &MPD::Song::GetArtist));
-		SortDialog->AddOption(std::make_pair("Album", &MPD::Song::GetAlbum));
-		SortDialog->AddOption(std::make_pair("Disc", &MPD::Song::GetDisc));
-		SortDialog->AddOption(std::make_pair("Track", &MPD::Song::GetTrack));
-		SortDialog->AddOption(std::make_pair("Genre", &MPD::Song::GetGenre));
-		SortDialog->AddOption(std::make_pair("Year", &MPD::Song::GetDate));
-		SortDialog->AddOption(std::make_pair("Composer", &MPD::Song::GetComposer));
-		SortDialog->AddOption(std::make_pair("Performer", &MPD::Song::GetPerformer));
-		SortDialog->AddOption(std::make_pair("Title", &MPD::Song::GetTitle));
-		SortDialog->AddOption(std::make_pair("Filename", &MPD::Song::GetFile));
+		SortDialog->AddOption(std::make_pair(_("Artist"), &MPD::Song::GetArtist));
+		SortDialog->AddOption(std::make_pair(_("Album"), &MPD::Song::GetAlbum));
+		SortDialog->AddOption(std::make_pair(_("Disc"), &MPD::Song::GetDisc));
+		SortDialog->AddOption(std::make_pair(_("Track"), &MPD::Song::GetTrack));
+		SortDialog->AddOption(std::make_pair(_("Genre"), &MPD::Song::GetGenre));
+		SortDialog->AddOption(std::make_pair(_("Year"), &MPD::Song::GetDate));
+		SortDialog->AddOption(std::make_pair(_("Composer"), &MPD::Song::GetComposer));
+		SortDialog->AddOption(std::make_pair(_("Performer"), &MPD::Song::GetPerformer));
+		SortDialog->AddOption(std::make_pair(_("Title"), &MPD::Song::GetTitle));
+		SortDialog->AddOption(std::make_pair(_("Filename"), &MPD::Song::GetFile));
 		SortDialog->AddSeparator();
-		SortDialog->AddOption(std::make_pair("Sort", static_cast<MPD::Song::GetFunction>(0)));
-		SortDialog->AddOption(std::make_pair("Reverse", static_cast<MPD::Song::GetFunction>(0)));
-		SortDialog->AddOption(std::make_pair("Cancel", static_cast<MPD::Song::GetFunction>(0)));
+		SortDialog->AddOption(std::make_pair(_("Sort"), static_cast<MPD::Song::GetFunction>(0)));
+		SortDialog->AddOption(std::make_pair(_("Reverse"), static_cast<MPD::Song::GetFunction>(0)));
+		SortDialog->AddOption(std::make_pair(_("Cancel"), static_cast<MPD::Song::GetFunction>(0)));
 	}
 	
 	w = Items;

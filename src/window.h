@@ -56,16 +56,18 @@
 #endif // USE_PDCURSES
 
 #ifdef _UTF8
-# define my_char_t wchar_t
+typedef wchar_t my_char_t;
 # define U(x) L##x
 # define TO_STRING(x) ToString(x)
 # define TO_WSTRING(x) ToWString(x)
 #else
-# define my_char_t char
+typedef char my_char_t;
 # define U(x) x
 # define TO_STRING(x) (x)
 # define TO_WSTRING(x) (x)
 #endif
+
+typedef std::basic_string<my_char_t> my_string_t;
 
 // workaraund for win32
 #ifdef WIN32

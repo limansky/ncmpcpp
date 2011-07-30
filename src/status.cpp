@@ -40,6 +40,8 @@
 #include "tag_editor.h"
 #include "visualizer.h"
 
+#include "i18n.h"
+
 using Global::myScreen;
 using Global::wFooter;
 using Global::Timer;
@@ -335,14 +337,14 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 		{
 			case MPD::psUnknown:
 			{
-				player_state = "[unknown]";
+				player_state = _("[unknown]");
 				break;
 			}
 			case MPD::psPlay:
 			{
 				if (!np.Empty())
 					WindowTitle(utf_to_locale_cpy(np.toString(Config.song_window_title_format)));
-				player_state = Config.new_design ? "[playing]" : "Playing: ";
+				player_state = Config.new_design ? _("[playing]") : std::string(_("Playing:")) + " ";
 				Playlist::ReloadRemaining = 1;
 				if (Mpd.GetOldState() == MPD::psStop) // show track info in status immediately
 					changed.ElapsedTime = 1;
@@ -523,28 +525,28 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 	if (changed.Repeat)
 	{
 		mpd_repeat = Mpd.GetRepeat() ? 'r' : 0;
-		ShowMessage("Repeat mode is %s", !mpd_repeat ? "off" : "on");
+		ShowMessage(_("Repeat mode is %s"), !mpd_repeat ? _("off") : _("on"));
 	}
 	if (changed.Random)
 	{
 		mpd_random = Mpd.GetRandom() ? 'z' : 0;
-		ShowMessage("Random mode is %s", !mpd_random ? "off" : "on");
+		ShowMessage(_("Random mode is %s"), !mpd_random ? _("off") : _("on"));
 	}
 	if (changed.Single)
 	{
 		mpd_single = Mpd.GetSingle() ? 's' : 0;
-		ShowMessage("Single mode is %s", !mpd_single ? "off" : "on");
+		ShowMessage(_("Single mode is %s"), !mpd_single ? _("off") : _("on"));
 	}
 	if (changed.Consume)
 	{
 		mpd_consume = Mpd.GetConsume() ? 'c' : 0;
-		ShowMessage("Consume mode is %s", !mpd_consume ? "off" : "on");
+		ShowMessage(_("Consume mode is %s"), !mpd_consume ? _("off") : _("on"));
 	}
 	if (changed.Crossfade)
 	{
 		int crossfade = Mpd.GetCrossfade();
 		mpd_crossfade = crossfade ? 'x' : 0;
-		ShowMessage("Crossfade set to %d seconds", crossfade);
+		ShowMessage(_("Crossfade set to %d seconds"), crossfade);
 	}
 	if (changed.DBUpdating)
 	{
@@ -552,11 +554,11 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 		// finished and nothing changed, so we need to switch it off for them.
 		if (!Mpd.SupportsIdle() || Mpd.Version() > 15)
 			mpd_db_updating = Mpd.GetDBIsUpdating() ? 'U' : 0;
-		ShowMessage(Mpd.GetDBIsUpdating() ? "Database update started!" : "Database update finished!");
+		ShowMessage(Mpd.GetDBIsUpdating() ? _("Database update started!") : _("Database update finished!"));
 		if (changed.Database && myScreen == mySelectedItemsAdder)
 		{
 			myScreen->SwitchTo(); // switch to previous screen
-			ShowMessage("Database has changed, you need to select your item(s) once again!");
+			ShowMessage(_("Database has changed, you need to select your item(s) once again!"));
 		}
 	}
 	if (changed.StatusFlags && (Config.header_visibility || Config.new_design))
@@ -617,10 +619,10 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 	}
 	if (changed.Volume && Config.display_volume_level && (Config.header_visibility || Config.new_design))
 	{
-		VolumeState = Config.new_design ? " Vol: " : " Volume: ";
+		VolumeState = Config.new_design ? _(" Vol: ") : _(" Volume: ");
 		int volume = Mpd.GetVolume();
 		if (volume < 0)
-			VolumeState += "n/a";
+			VolumeState += _("n/a");
 		else
 		{
 			VolumeState += IntoStr(volume);

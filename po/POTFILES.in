@@ -1,0 +1,6 @@
+# List of source files which contain translatable strings.
+
+src/help.cpp
+src/status.cpp
+src/playlist.cpp
+src/display.cpp

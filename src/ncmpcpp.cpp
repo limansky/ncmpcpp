@@ -28,6 +28,8 @@
 #include <fstream>
 #include <stdexcept>
 
+#include <libintl.h>
+
 #include "mpdpp.h"
 #include "ncmpcpp.h"
 
@@ -233,6 +235,9 @@ namespace
 int main(int argc, char *argv[])
 {
 	setlocale(LC_ALL, "");
+    bindtextdomain(PACKAGE, LOCALEDIR);
+    textdomain(PACKAGE);
+
 	CreateConfigDir();
 	
 	Config.SetDefaults();

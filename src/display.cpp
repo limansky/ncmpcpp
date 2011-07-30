@@ -25,44 +25,45 @@
 #include "song_info.h"
 #include "playlist.h"
 #include "global.h"
+#include "i18n.h"
 
 using Global::myScreen;
 
 namespace
 {
-	const my_char_t *toColumnName(char c)
+	const my_string_t toColumnName(char c)
 	{
 		switch (c)
 		{
 			case 'l':
-				return U("Time");
+				return _U("Time");
 			case 'f':
-				return U("Filename");
+				return _U("Filename");
 			case 'D':
-				return U("Directory");
+				return _U("Directory");
 			case 'a':
-				return U("Artist");
+				return _U("Artist");
 			case 'A':
-				return U("Album Artist");
+				return _U("Album Artist");
 			case 't':
-				return U("Title");
+				return _U("Title");
 			case 'b':
-				return U("Album");
+				return _U("Album");
 			case 'y':
-				return U("Year");
+				return _U("Year");
 			case 'n':
 			case 'N':
-				return U("Track");
+				return _U("Track");
 			case 'g':
-				return U("Genre");
+				return _U("Genre");
 			case 'c':
-				return U("Composer");
+				return _U("Composer");
 			case 'p':
-				return U("Performer");
+				return _U("Performer");
 			case 'd':
-				return U("Disc");
+				return _U("Disc");
 			case 'C':
-				return U("Comment");
+				return _U("Comment");
 			default:
 				return U("?");
 		}
@@ -74,7 +75,7 @@ std::string Display::Columns()
 	if (Config.columns.empty())
 		return "";
 	
-	std::basic_string<my_char_t> result;
+	my_string_t result;
 	size_t where = 0;
 	int width;
 	
@@ -92,7 +93,7 @@ std::string Display::Columns()
 		else
 			width = it->width*(it->fixed ? 1 : COLS/100.0);
 		
-		std::basic_string<my_char_t> tag;
+		my_string_t tag;
 		if (it->type.length() >= 1 && it->name.empty())
 		{
 			for (size_t j = 0; j < it->type.length(); ++j)
@@ -208,7 +209,7 @@ void Display::SongsInColumns(const MPD::Song &s, void *data, Menu<MPD::Song> *me
 			{
 				int x, y;
 				menu->GetXY(x, y);
-				std::basic_string<my_char_t> wtag = TO_WSTRING(tag.empty() ? Config.empty_tag : tag).substr(0, width-!!x);
+				my_string_t wtag = TO_WSTRING(tag.empty() ? Config.empty_tag : tag).substr(0, width-!!x);
 				*menu << XY(x+width-Window::Length(wtag)-!!x, y) << wtag;
 			}
 		}
@@ -218,7 +219,7 @@ void Display::SongsInColumns(const MPD::Song &s, void *data, Menu<MPD::Song> *me
 			{
 				if (width > 0)
 				{
-					std::basic_string<my_char_t> str;
+					my_string_t str;
 					if (!tag.empty())
 						str = TO_WSTRING(tag).substr(0, width-1);
 					else if (it->display_empty_tag)
