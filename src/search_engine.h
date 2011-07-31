@@ -51,6 +51,8 @@ class SearchEngine : public Screen< Menu< std::pair<Buffer *, MPD::Song *> > >
 		void UpdateFoundList();
 		void Scroll(int);
 		void SelectAlbum();
+
+        static void InitConstraints();
 		
 		static size_t StaticOptions;
 		static size_t SearchButton;

@@ -237,6 +237,7 @@ int main(int argc, char *argv[])
 	setlocale(LC_ALL, "");
     bindtextdomain(PACKAGE, LOCALEDIR);
     textdomain(PACKAGE);
+    SearchEngine::InitConstraints();
 
 	CreateConfigDir();
 	

@@ -316,13 +316,11 @@ msgstr ""
 msgid "Clear playlist but hold currently playing/selected items\n"
 msgstr ""
 
-#: src/help.cpp:239
-#: src/help.cpp:304
+#: src/help.cpp:239 src/help.cpp:304
 msgid "Move item(s) up\n"
 msgstr ""
 
-#: src/help.cpp:240
-#: src/help.cpp:305
+#: src/help.cpp:240 src/help.cpp:305
 msgid "Move item(s) down\n"
 msgstr ""
 
@@ -342,8 +340,7 @@ msgstr ""
 msgid "Add url/file/directory to playlist\n"
 msgstr ""
 
-#: src/help.cpp:246
-#: src/help.cpp:275
+#: src/help.cpp:246 src/help.cpp:275
 msgid "Edit song's tags\n"
 msgstr ""
 
@@ -367,8 +364,7 @@ msgstr ""
 msgid "Enter directory/Add item to playlist and play\n"
 msgstr ""
 
-#: src/help.cpp:256
-#: src/help.cpp:273
+#: src/help.cpp:256 src/help.cpp:273
 msgid "Add item to playlist\n"
 msgstr ""
 
@@ -420,15 +416,11 @@ msgstr ""
 msgid "Switch between two/three columns\n"
 msgstr ""
 
-#: src/help.cpp:284
-#: src/help.cpp:295
-#: src/help.cpp:330
+#: src/help.cpp:284 src/help.cpp:295 src/help.cpp:330
 msgid "Previous column\n"
 msgstr ""
 
-#: src/help.cpp:285
-#: src/help.cpp:296
-#: src/help.cpp:331
+#: src/help.cpp:285 src/help.cpp:296 src/help.cpp:331
 msgid "Next column\n"
 msgstr ""
 
@@ -562,27 +554,16 @@ msgid ""
 " -----------------------------------------\n"
 msgstr ""
 
-#: src/help.cpp:357
-#: src/help.cpp:370
-#: src/help.cpp:396
-#: src/help.cpp:417
+#: src/help.cpp:357 src/help.cpp:370 src/help.cpp:396 src/help.cpp:417
 msgid "\tLeft click\t\t\t"
 msgstr ""
 
-#: src/help.cpp:357
-#: src/help.cpp:376
-#: src/help.cpp:386
-#: src/help.cpp:396
-#: src/help.cpp:406
-#: src/help.cpp:410
-#: src/help.cpp:417
+#: src/help.cpp:357 src/help.cpp:376 src/help.cpp:386 src/help.cpp:396
+#: src/help.cpp:406 src/help.cpp:410 src/help.cpp:417
 msgid ": Highlight\n"
 msgstr ""
 
-#: src/help.cpp:358
-#: src/help.cpp:371
-#: src/help.cpp:397
-#: src/help.cpp:418
+#: src/help.cpp:358 src/help.cpp:371 src/help.cpp:397 src/help.cpp:418
 msgid "\tRight click\t\t\t"
 msgstr ""
 
@@ -608,12 +589,8 @@ msgstr ""
 msgid "\tRight click on directory\t"
 msgstr ""
 
-#: src/help.cpp:363
-#: src/help.cpp:365
-#: src/help.cpp:377
-#: src/help.cpp:380
-#: src/help.cpp:387
-#: src/help.cpp:390
+#: src/help.cpp:363 src/help.cpp:365 src/help.cpp:377 src/help.cpp:380
+#: src/help.cpp:387 src/help.cpp:390
 msgid ": Add to playlist\n"
 msgstr ""
 
@@ -625,9 +602,7 @@ msgstr ""
 msgid "\tRight click on song/playlist\t"
 msgstr ""
 
-#: src/help.cpp:366
-#: src/help.cpp:381
-#: src/help.cpp:391
+#: src/help.cpp:366 src/help.cpp:381 src/help.cpp:391
 msgid ": Add to playlist and play\n"
 msgstr ""
 
@@ -641,8 +616,7 @@ msgstr ""
 msgid ": Highlight/switch value\n"
 msgstr ""
 
-#: src/help.cpp:371
-#: src/help.cpp:411
+#: src/help.cpp:371 src/help.cpp:411
 msgid ": Change value\n"
 msgstr ""
 
@@ -656,29 +630,17 @@ msgstr ""
 msgid "\tLeft/middle column:\n"
 msgstr ""
 
-#: src/help.cpp:376
-#: src/help.cpp:380
-#: src/help.cpp:386
-#: src/help.cpp:390
-#: src/help.cpp:402
-#: src/help.cpp:406
-#: src/help.cpp:410
+#: src/help.cpp:376 src/help.cpp:380 src/help.cpp:386 src/help.cpp:390
+#: src/help.cpp:402 src/help.cpp:406 src/help.cpp:410
 msgid "\t\tLeft Click\t\t"
 msgstr ""
 
-#: src/help.cpp:377
-#: src/help.cpp:381
-#: src/help.cpp:387
-#: src/help.cpp:391
-#: src/help.cpp:403
-#: src/help.cpp:407
-#: src/help.cpp:411
+#: src/help.cpp:377 src/help.cpp:381 src/help.cpp:387 src/help.cpp:391
+#: src/help.cpp:403 src/help.cpp:407 src/help.cpp:411
 msgid "\t\tRight Click\t\t"
 msgstr ""
 
-#: src/help.cpp:379
-#: src/help.cpp:389
-#: src/help.cpp:409
+#: src/help.cpp:379 src/help.cpp:389 src/help.cpp:409
 msgid "\tRight column:\n"
 msgstr ""
 
@@ -688,8 +650,7 @@ msgid ""
 " -----------------------------------------\n"
 msgstr ""
 
-#: src/help.cpp:385
-#: src/help.cpp:401
+#: src/help.cpp:385 src/help.cpp:401
 msgid "\tLeft column:\n"
 msgstr ""
 
@@ -699,8 +660,7 @@ msgid ""
 " -----------------------------------------\n"
 msgstr ""
 
-#: src/help.cpp:397
-#: src/help.cpp:407
+#: src/help.cpp:397 src/help.cpp:407
 msgid ": Change value/execute command\n"
 msgstr ""
 
@@ -749,17 +709,11 @@ msgstr "Играет:"
 msgid "Repeat mode is %s"
 msgstr "Режим повторения %s"
 
-#: src/status.cpp:528
-#: src/status.cpp:533
-#: src/status.cpp:538
-#: src/status.cpp:543
+#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
 msgid "off"
 msgstr "выключен"
 
-#: src/status.cpp:528
-#: src/status.cpp:533
-#: src/status.cpp:538
-#: src/status.cpp:543
+#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
 msgid "on"
 msgstr "включен"
 
@@ -811,54 +765,44 @@ msgstr ""
 msgid "Sort songs by..."
 msgstr "Сортировать песни по..."
 
-#: src/playlist.cpp:74
-#: src/display.cpp:49
+#: src/playlist.cpp:74 src/display.cpp:49
 msgid "Artist"
 msgstr "Исполнитель"
 
-#: src/playlist.cpp:75
-#: src/display.cpp:58
+#: src/playlist.cpp:75 src/display.cpp:58
 msgid "Album"
 msgstr "Альбом"
 
-#: src/playlist.cpp:76
-#: src/display.cpp:77
+#: src/playlist.cpp:76 src/display.cpp:77
 msgid "Disc"
 msgstr "Диск"
 
-#: src/playlist.cpp:77
-#: src/display.cpp:65
+#: src/playlist.cpp:77 src/display.cpp:65
 msgid "Track"
 msgstr "Дорожка"
 
-#: src/playlist.cpp:78
-#: src/display.cpp:68
+#: src/playlist.cpp:78 src/display.cpp:68
 msgid "Genre"
 msgstr "Жанр"
 
-#: src/playlist.cpp:79
-#: src/display.cpp:61
+#: src/playlist.cpp:79 src/display.cpp:61
 msgid "Year"
 msgstr "Год"
 
-#: src/playlist.cpp:80
-#: src/display.cpp:71
+#: src/playlist.cpp:80 src/display.cpp:71
 msgid "Composer"
 msgstr "Композитор"
 
-#: src/playlist.cpp:81
-#: src/display.cpp:74
+#: src/playlist.cpp:81 src/display.cpp:74
 #, fuzzy
 msgid "Performer"
 msgstr "Performer"
 
-#: src/playlist.cpp:82
-#: src/display.cpp:55
+#: src/playlist.cpp:82 src/display.cpp:55
 msgid "Title"
 msgstr "Заголовок"
 
-#: src/playlist.cpp:83
-#: src/display.cpp:43
+#: src/playlist.cpp:83 src/display.cpp:43
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -936,4 +880,3 @@ msgstr ""
 #: src/browser.cpp:521
 msgid "MPD music dir"
 msgstr ""
-

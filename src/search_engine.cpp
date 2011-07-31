@@ -27,33 +27,16 @@
 #include "search_engine.h"
 #include "settings.h"
 #include "status.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
 
 SearchEngine *mySearcher = new SearchEngine;
 
-const char *SearchEngine::ConstraintsNames[] =
-{
-	"Any:",
-	"Artist:",
-	"Title:",
-	"Album:",
-	"Filename:",
-	"Composer:",
-	"Performer:",
-	"Genre:",
-	"Year:",
-	"Comment:"
-};
+const char* SearchEngine::ConstraintsNames[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-const char *SearchEngine::SearchModes[] =
-{
-	"Match if tag contains searched phrase (no regexes)",
-	"Match if tag contains searched phrase (regexes supported)",
-	"Match only if both values are the same",
-	0
-};
+const char *SearchEngine::SearchModes[] = { 0, 0, 0, 0 };
 
 size_t SearchEngine::StaticOptions = 19;
 size_t SearchEngine::ResetButton = 15;
@@ -74,6 +57,24 @@ void SearchEngine::Init()
 	w->SetGetStringFunction(SearchEngineOptionToString);
 	SearchMode = &SearchModes[Config.search_engine_default_search_mode];
 	isInitialized = 1;
+}
+
+void SearchEngine::InitConstraints()
+{
+    ConstraintsNames[0] = _("Any");
+    ConstraintsNames[1] = _("Artist");
+	ConstraintsNames[2] = _("Title");
+	ConstraintsNames[3] = _("Album");
+	ConstraintsNames[4] = _("Filename");
+	ConstraintsNames[5] = _("Composer");
+	ConstraintsNames[6] = _("Performer");
+	ConstraintsNames[7] = _("Genre");
+	ConstraintsNames[8] = _("Year");
+	ConstraintsNames[9] = _("Comment");
+
+    SearchModes[0] = _("Match if tag contains searched phrase (no regexes)");
+	SearchModes[1] = _("Match if tag contains searched phrase (regexes supported)");
+	SearchModes[2] = _("Match only if both values are the same");
 }
 
 void SearchEngine::Resize()
@@ -109,14 +110,14 @@ void SearchEngine::SwitchTo()
 	
 	if (!w->Back().first)
 	{
-		*w << XY(0, 0) << "Updating list...";
+		*w << XY(0, 0) << _("Updating list...");
 		UpdateFoundList();
 	}
 }
 
 std::basic_string<my_char_t> SearchEngine::Title()
 {
-	return U("Search engine");
+	return TO_WSTRING(_("Search engine"));
 }
 
 void SearchEngine::EnterPressed()
@@ -129,22 +130,22 @@ void SearchEngine::EnterPressed()
 	
 	if (option < ConstraintsNumber)
 	{
-		Statusbar() << fmtBold << ConstraintsNames[option] << fmtBoldEnd << ' ';
+		Statusbar() << fmtBold << ConstraintsNames[option] << ':' << fmtBoldEnd << ' ';
 		itsConstraints[option] = Global::wFooter->GetString(itsConstraints[option]);
 		w->Current().first->Clear();
-		*w->Current().first << fmtBold << std::setw(10) << std::left << ConstraintsNames[option] << fmtBoldEnd << ' ';
+		*w->Current().first << fmtBold << std::setw(10) << std::left << ConstraintsNames[option] << ':' << fmtBoldEnd << ' ';
 		ShowTag(*w->Current().first, itsConstraints[option]);
 	}
 	else if (option == ConstraintsNumber+1)
 	{
 		Config.search_in_db = !Config.search_in_db;
-		*w->Current().first << fmtBold << "Search in:" << fmtBoldEnd << ' ' << (Config.search_in_db ? "Database" : "Current playlist");
+		*w->Current().first << fmtBold << _("Search in:") << fmtBoldEnd << ' ' << (Config.search_in_db ? _("Database") : _("Current playlist"));
 	}
 	else if (option == ConstraintsNumber+2)
 	{
 		if (!*++SearchMode)
 			SearchMode = &SearchModes[0];
-		*w->Current().first << fmtBold << "Search mode:" << fmtBoldEnd << ' ' << *SearchMode;
+		*w->Current().first << fmtBold << _("Search mode:") << fmtBoldEnd << ' ' << *SearchMode;
 	}
 	else if (option == SearchButton)
 	{
@@ -161,7 +162,8 @@ void SearchEngine::EnterPressed()
 			w->InsertSeparator(ResetButton+1);
 			w->InsertOption(ResetButton+2, std::make_pair(static_cast<Buffer *>(0), static_cast<MPD::Song *>(0)), 1, 1);
 			w->at(ResetButton+2).first = new Buffer();
-			*w->at(ResetButton+2).first << Config.color1 << "Search results: " << Config.color2 << "Found " << found  << (found > 1 ? " songs" : " song") << clDefault;
+			*w->at(ResetButton+2).first << Config.color1 << _("Search results: ") << Config.color2 << _("Found") << ' ' << found  
+                                                         << ' ' << (found > 1 ? _("songs") : _("song")) << clDefault;
 			w->InsertSeparator(ResetButton+3);
 			UpdateFoundList();
 			ShowMessage("Searching finished!");
@@ -172,7 +174,7 @@ void SearchEngine::EnterPressed()
 			w->Scroll(wDown);
 		}
 		else
-			ShowMessage("No results found");
+			ShowMessage(_("No results found"));
 	}
 	else if (option == ResetButton)
 	{
@@ -396,15 +398,15 @@ void SearchEngine::Prepare()
 	
 	for (size_t i = 0; i < ConstraintsNumber; ++i)
 	{
-		*(*w)[i].first << fmtBold << std::setw(10) << std::left << ConstraintsNames[i] << fmtBoldEnd << ' ';
+		*(*w)[i].first << fmtBold << std::setw(10) << std::left << ConstraintsNames[i] << ':' << fmtBoldEnd << ' ';
 		ShowTag(*(*w)[i].first, itsConstraints[i]);
 	}
 	
-	*w->at(ConstraintsNumber+1).first << fmtBold << "Search in:" << fmtBoldEnd << ' ' << (Config.search_in_db ? "Database" : "Current playlist");
-	*w->at(ConstraintsNumber+2).first << fmtBold << "Search mode:" << fmtBoldEnd << ' ' << *SearchMode;
+	*w->at(ConstraintsNumber+1).first << fmtBold << _("Search in:") << fmtBoldEnd << ' ' << (Config.search_in_db ? _("Database") : _("Current playlist"));
+	*w->at(ConstraintsNumber+2).first << fmtBold << _("Search mode:") << fmtBoldEnd << ' ' << *SearchMode;
 	
-	*w->at(SearchButton).first << "Search";
-	*w->at(ResetButton).first << "Reset";
+	*w->at(SearchButton).first << _("Search");
+	*w->at(ResetButton).first << _("Reset");
 }
 
 void SearchEngine::Reset()
