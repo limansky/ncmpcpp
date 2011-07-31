@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-07-30 01:04+0400\n"
+"POT-Creation-Date: 2011-07-31 13:28+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -764,43 +764,43 @@ msgstr ""
 msgid "Sort songs by..."
 msgstr ""
 
-#: src/playlist.cpp:74
+#: src/playlist.cpp:74 src/display.cpp:49
 msgid "Artist"
 msgstr ""
 
-#: src/playlist.cpp:75
+#: src/playlist.cpp:75 src/display.cpp:58
 msgid "Album"
 msgstr ""
 
-#: src/playlist.cpp:76
+#: src/playlist.cpp:76 src/display.cpp:77
 msgid "Disc"
 msgstr ""
 
-#: src/playlist.cpp:77
+#: src/playlist.cpp:77 src/display.cpp:65
 msgid "Track"
 msgstr ""
 
-#: src/playlist.cpp:78
+#: src/playlist.cpp:78 src/display.cpp:68
 msgid "Genre"
 msgstr ""
 
-#: src/playlist.cpp:79
+#: src/playlist.cpp:79 src/display.cpp:61
 msgid "Year"
 msgstr ""
 
-#: src/playlist.cpp:80
+#: src/playlist.cpp:80 src/display.cpp:71
 msgid "Composer"
 msgstr ""
 
-#: src/playlist.cpp:81
+#: src/playlist.cpp:81 src/display.cpp:74
 msgid "Performer"
 msgstr ""
 
-#: src/playlist.cpp:82
+#: src/playlist.cpp:82 src/display.cpp:55
 msgid "Title"
 msgstr ""
 
-#: src/playlist.cpp:83
+#: src/playlist.cpp:83 src/display.cpp:43
 msgid "Filename"
 msgstr ""
 
@@ -814,4 +814,67 @@ msgstr ""
 
 #: src/playlist.cpp:87
 msgid "Cancel"
+msgstr ""
+
+#: src/display.cpp:40
+msgid "Time"
+msgstr ""
+
+#: src/display.cpp:46
+msgid "Directory"
+msgstr ""
+
+#: src/display.cpp:52
+msgid "Album Artist"
+msgstr ""
+
+#: src/display.cpp:80
+msgid "Comment"
+msgstr ""
+
+#: src/browser.cpp:110
+msgid "Browse: "
+msgstr ""
+
+#: src/browser.cpp:139
+#, c-format
+msgid "Loading and playing playlist %s..."
+msgstr ""
+
+#: src/browser.cpp:174
+#, c-format
+msgid "Scanning \"%s\"..."
+msgstr ""
+
+#: src/browser.cpp:185
+#, c-format
+msgid "Added folder: %s"
+msgstr ""
+
+#: src/browser.cpp:200
+#, c-format
+msgid "Loading playlist %s..."
+msgstr ""
+
+#: src/browser.cpp:503
+#, c-format
+msgid "Deleting \"%s\"..."
+msgstr ""
+
+#: src/browser.cpp:508
+#, c-format
+msgid "Couldn't remove \"%s\": %s"
+msgstr ""
+
+#: src/browser.cpp:521
+#, c-format
+msgid "Browse mode: %s"
+msgstr ""
+
+#: src/browser.cpp:521
+msgid "Local filesystem"
+msgstr ""
+
+#: src/browser.cpp:521
+msgid "MPD music dir"
 msgstr ""

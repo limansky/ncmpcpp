@@ -35,6 +35,7 @@
 #ifdef HAVE_TAGLIB_H
 # include "tag_editor.h"
 #endif // HAVE_TAGLIB_H
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -104,9 +105,9 @@ void Browser::SwitchTo()
 	RedrawHeader = 1;
 }
 
-std::basic_string<my_char_t> Browser::Title()
+my_string_t Browser::Title()
 {
-	std::basic_string<my_char_t> result = U("Browse: ");
+	my_string_t result = TO_WSTRING(_("Browse: "));
 	result += Scroller(TO_WSTRING(itsBrowsedDir), itsScrollBeginning, w->GetWidth()-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
 	return result;
 }
@@ -135,7 +136,7 @@ void Browser::EnterPressed()
 			MPD::SongList list;
 			Mpd.GetPlaylistContent(locale_to_utf_cpy(item.name), list);
 			if (myPlaylist->Add(list, 1))
-				ShowMessage("Loading and playing playlist %s...", item.name.c_str());
+				ShowMessage(_("Loading and playing playlist %s..."), item.name.c_str());
 			FreeSongList(list);
 			break;
 		}
@@ -170,7 +171,7 @@ void Browser::SpacePressed()
 			if (isLocal())
 			{
 				MPD::ItemList items;
-				ShowMessage("Scanning \"%s\"...", item.name.c_str());
+				ShowMessage(_("Scanning \"%s\"..."), item.name.c_str());
 				myBrowser->GetLocalDirectory(items, item.name, 1);
 				list.reserve(items.size());
 				for (MPD::ItemList::const_iterator it = items.begin(); it != items.end(); ++it)
@@ -181,7 +182,7 @@ void Browser::SpacePressed()
 				Mpd.GetDirectoryRecursive(locale_to_utf_cpy(item.name), list);
 			
 			if (myPlaylist->Add(list, 0))
-				ShowMessage("Added folder: %s", item.name.c_str());
+				ShowMessage(_("Added folder: %s"), item.name.c_str());
 			
 			FreeSongList(list);
 			break;
@@ -196,7 +197,7 @@ void Browser::SpacePressed()
 			MPD::SongList list;
 			Mpd.GetPlaylistContent(locale_to_utf_cpy(item.name), list);
 			if (myPlaylist->Add(list, 0))
-				ShowMessage("Loading playlist %s...", item.name.c_str());
+				ShowMessage(_("Loading playlist %s..."), item.name.c_str());
 			FreeSongList(list);
 			break;
 		}
@@ -499,13 +500,13 @@ void Browser::ClearDirectory(const std::string &path) const
 			ClearDirectory(full_path);
 		if (remove(full_path.c_str()) == 0)
 		{
-			static const char msg[] = "Deleting \"%s\"...";
-			ShowMessage(msg, Shorten(TO_WSTRING(full_path), COLS-static_strlen(msg)).c_str());
+			const char* msg = _("Deleting \"%s\"...");
+			ShowMessage(msg, Shorten(TO_WSTRING(full_path), COLS - strlen(msg)).c_str());
 		}
 		else
 		{
-			static const char msg[] = "Couldn't remove \"%s\": %s";
-			ShowMessage(msg, Shorten(TO_WSTRING(full_path), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+			const char* msg = _("Couldn't remove \"%s\": %s");
+			ShowMessage(msg, Shorten(TO_WSTRING(full_path), COLS - strlen(msg)-25).c_str(), strerror(errno));
 		}
 	}
 	closedir(dir);
@@ -517,7 +518,7 @@ void Browser::ChangeBrowseMode()
 		return;
 	
 	itsBrowseLocally = !itsBrowseLocally;
-	ShowMessage("Browse mode: %s", itsBrowseLocally ? "Local filesystem" : "MPD music dir");
+	ShowMessage(_("Browse mode: %s"), itsBrowseLocally ? _("Local filesystem") : _("MPD music dir"));
 	itsBrowsedDir = itsBrowseLocally ? home_path : "/";
 	w->Reset();
 	GetDirectory(itsBrowsedDir);

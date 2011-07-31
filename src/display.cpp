@@ -33,40 +33,54 @@ namespace
 {
 	const my_string_t toColumnName(char c)
 	{
+        const char* result = "?";
 		switch (c)
 		{
 			case 'l':
-				return _U("Time");
+				result = _("Time");
+                break;
 			case 'f':
-				return _U("Filename");
+				result = _("Filename");
+                break;
 			case 'D':
-				return _U("Directory");
+				result = _("Directory");
+                break;
 			case 'a':
-				return _U("Artist");
+				result = _("Artist");
+                break;
 			case 'A':
-				return _U("Album Artist");
+				result = _("Album Artist");
+                break;
 			case 't':
-				return _U("Title");
+				result = _("Title");
+                break;
 			case 'b':
-				return _U("Album");
+				result = _("Album");
+                break;
 			case 'y':
-				return _U("Year");
+				result = _("Year");
+                break;
 			case 'n':
 			case 'N':
-				return _U("Track");
+				result = _("Track");
+                break;
 			case 'g':
-				return _U("Genre");
+				result = _("Genre");
+                break;
 			case 'c':
-				return _U("Composer");
+				result = _("Composer");
+                break;
 			case 'p':
-				return _U("Performer");
+				result = _("Performer");
+                break;
 			case 'd':
-				return _U("Disc");
+				result = _("Disc");
+                break;
 			case 'C':
-				return _U("Comment");
-			default:
-				return U("?");
+				result = _("Comment");
+                break;
 		}
+        return TO_WSTRING(result);
 	}
 }
 

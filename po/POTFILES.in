@@ -4,3 +4,4 @@ src/help.cpp
 src/status.cpp
 src/playlist.cpp
 src/display.cpp
+src/browser.cpp
