@@ -171,7 +171,7 @@ void SearchEngine::EnterPressed()
 			w->InsertOption(ResetButton+2, std::make_pair(static_cast<Buffer *>(0), static_cast<MPD::Song *>(0)), 1, 1);
 			w->at(ResetButton+2).first = new Buffer();
 			*w->at(ResetButton+2).first << Config.color1 << _("Search results: ") << Config.color2 << _("Found") << ' ' << found  
-                                                         << ' ' << (found > 1 ? _("songs") : _("song")) << clDefault;
+                                                         << ' ' << ngettext("song", "songs", found) << clDefault;
 			w->InsertSeparator(ResetButton+3);
 			UpdateFoundList();
 			ShowMessage("Searching finished!");
