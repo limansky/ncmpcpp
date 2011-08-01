@@ -21,6 +21,7 @@
 #include "global.h"
 #include "song_info.h"
 #include "tag_editor.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -29,19 +30,19 @@ using Global::myOldScreen;
 
 SongInfo *mySongInfo = new SongInfo;
 
-const SongInfo::Metadata SongInfo::Tags[] =
+SongInfo::Metadata SongInfo::Tags[] =
 {
- { "Title",		&MPD::Song::GetTitle,		&MPD::Song::SetTitle		},
- { "Artist",		&MPD::Song::GetArtist,		&MPD::Song::SetArtist		},
- { "Album Artist",	&MPD::Song::GetAlbumArtist,	&MPD::Song::SetAlbumArtist	},
- { "Album",		&MPD::Song::GetAlbum,		&MPD::Song::SetAlbum		},
- { "Year",		&MPD::Song::GetDate,		&MPD::Song::SetDate		},
- { "Track",		&MPD::Song::GetTrack,		&MPD::Song::SetTrack		},
- { "Genre",		&MPD::Song::GetGenre,		&MPD::Song::SetGenre		},
- { "Composer",		&MPD::Song::GetComposer,	&MPD::Song::SetComposer		},
- { "Performer",		&MPD::Song::GetPerformer,	&MPD::Song::SetPerformer	},
- { "Disc",		&MPD::Song::GetDisc,		&MPD::Song::SetDisc		},
- { "Comment",		&MPD::Song::GetComment,		&MPD::Song::SetComment		},
+ { 0,		&MPD::Song::GetTitle,		&MPD::Song::SetTitle		},
+ { 0,		&MPD::Song::GetArtist,		&MPD::Song::SetArtist		},
+ { 0,		&MPD::Song::GetAlbumArtist,	&MPD::Song::SetAlbumArtist	},
+ { 0,		&MPD::Song::GetAlbum,		&MPD::Song::SetAlbum		},
+ { 0,		&MPD::Song::GetDate,		&MPD::Song::SetDate		},
+ { 0,		&MPD::Song::GetTrack,		&MPD::Song::SetTrack		},
+ { 0,		&MPD::Song::GetGenre,		&MPD::Song::SetGenre		},
+ { 0,		&MPD::Song::GetComposer,	&MPD::Song::SetComposer		},
+ { 0,		&MPD::Song::GetPerformer,	&MPD::Song::SetPerformer	},
+ { 0,		&MPD::Song::GetDisc,		&MPD::Song::SetDisc		},
+ { 0,		&MPD::Song::GetComment,		&MPD::Song::SetComment		},
  { 0,			0,				0				}
 };
 
@@ -51,6 +52,21 @@ void SongInfo::Init()
 	isInitialized = 1;
 }
 
+void SongInfo::InitTranslation()
+{
+	Tags[0].Name = _("Title");
+	Tags[1].Name = _("Artist");
+	Tags[2].Name = _("Album Artist");
+	Tags[3].Name = _("Album");
+	Tags[4].Name = _("Year");
+	Tags[5].Name = _("Track");
+	Tags[6].Name = _("Genre");
+	Tags[7].Name = _("Composer");
+	Tags[8].Name = _("Performer");
+	Tags[9].Name = _("Disc");
+	Tags[10].Name = _("Comment");
+}
+
 void SongInfo::Resize()
 {
 	w->Resize(COLS, MainHeight);
@@ -58,9 +74,9 @@ void SongInfo::Resize()
 	hasToBeResized = 0;
 }
 
-std::basic_string<my_char_t> SongInfo::Title()
+my_string_t SongInfo::Title()
 {
-	return U("Song info");
+	return TO_WSTRING(_("Song info"));
 }
 
 void SongInfo::SwitchTo()
@@ -102,24 +118,24 @@ void SongInfo::PrepareSong(MPD::Song &s)
 		s.SetComment(f.tag()->comment().to8Bit(1));
 #	endif // HAVE_TAGLIB_H
 	
-	*w << fmtBold << Config.color1 << "Filename: " << fmtBoldEnd << Config.color2 << s.GetName() << "\n" << clEnd;
-	*w << fmtBold << "Directory: " << fmtBoldEnd << Config.color2;
+	*w << fmtBold << Config.color1 << _("Filename") << ": " << fmtBoldEnd << Config.color2 << s.GetName() << "\n" << clEnd;
+	*w << fmtBold << _("Directory") << ": " << fmtBoldEnd << Config.color2;
 	ShowTag(*w, s.GetDirectory());
 	*w << "\n\n" << clEnd;
-	*w << fmtBold << "Length: " << fmtBoldEnd << Config.color2 << s.GetLength() << "\n" << clEnd;
+	*w << fmtBold << _("Length") << ": " << fmtBoldEnd << Config.color2 << s.GetLength() << "\n" << clEnd;
 #	ifdef HAVE_TAGLIB_H
 	if (!f.isNull())
 	{
-		*w << fmtBold << "Bitrate: " << fmtBoldEnd << Config.color2 << f.audioProperties()->bitrate() << " kbps\n" << clEnd;
-		*w << fmtBold << "Sample rate: " << fmtBoldEnd << Config.color2 << f.audioProperties()->sampleRate() << " Hz\n" << clEnd;
-		*w << fmtBold << "Channels: " << fmtBoldEnd << Config.color2 << (f.audioProperties()->channels() == 1 ? "Mono" : "Stereo") << "\n" << clDefault;
+		*w << fmtBold << _("Bitrate") << ": " << fmtBoldEnd << Config.color2 << f.audioProperties()->bitrate() << " " << _("kbps") << "\n" << clEnd;
+		*w << fmtBold << _("Sample rate") << ": " << fmtBoldEnd << Config.color2 << f.audioProperties()->sampleRate() << " " << _("Hz") << "\n" << clEnd;
+		*w << fmtBold << _("Channels") << ": " << fmtBoldEnd << Config.color2 << (f.audioProperties()->channels() == 1 ? _("Mono") : _("Stereo")) << "\n" << clDefault;
 	}
 #	endif // HAVE_TAGLIB_H
 	*w << clDefault;
 	
 	for (const Metadata *m = Tags; m->Name; ++m)
 	{
-		*w << fmtBold << "\n" << m->Name << ": " << fmtBoldEnd;
+		*w << fmtBold << "\n" << TO_WSTRING(m->Name) << ": " << fmtBoldEnd;
 		ShowTag(*w, s.GetTags(m->Get));
 	}
 }

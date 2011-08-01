@@ -45,8 +45,10 @@ class SongInfo : public Screen<Scrollpad>
 		virtual bool allowsSelection() { return false; }
 		
 		virtual List *GetList() { return 0; }
+
+        static void InitTranslation();
 		
-		static const Metadata Tags[];
+		static Metadata Tags[];
 		
 	protected:
 		virtual void Init();

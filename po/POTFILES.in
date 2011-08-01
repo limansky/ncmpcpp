@@ -7,3 +7,4 @@ src/display.cpp
 src/browser.cpp
 src/search_engine.cpp
 src/helpers.h
+src/song_info.cpp

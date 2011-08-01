@@ -60,7 +60,7 @@ void SearchEngine::Init()
 	isInitialized = 1;
 }
 
-void SearchEngine::InitConstraints()
+void SearchEngine::InitTranslation()
 {
     ConstraintsNames[0] = _("Any");
     ConstraintsNames[1] = _("Artist");
