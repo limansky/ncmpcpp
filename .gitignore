@@ -16,3 +16,6 @@ src/ncmpcpp
 stamp-h1
 *~
 POTFILES
+*.mo
+*.gmo
+stamp-po
