@@ -123,6 +123,7 @@ namespace NCurses
 			}
 #			ifdef _UTF8
 			Scrollpad &operator<<(const std::string &s);
+			Scrollpad &operator<<(const char* s);
 #			endif // _UTF8
 			
 		private:

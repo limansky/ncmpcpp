@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-01 23:00+0400\n"
+"POT-Creation-Date: 2011-08-02 01:42+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,678 +18,662 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: src/help.cpp:137 src/help.cpp:177 src/help.cpp:233 src/help.cpp:254
+#: src/help.cpp:271 src/help.cpp:281 src/help.cpp:294 src/help.cpp:309
+#: src/help.cpp:315 src/help.cpp:320 src/help.cpp:325 src/help.cpp:337
+#: src/help.cpp:343
+msgid "Keys"
+msgstr ""
+
 #: src/help.cpp:137
-msgid ""
-"Keys - Movement\n"
-" -----------------------------------------\n"
+msgid "Movement"
 msgstr ""
 
 #: src/help.cpp:138
-msgid "Move Cursor up\n"
+msgid "Move Cursor up"
 msgstr ""
 
 #: src/help.cpp:139
-msgid "Move Cursor down\n"
+msgid "Move Cursor down"
 msgstr ""
 
 #: src/help.cpp:140
-msgid "Move Cursor up one album\n"
+msgid "Move Cursor up one album"
 msgstr ""
 
 #: src/help.cpp:141
-msgid "Move Cursor down one album\n"
+msgid "Move Cursor down one album"
 msgstr ""
 
 #: src/help.cpp:142
-msgid "Move Cursor up one artist\n"
+msgid "Move Cursor up one artist"
 msgstr ""
 
 #: src/help.cpp:143
-msgid "Move Cursor down one artist\n"
+msgid "Move Cursor down one artist"
 msgstr ""
 
 #: src/help.cpp:144
-msgid "Page up\n"
+msgid "Page up"
 msgstr ""
 
 #: src/help.cpp:145
-msgid "Page down\n"
+msgid "Page down"
 msgstr ""
 
 #: src/help.cpp:146
-msgid "Home\n"
+msgid "Home"
 msgstr ""
 
 #: src/help.cpp:147
-msgid "End\n"
+msgid "End"
 msgstr ""
 
 #: src/help.cpp:150
-msgid "Switch between current and last screen\n"
+msgid "Switch between current and last screen"
 msgstr ""
 
 #: src/help.cpp:153
-msgid "Switch to next screen in sequence\n"
+msgid "Switch to next screen in sequence"
 msgstr ""
 
 #: src/help.cpp:154
-msgid "Switch to previous screen in sequence\n"
+msgid "Switch to previous screen in sequence"
 msgstr ""
 
 #: src/help.cpp:156
-msgid "Help screen\n"
+msgid "Help screen"
 msgstr ""
 
 #: src/help.cpp:157
-msgid "Playlist screen\n"
+msgid "Playlist screen"
 msgstr ""
 
 #: src/help.cpp:158
-msgid "Browse screen\n"
+msgid "Browse screen"
 msgstr ""
 
-#: src/help.cpp:159
-msgid "Search engine\n"
+#: src/help.cpp:159 src/help.cpp:271 src/help.cpp:369
+#: src/search_engine.cpp:128
+msgid "Search engine"
 msgstr ""
 
-#: src/help.cpp:160
-msgid "Media library\n"
+#: src/help.cpp:160 src/help.cpp:281 src/help.cpp:374
+msgid "Media library"
 msgstr ""
 
-#: src/help.cpp:161
-msgid "Playlist editor\n"
+#: src/help.cpp:161 src/help.cpp:384
+msgid "Playlist editor"
 msgstr ""
 
-#: src/help.cpp:163
-msgid "Tag editor\n"
+#: src/help.cpp:163 src/help.cpp:325 src/help.cpp:400
+msgid "Tag editor"
 msgstr ""
 
-#: src/help.cpp:166
-msgid "Outputs\n"
+#: src/help.cpp:166 src/help.cpp:337 src/help.cpp:416
+msgid "Outputs"
 msgstr ""
 
-#: src/help.cpp:169
-msgid "Music visualizer\n"
+#: src/help.cpp:169 src/help.cpp:343
+msgid "Music visualizer"
 msgstr ""
 
 #: src/help.cpp:172
-msgid "Clock screen\n"
+msgid "Clock screen"
 msgstr ""
 
 #: src/help.cpp:175
-msgid "MPD server info\n"
+msgid "MPD server info"
+msgstr ""
+
+#: src/help.cpp:177 src/help.cpp:348
+msgid "Global"
 msgstr ""
 
 #: src/help.cpp:178
-msgid "Stop\n"
+msgid "Stop"
 msgstr ""
 
 #: src/help.cpp:179
-msgid "Pause\n"
+msgid "Pause"
 msgstr ""
 
 #: src/help.cpp:180
-msgid "Next track\n"
+msgid "Next track"
 msgstr ""
 
 #: src/help.cpp:181
-msgid "Previous track\n"
+msgid "Previous track"
 msgstr ""
 
 #: src/help.cpp:182
-msgid "Play current track from the beginning\n"
+msgid "Play current track from the beginning"
 msgstr ""
 
 #: src/help.cpp:183
-msgid "Seek forward\n"
+msgid "Seek forward"
 msgstr ""
 
 #: src/help.cpp:184
-msgid "Seek backward\n"
+msgid "Seek backward"
 msgstr ""
 
 #: src/help.cpp:185
-msgid "Decrease volume\n"
+msgid "Decrease volume"
 msgstr ""
 
 #: src/help.cpp:186
-msgid "Increase volume\n"
+msgid "Increase volume"
 msgstr ""
 
 #: src/help.cpp:188
-msgid "Toggle space mode (select/add)\n"
+msgid "Toggle space mode (select/add)"
 msgstr ""
 
 #: src/help.cpp:189
-msgid "Toggle add mode\n"
+msgid "Toggle add mode"
 msgstr ""
 
 #: src/help.cpp:190
-msgid "Toggle mouse support\n"
+msgid "Toggle mouse support"
 msgstr ""
 
 #: src/help.cpp:191
-msgid "Reverse selection\n"
+msgid "Reverse selection"
 msgstr ""
 
 #: src/help.cpp:192
-msgid "Deselect all items\n"
+msgid "Deselect all items"
 msgstr ""
 
 #: src/help.cpp:193
-msgid "Select songs of album around cursor\n"
+msgid "Select songs of album around cursor"
 msgstr ""
 
 #: src/help.cpp:194
-msgid "Add selected items to playlist/m3u file\n"
+msgid "Add selected items to playlist/m3u file"
 msgstr ""
 
 #: src/help.cpp:196
-msgid "Toggle repeat mode\n"
+msgid "Toggle repeat mode"
 msgstr ""
 
 #: src/help.cpp:197
-msgid "Toggle random mode\n"
+msgid "Toggle random mode"
 msgstr ""
 
 #: src/help.cpp:198
-msgid "Toggle single mode\n"
+msgid "Toggle single mode"
 msgstr ""
 
 #: src/help.cpp:199
-msgid "Toggle consume mode\n"
+msgid "Toggle consume mode"
 msgstr ""
 
 #: src/help.cpp:201
-msgid "Toggle replay gain mode\n"
+msgid "Toggle replay gain mode"
 msgstr ""
 
 #: src/help.cpp:202
-msgid "Toggle bitrate visibility\n"
+msgid "Toggle bitrate visibility"
 msgstr ""
 
 #: src/help.cpp:203
-msgid "Shuffle playlist\n"
+msgid "Shuffle playlist"
 msgstr ""
 
 #: src/help.cpp:204
-msgid "Toggle crossfade mode\n"
+msgid "Toggle crossfade mode"
 msgstr ""
 
 #: src/help.cpp:205
-msgid "Set crossfade\n"
+msgid "Set crossfade"
 msgstr ""
 
 #: src/help.cpp:206
-msgid "Start a music database update\n"
+msgid "Start a music database update"
 msgstr ""
 
 #: src/help.cpp:208
-msgid "Apply filter\n"
+msgid "Apply filter"
 msgstr ""
 
 #: src/help.cpp:209
-msgid "Forward find\n"
+msgid "Forward find"
 msgstr ""
 
 #: src/help.cpp:210
-msgid "Backward find\n"
+msgid "Backward find"
 msgstr ""
 
 #: src/help.cpp:211
-msgid "Go to previous found position\n"
+msgid "Go to previous found position"
 msgstr ""
 
 #: src/help.cpp:212
-msgid "Go to next found position\n"
+msgid "Go to next found position"
 msgstr ""
 
 #: src/help.cpp:213
-msgid "Toggle find mode (normal/wrapped)\n"
+msgid "Toggle find mode (normal/wrapped)"
 msgstr ""
 
 #: src/help.cpp:214
-msgid "Locate song in browser\n"
+msgid "Locate song in browser"
 msgstr ""
 
 #: src/help.cpp:215
-msgid "Locate current song in media library\n"
+msgid "Locate current song in media library"
 msgstr ""
 
 #: src/help.cpp:217
-msgid "Locate current song in tag editor\n"
+msgid "Locate current song in tag editor"
 msgstr ""
 
 #: src/help.cpp:219
-msgid "Toggle display mode\n"
+msgid "Toggle display mode"
 msgstr ""
 
 #: src/help.cpp:220
-msgid "Toggle user interface\n"
+msgid "Toggle user interface"
 msgstr ""
 
 #: src/help.cpp:221
-msgid "Toggle displaying separators between albums\n"
+msgid "Toggle displaying separators between albums"
 msgstr ""
 
 #: src/help.cpp:222
-msgid "Go to given position in current song (in % by default)\n"
+msgid "Go to given position in current song (in % by default)"
 msgstr ""
 
 #: src/help.cpp:223
-msgid "Show song info\n"
+msgid "Show song info"
 msgstr ""
 
 #: src/help.cpp:225
-msgid "Show artist info\n"
+msgid "Show artist info"
 msgstr ""
 
 #: src/help.cpp:226
-msgid "Toggle lyrics database\n"
+msgid "Toggle lyrics database"
 msgstr ""
 
 #: src/help.cpp:228
-msgid "Show/hide song's lyrics\n"
+msgid "Show/hide song's lyrics"
 msgstr ""
 
 #: src/help.cpp:230
-msgid "Quit\n"
+msgid "Quit"
+msgstr ""
+
+#: src/help.cpp:233 src/help.cpp:356 src/playlist.cpp:141
+msgid "Playlist"
 msgstr ""
 
 #: src/help.cpp:234
-msgid "Play\n"
+msgid "Play"
 msgstr ""
 
 #: src/help.cpp:235
-msgid "Add random songs/artists/albums to playlist\n"
+msgid "Add random songs/artists/albums to playlist"
 msgstr ""
 
 #: src/help.cpp:236
-msgid "Delete item/selected items from playlist\n"
+msgid "Delete item/selected items from playlist"
 msgstr ""
 
 #: src/help.cpp:237
-msgid "Clear playlist\n"
+msgid "Clear playlist"
 msgstr ""
 
 #: src/help.cpp:238
-msgid "Clear playlist but hold currently playing/selected items\n"
+msgid "Clear playlist but hold currently playing/selected items"
 msgstr ""
 
 #: src/help.cpp:239 src/help.cpp:304
-msgid "Move item(s) up\n"
+msgid "Move item(s) up"
 msgstr ""
 
 #: src/help.cpp:240 src/help.cpp:305
-msgid "Move item(s) down\n"
+msgid "Move item(s) down"
 msgstr ""
 
 #: src/help.cpp:241
-msgid "Move selected item(s) to cursor position\n"
+msgid "Move selected item(s) to cursor position"
 msgstr ""
 
 #: src/help.cpp:242
-msgid "Move selected item(s) before cursor position\n"
+msgid "Move selected item(s) before cursor position"
 msgstr ""
 
 #: src/help.cpp:243
-msgid "Move selected item(s) after cursor position\n"
+msgid "Move selected item(s) after cursor position"
 msgstr ""
 
 #: src/help.cpp:244
-msgid "Add url/file/directory to playlist\n"
+msgid "Add url/file/directory to playlist"
 msgstr ""
 
 #: src/help.cpp:246 src/help.cpp:275
-msgid "Edit song's tags\n"
+msgid "Edit song's tags"
 msgstr ""
 
 #: src/help.cpp:248
-msgid "Save playlist\n"
+msgid "Save playlist"
 msgstr ""
 
 #: src/help.cpp:249
-msgid "Sort/reverse playlist\n"
+msgid "Sort/reverse playlist"
 msgstr ""
 
 #: src/help.cpp:250
-msgid "Go to currently playing position\n"
+msgid "Go to currently playing position"
 msgstr ""
 
 #: src/help.cpp:251
-msgid "Toggle auto center mode\n"
+msgid "Toggle auto center mode"
+msgstr ""
+
+#: src/help.cpp:254 src/help.cpp:361
+msgid "Browser"
 msgstr ""
 
 #: src/help.cpp:255
-msgid "Enter directory/Add item to playlist and play\n"
+msgid "Enter directory/Add item to playlist and play"
 msgstr ""
 
 #: src/help.cpp:256 src/help.cpp:273
-msgid "Add item to playlist\n"
+msgid "Add item to playlist"
 msgstr ""
 
 #: src/help.cpp:258
-msgid "Edit song's tags/Rename playlist/directory\n"
+msgid "Edit song's tags/Rename playlist/directory"
 msgstr ""
 
 #: src/help.cpp:260
-msgid "Rename playlist/directory\n"
+msgid "Rename playlist/directory"
 msgstr ""
 
 #: src/help.cpp:263
-msgid "Browse MPD database/local filesystem\n"
+msgid "Browse MPD database/local filesystem"
 msgstr ""
 
 #: src/help.cpp:264
-msgid "Toggle sort order\n"
+msgid "Toggle sort order"
 msgstr ""
 
 #: src/help.cpp:265
-msgid "Locate currently playing song\n"
+msgid "Locate currently playing song"
 msgstr ""
 
 #: src/help.cpp:266
-msgid "Go to parent directory\n"
+msgid "Go to parent directory"
 msgstr ""
 
 #: src/help.cpp:267
-msgid "Delete playlist/file/directory\n"
+msgid "Delete playlist/file/directory"
 msgstr ""
 
 #: src/help.cpp:268
-msgid "Jump to playlist editor (playlists only)\n"
+msgid "Jump to playlist editor (playlists only)"
 msgstr ""
 
 #: src/help.cpp:272
-msgid "Add item to playlist and play/change option\n"
+msgid "Add item to playlist and play/change option"
 msgstr ""
 
 #: src/help.cpp:277
-msgid "Start searching immediately\n"
+msgid "Start searching immediately"
 msgstr ""
 
 #: src/help.cpp:278
-msgid "Reset search engine\n"
+msgid "Reset search engine"
 msgstr ""
 
 #: src/help.cpp:283
-msgid "Switch between two/three columns\n"
+msgid "Switch between two/three columns"
 msgstr ""
 
 #: src/help.cpp:284 src/help.cpp:295 src/help.cpp:330
-msgid "Previous column\n"
+msgid "Previous column"
 msgstr ""
 
 #: src/help.cpp:285 src/help.cpp:296 src/help.cpp:331
-msgid "Next column\n"
+msgid "Next column"
 msgstr ""
 
 #: src/help.cpp:286
-msgid "Add to playlist and play song/album/artist's songs\n"
+msgid "Add to playlist and play song/album/artist's songs"
 msgstr ""
 
 #: src/help.cpp:287
-msgid "Add to playlist song/album/artist's songs\n"
+msgid "Add to playlist song/album/artist's songs"
 msgstr ""
 
 #: src/help.cpp:289
-msgid "Edit main tag/album/song's tags\n"
+msgid "Edit main tag/album/song's tags"
 msgstr ""
 
 #: src/help.cpp:291
-msgid "Tag type list switcher (left column)\n"
+msgid "Tag type list switcher (left column)"
+msgstr ""
+
+#: src/help.cpp:294
+msgid "Playlist Editor"
 msgstr ""
 
 #: src/help.cpp:297
-msgid "Add item to playlist and play\n"
+msgid "Add item to playlist and play"
 msgstr ""
 
 #: src/help.cpp:298
-msgid "Add to playlist/select item\n"
+msgid "Add to playlist/select item"
 msgstr ""
 
 #: src/help.cpp:300
-msgid "Edit playlist's name/song's tags\n"
+msgid "Edit playlist's name/song's tags"
 msgstr ""
 
 #: src/help.cpp:302
-msgid "Edit playlist's name\n"
+msgid "Edit playlist's name"
 msgstr ""
 
 #: src/help.cpp:306
-msgid "Clear current playlist\n"
+msgid "Clear current playlist"
+msgstr ""
+
+#: src/help.cpp:309
+msgid "Lyrics"
 msgstr ""
 
 #: src/help.cpp:310
-msgid "Switch for following lyrics of now playing song\n"
+msgid "Switch for following lyrics of now playing song"
 msgstr ""
 
 #: src/help.cpp:311
-msgid "Open lyrics in external editor\n"
+msgid "Open lyrics in external editor"
 msgstr ""
 
 #: src/help.cpp:312
-msgid "Refetch lyrics\n"
+msgid "Refetch lyrics"
+msgstr ""
+
+#: src/help.cpp:315
+msgid "Artist info"
 msgstr ""
 
 #: src/help.cpp:316
-msgid "Refetch artist info\n"
+msgid "Refetch artist info"
+msgstr ""
+
+#: src/help.cpp:320 src/help.cpp:395
+msgid "Tiny tag editor"
 msgstr ""
 
 #: src/help.cpp:321
-msgid "Edit tag\n"
+msgid "Edit tag"
 msgstr ""
 
 #: src/help.cpp:322
-msgid "Save\n"
+msgid "Save"
 msgstr ""
 
 #: src/help.cpp:326
-msgid "Change tag/filename for one song (left column)\n"
+msgid "Change tag/filename for one song (left column)"
 msgstr ""
 
 #: src/help.cpp:327
-msgid "Perform operation on all/selected songs (middle column)\n"
+msgid "Perform operation on all/selected songs (middle column)"
 msgstr ""
 
 #: src/help.cpp:328
-msgid "Switch to albums/directories view (left column)\n"
+msgid "Switch to albums/directories view (left column)"
 msgstr ""
 
 #: src/help.cpp:329
-msgid "Select/deselect song (right column)\n"
+msgid "Select/deselect song (right column)"
 msgstr ""
 
 #: src/help.cpp:332
-msgid "Go to parent directory (left column, directories view)\n"
+msgid "Go to parent directory (left column, directories view)"
 msgstr ""
 
 #: src/help.cpp:338
-msgid "Enable/disable output\n"
-msgstr ""
-
-#: src/help.cpp:343
-msgid ""
-"Keys - Music visualizer\n"
-" -----------------------------------------\n"
+msgid "Enable/disable output"
 msgstr ""
 
 #: src/help.cpp:344
-msgid "Toggle visualization type\n"
+msgid "Toggle visualization type"
 msgstr ""
 
-#: src/help.cpp:348
-msgid ""
-"Mouse - Global\n"
-" -----------------------------------------\n"
+#: src/help.cpp:348 src/help.cpp:356 src/help.cpp:361 src/help.cpp:369
+#: src/help.cpp:374 src/help.cpp:384 src/help.cpp:395 src/help.cpp:400
+#: src/help.cpp:416
+msgid "Mouse"
 msgstr ""
 
 #: src/help.cpp:349
-msgid ": Play/pause\n"
+msgid "Left click on \"Playing/Paused\""
+msgstr ""
+
+#: src/help.cpp:349
+msgid "Play/pause"
 msgstr ""
 
 #: src/help.cpp:350
-msgid "\tLeft click on progressbar\t"
+msgid "Left click on progressbar"
 msgstr ""
 
 #: src/help.cpp:350
-msgid ": Go to chosen position in played track\n"
+msgid ": Go to chosen position in played track"
 msgstr ""
 
 #: src/help.cpp:352
-msgid ": Change volume\n"
+msgid ": Change volume"
 msgstr ""
 
 #: src/help.cpp:353
-msgid "\tMouse wheel on main window\t"
+msgid "Mouse wheel on main window"
 msgstr ""
 
 #: src/help.cpp:353
-msgid ": Scroll\n"
-msgstr ""
-
-#: src/help.cpp:356
-msgid ""
-"Mouse - Playlist\n"
-" -----------------------------------------\n"
+msgid ": Scroll"
 msgstr ""
 
 #: src/help.cpp:357 src/help.cpp:370 src/help.cpp:396 src/help.cpp:417
-msgid "\tLeft click\t\t\t"
+msgid "Left click"
 msgstr ""
 
 #: src/help.cpp:357 src/help.cpp:376 src/help.cpp:386 src/help.cpp:396
 #: src/help.cpp:406 src/help.cpp:410 src/help.cpp:417
-msgid ": Highlight\n"
+msgid ": Highlight"
 msgstr ""
 
 #: src/help.cpp:358 src/help.cpp:371 src/help.cpp:397 src/help.cpp:418
-msgid "\tRight click\t\t\t"
+msgid "Right click"
 msgstr ""
 
 #: src/help.cpp:358
-msgid ": Play\n"
-msgstr ""
-
-#: src/help.cpp:361
-msgid ""
-"Mouse - Browser\n"
-" -----------------------------------------\n"
+msgid ": Play"
 msgstr ""
 
 #: src/help.cpp:362
-msgid "\tLeft click on directory\t\t"
+msgid "Left click on directory"
 msgstr ""
 
 #: src/help.cpp:362
-msgid ": Enter directory\n"
+msgid ": Enter directory"
 msgstr ""
 
 #: src/help.cpp:363
-msgid "\tRight click on directory\t"
+msgid "Right click on directory"
 msgstr ""
 
 #: src/help.cpp:363 src/help.cpp:365 src/help.cpp:377 src/help.cpp:380
 #: src/help.cpp:387 src/help.cpp:390
-msgid ": Add to playlist\n"
+msgid ": Add to playlist"
 msgstr ""
 
 #: src/help.cpp:365
-msgid "\tLeft click on song/playlist\t"
+msgid "Left click on song/playlist"
 msgstr ""
 
 #: src/help.cpp:366
-msgid "\tRight click on song/playlist\t"
+msgid "Right click on song/playlist"
 msgstr ""
 
 #: src/help.cpp:366 src/help.cpp:381 src/help.cpp:391
-msgid ": Add to playlist and play\n"
-msgstr ""
-
-#: src/help.cpp:369
-msgid ""
-"Mouse - Search engine\n"
-" -----------------------------------------\n"
+msgid ": Add to playlist and play"
 msgstr ""
 
 #: src/help.cpp:370
-msgid ": Highlight/switch value\n"
+msgid ": Highlight/switch value"
 msgstr ""
 
 #: src/help.cpp:371 src/help.cpp:411
-msgid ": Change value\n"
-msgstr ""
-
-#: src/help.cpp:374
-msgid ""
-"Mouse - Media library\n"
-" -----------------------------------------\n"
+msgid ": Change value"
 msgstr ""
 
 #: src/help.cpp:375
-msgid "\tLeft/middle column:\n"
+msgid "Left/middle column"
 msgstr ""
 
 #: src/help.cpp:376 src/help.cpp:380 src/help.cpp:386 src/help.cpp:390
 #: src/help.cpp:402 src/help.cpp:406 src/help.cpp:410
-msgid "\t\tLeft Click\t\t"
+msgid "Left Click"
 msgstr ""
 
 #: src/help.cpp:377 src/help.cpp:381 src/help.cpp:387 src/help.cpp:391
 #: src/help.cpp:403 src/help.cpp:407 src/help.cpp:411
-msgid "\t\tRight Click\t\t"
+msgid "Right Click"
 msgstr ""
 
 #: src/help.cpp:379 src/help.cpp:389 src/help.cpp:409
-msgid "\tRight column:\n"
-msgstr ""
-
-#: src/help.cpp:384
-msgid ""
-"Mouse - Playlist editor\n"
-" -----------------------------------------\n"
+msgid "Right column"
 msgstr ""
 
 #: src/help.cpp:385 src/help.cpp:401
-msgid "\tLeft column:\n"
-msgstr ""
-
-#: src/help.cpp:395
-msgid ""
-"Mouse - Tiny tag editor\n"
-" -----------------------------------------\n"
+msgid "Left column"
 msgstr ""
 
 #: src/help.cpp:397 src/help.cpp:407
-msgid ": Change value/execute command\n"
-msgstr ""
-
-#: src/help.cpp:400
-msgid ""
-"Mouse - Tag editor\n"
-" -----------------------------------------\n"
+msgid ": Change value/execute command"
 msgstr ""
 
 #: src/help.cpp:402
-msgid ": Enter directory/highlight album\n"
+msgid ": Enter directory/highlight album"
 msgstr ""
 
 #: src/help.cpp:403
-msgid ": Switch to directories/albums view\n"
+msgid ": Switch to directories/albums view"
 msgstr ""
 
 #: src/help.cpp:405
-msgid "\tMiddle column:\n"
-msgstr ""
-
-#: src/help.cpp:416
-msgid ""
-"Mouse - Outputs\n"
-" -----------------------------------------\n"
+msgid "Middle column"
 msgstr ""
 
 #: src/help.cpp:418
-msgid ": Enable/disable output\n"
+msgid ": Enable/disable output"
 msgstr ""
 
 #: src/status.cpp:340
@@ -823,10 +807,6 @@ msgstr ""
 
 #: src/playlist.cpp:87
 msgid "Cancel"
-msgstr ""
-
-#: src/playlist.cpp:141
-msgid "Playlist"
 msgstr ""
 
 #: src/playlist.cpp:177
@@ -965,10 +945,6 @@ msgstr ""
 
 #: src/search_engine.cpp:121
 msgid "Updating list..."
-msgstr ""
-
-#: src/search_engine.cpp:128
-msgid "Search engine"
 msgstr ""
 
 #: src/search_engine.cpp:150 src/search_engine.cpp:413

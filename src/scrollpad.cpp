@@ -204,5 +204,11 @@ Scrollpad &Scrollpad::operator<<(const std::string &s)
 	itsBuffer << ToWString(s);
 	return *this;
 }
+
+Scrollpad &Scrollpad::operator<<(const char* s)
+{
+    itsBuffer << ToWString(s);
+    return *this;
+}
 #endif // _UTF8
 

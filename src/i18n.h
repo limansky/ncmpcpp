@@ -7,7 +7,7 @@
 #ifdef ENABLE_NLS
 #include <libintl.h>
 
-#define _(x) gettext(x)
+#define _(x) (const char*)gettext(x)
 
 #else
 #define _(x) x
