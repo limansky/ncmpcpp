@@ -41,6 +41,7 @@ const char *SearchEngine::SearchModes[] = { 0, 0, 0, 0 };
 size_t SearchEngine::StaticOptions = 19;
 size_t SearchEngine::ResetButton = 15;
 size_t SearchEngine::SearchButton = 14;
+size_t SearchEngine::ConstraintsNamesMaxWidth = 10;
 
 void SearchEngine::Init()
 {
@@ -71,6 +72,13 @@ void SearchEngine::InitConstraints()
 	ConstraintsNames[7] = _("Genre");
 	ConstraintsNames[8] = _("Year");
 	ConstraintsNames[9] = _("Comment");
+
+	for (int i = 0; i < ConstraintsNumber; i++)
+	{
+		const int len = TO_WSTRING(ConstraintsNames[i]).length();
+		if (len > ConstraintsNamesMaxWidth)
+			ConstraintsNamesMaxWidth = len;
+	}
 
     SearchModes[0] = _("Match if tag contains searched phrase (no regexes)");
 	SearchModes[1] = _("Match if tag contains searched phrase (regexes supported)");
@@ -133,7 +141,7 @@ void SearchEngine::EnterPressed()
 		Statusbar() << fmtBold << ConstraintsNames[option] << ':' << fmtBoldEnd << ' ';
 		itsConstraints[option] = Global::wFooter->GetString(itsConstraints[option]);
 		w->Current().first->Clear();
-		*w->Current().first << fmtBold << std::setw(10) << std::left << ConstraintsNames[option] << ':' << fmtBoldEnd << ' ';
+		*w->Current().first << fmtBold << std::setw(ConstraintsNamesMaxWidth) << std::left << ConstraintsNames[option] << ':' << fmtBoldEnd << ' ';
 		ShowTag(*w->Current().first, itsConstraints[option]);
 	}
 	else if (option == ConstraintsNumber+1)
@@ -398,7 +406,7 @@ void SearchEngine::Prepare()
 	
 	for (size_t i = 0; i < ConstraintsNumber; ++i)
 	{
-		*(*w)[i].first << fmtBold << std::setw(10) << std::left << ConstraintsNames[i] << ':' << fmtBoldEnd << ' ';
+		*(*w)[i].first << fmtBold << std::setw(ConstraintsNamesMaxWidth) << std::left << ConstraintsNames[i] << ':' << fmtBoldEnd << ' ';
 		ShowTag(*(*w)[i].first, itsConstraints[i]);
 	}
 	
