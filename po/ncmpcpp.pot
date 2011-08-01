@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-01 17:19+0400\n"
+"POT-Creation-Date: 2011-08-01 23:00+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -766,42 +766,50 @@ msgid "Sort songs by..."
 msgstr ""
 
 #: src/playlist.cpp:74 src/display.cpp:49 src/search_engine.cpp:66
+#: src/song_info.cpp:58
 msgid "Artist"
 msgstr ""
 
 #: src/playlist.cpp:75 src/display.cpp:58 src/search_engine.cpp:68
+#: src/song_info.cpp:60
 msgid "Album"
 msgstr ""
 
-#: src/playlist.cpp:76 src/display.cpp:77
+#: src/playlist.cpp:76 src/display.cpp:77 src/song_info.cpp:66
 msgid "Disc"
 msgstr ""
 
-#: src/playlist.cpp:77 src/display.cpp:65
+#: src/playlist.cpp:77 src/display.cpp:65 src/song_info.cpp:62
 msgid "Track"
 msgstr ""
 
 #: src/playlist.cpp:78 src/display.cpp:68 src/search_engine.cpp:72
+#: src/song_info.cpp:63
 msgid "Genre"
 msgstr ""
 
 #: src/playlist.cpp:79 src/display.cpp:61 src/search_engine.cpp:73
+#: src/song_info.cpp:61
 msgid "Year"
 msgstr ""
 
 #: src/playlist.cpp:80 src/display.cpp:71 src/search_engine.cpp:70
+#: src/song_info.cpp:64
 msgid "Composer"
 msgstr ""
 
 #: src/playlist.cpp:81 src/display.cpp:74 src/search_engine.cpp:71
+#: src/song_info.cpp:65
 msgid "Performer"
 msgstr ""
 
 #: src/playlist.cpp:82 src/display.cpp:55 src/search_engine.cpp:67
+#: src/song_info.cpp:57
 msgid "Title"
 msgstr ""
 
 #: src/playlist.cpp:83 src/display.cpp:43 src/search_engine.cpp:69
+#: src/song_info.cpp:121
 msgid "Filename"
 msgstr ""
 
@@ -817,19 +825,78 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: src/playlist.cpp:141
+msgid "Playlist"
+msgstr ""
+
+#: src/playlist.cpp:177
+msgid "Reversing playlist order..."
+msgstr ""
+
+#: src/playlist.cpp:184
+msgid "Playlist reversed!"
+msgstr ""
+
+#: src/playlist.cpp:184
+msgid "Error while reversing playlist!"
+msgstr ""
+
+#: src/playlist.cpp:196
+msgid "Move tag types up and down to adjust sort order"
+msgstr ""
+
+#: src/playlist.cpp:200
+msgid "Sorting playlist..."
+msgstr ""
+
+#: src/playlist.cpp:214
+msgid "Playlist is already sorted"
+msgstr ""
+
+#: src/playlist.cpp:234
+msgid "Playlist sorted!"
+msgstr ""
+
+#: src/playlist.cpp:234
+msgid "Error while sorting playlist!"
+msgstr ""
+
+#: src/playlist.cpp:306
+msgid "Screen is too small to display dialog window!"
+msgstr ""
+
+#: src/playlist.cpp:380
+msgid "item"
+msgid_plural "items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/playlist.cpp:393
+msgid "length"
+msgstr ""
+
+#: src/playlist.cpp:398
+msgid "remaining"
+msgstr ""
+
+#: src/playlist.cpp:466
+#, c-format
+msgid "Added to playlist: %s"
+msgstr ""
+
 #: src/display.cpp:40
 msgid "Time"
 msgstr ""
 
-#: src/display.cpp:46
+#: src/display.cpp:46 src/song_info.cpp:122
 msgid "Directory"
 msgstr ""
 
-#: src/display.cpp:52
+#: src/display.cpp:52 src/song_info.cpp:59
 msgid "Album Artist"
 msgstr ""
 
-#: src/display.cpp:80 src/search_engine.cpp:74
+#: src/display.cpp:80 src/search_engine.cpp:74 src/song_info.cpp:67
 msgid "Comment"
 msgstr ""
 
@@ -995,3 +1062,39 @@ msgid "second"
 msgid_plural "seconds"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/song_info.cpp:79
+msgid "Song info"
+msgstr ""
+
+#: src/song_info.cpp:125
+msgid "Length"
+msgstr ""
+
+#: src/song_info.cpp:129
+msgid "Bitrate"
+msgstr ""
+
+#: src/song_info.cpp:129
+msgid "kbps"
+msgstr ""
+
+#: src/song_info.cpp:130
+msgid "Sample rate"
+msgstr ""
+
+#: src/song_info.cpp:130
+msgid "Hz"
+msgstr ""
+
+#: src/song_info.cpp:131
+msgid "Channels"
+msgstr ""
+
+#: src/song_info.cpp:131
+msgid "Mono"
+msgstr ""
+
+#: src/song_info.cpp:131
+msgid "Stereo"
+msgstr ""

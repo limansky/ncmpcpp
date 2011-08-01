@@ -138,7 +138,7 @@ void Playlist::Resize()
 
 std::basic_string<my_char_t> Playlist::Title()
 {
-	std::basic_string<my_char_t> result = U("Playlist ");
+	my_string_t result = TO_WSTRING(_("Playlist")) + L" ";
 	if (ReloadTotalLength || ReloadRemaining)
 		itsBufferedStats = TotalLength();
 	result += Scroller(TO_WSTRING(itsBufferedStats), itsScrollBegin, Items->GetWidth()-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
@@ -174,14 +174,14 @@ void Playlist::EnterPressed()
 			if (pos == SortOptions+2) // reverse
 			{
 				BlockUpdate = 1;
-				ShowMessage("Reversing playlist order...");
+				ShowMessage(_("Reversing playlist order..."));
 				Mpd.StartCommandsList();
 				for (size_t i = beginning, j = end-1; i < (beginning+end)/2; ++i, --j)
 				{
 					Mpd.Swap(i, j);
 					Items->Swap(i, j);
 				}
-				ShowMessage(Mpd.CommitCommandsList() ? "Playlist reversed!" : "Error while reversing playlist!");
+				ShowMessage(Mpd.CommitCommandsList() ? _("Playlist reversed!") : _("Error while reversing playlist!"));
 				w = Items;
 				return;
 			}
@@ -193,11 +193,11 @@ void Playlist::EnterPressed()
 		}
 		else
 		{
-			ShowMessage("Move tag types up and down to adjust sort order");
+			ShowMessage(_("Move tag types up and down to adjust sort order"));
 			return;
 		}
 		
-		ShowMessage("Sorting playlist...");
+		ShowMessage(_("Sorting playlist..."));
 		MPD::SongList playlist, cmp;
 		
 		playlist.reserve(end-beginning);
@@ -211,7 +211,7 @@ void Playlist::EnterPressed()
 		
 		if (playlist == cmp)
 		{
-			ShowMessage("Playlist is already sorted");
+			ShowMessage(_("Playlist is already sorted"));
 			return;
 		}
 		
@@ -231,7 +231,7 @@ void Playlist::EnterPressed()
 			}
 		}
 		while (playlist != cmp);
-		ShowMessage(Mpd.CommitCommandsList() ? "Playlist sorted!" : "Error while sorting playlist!");
+		ShowMessage(Mpd.CommitCommandsList() ? _("Playlist sorted!") : _("Error while sorting playlist!"));
 		w = Items;
 	}
 }
@@ -303,7 +303,7 @@ void Playlist::ApplyFilter(const std::string &s)
 void Playlist::Sort()
 {
 	if (Items->GetWidth() < SortDialogWidth || MainHeight < 5)
-		ShowMessage("Screen is too small to display dialog window!");
+		ShowMessage(_("Screen is too small to display dialog window!"));
 	else
 	{
 		SortDialog->Reset();
@@ -377,7 +377,7 @@ std::string Playlist::TotalLength()
 		ReloadRemaining = 0;
 	}
 	
-	result << '(' << Items->Size() << (Items->Size() == 1 ? " item" : " items");
+	result << '(' << Items->Size() << " " << ngettext("item", "items", Items->Size());
 	
 	if (Items->isFiltered())
 	{
@@ -390,12 +390,12 @@ std::string Playlist::TotalLength()
 	
 	if (itsTotalLength)
 	{
-		result << ", length: ";
+		result << ", " << _("length") << ": ";
 		ShowTime(result, itsTotalLength, Config.playlist_shorten_total_times);
 	}
 	if (Config.playlist_show_remaining_time && itsRemainingTime && !Items->isFiltered() && Items->Size() > 1)
 	{
-		result << " :: remaining: ";
+		result << " :: " << _("remaining") << ": ";
 		ShowTime(result, itsRemainingTime, Config.playlist_shorten_total_times);
 	}
 	result << ')';
@@ -463,7 +463,7 @@ bool Playlist::Add(const MPD::Song &s, bool in_playlist, bool play, int position
 		int id = Mpd.AddSong(s, position);
 		if (id >= 0)
 		{
-			ShowMessage("Added to playlist: %s", s.toString(Config.song_status_format_no_colors).c_str());
+			ShowMessage(_("Added to playlist: %s"), s.toString(Config.song_status_format_no_colors).c_str());
 			if (play)
 				Mpd.PlayID(id);
 			return true;
