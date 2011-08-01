@@ -26,6 +26,7 @@
 #include "ncmpcpp.h"
 #include "settings.h"
 #include "status.h"
+#include "i18n.h"
 
 bool ConnectToMPD();
 void ParseArgv(int, char **);
@@ -153,11 +154,16 @@ template <typename T> void ShowTime(T &buf, size_t length, bool short_names)
 	const unsigned HOUR = 60*MINUTE;
 	const unsigned DAY = 24*HOUR;
 	const unsigned YEAR = 365*DAY;
-	
+
 	unsigned years = length/YEAR;
 	if (years)
 	{
-		buf << years << (short_names ? "y" : (years == 1 ? " year" : " years"));
+		buf << years;
+		if (short_names) 
+			buf << _("y");
+		else
+			buf << " " << ngettext("year", "years", years);
+
 		length -= years*YEAR;
 		if (length)
 			buf << ", ";
@@ -165,7 +171,11 @@ template <typename T> void ShowTime(T &buf, size_t length, bool short_names)
 	unsigned days = length/DAY;
 	if (days)
 	{
-		buf << days << (short_names ? "d" : (days == 1 ? " day" : " days"));
+		buf << days;
+		if (short_names)
+			buf << _("d");
+		else
+			buf << " " << ngettext("day", "days", days);
 		length -= days*DAY;
 		if (length)
 			buf << ", ";
@@ -173,7 +183,12 @@ template <typename T> void ShowTime(T &buf, size_t length, bool short_names)
 	unsigned hours = length/HOUR;
 	if (hours)
 	{
-		buf << hours << (short_names ? "h" : (hours == 1 ? " hour" : " hours"));
+		buf << hours;
+		if (short_names)
+			buf << _("h");
+		else
+			buf << " " << ngettext("hour", "hours", hours);
+
 		length -= hours*HOUR;
 		if (length)
 			buf << ", ";
@@ -181,13 +196,24 @@ template <typename T> void ShowTime(T &buf, size_t length, bool short_names)
 	unsigned minutes = length/MINUTE;
 	if (minutes)
 	{
-		buf << minutes << (short_names ? "m" : (minutes == 1 ? " minute" : " minutes"));
+		buf << minutes;
+		if (short_names)
+			buf << _("m");
+		else 
+			buf << " " << ngettext("minute", "minutes", minutes);
+
 		length -= minutes*MINUTE;
 		if (length)
 			buf << ", ";
 	}
 	if (length)
-		buf << length << (short_names ? "s" : (length == 1 ? " second" : " seconds"));
+	{
+		buf << length;
+		if (short_names)
+			buf << _("s");
+		else 
+			buf << " " << ngettext("second", "seconds", length);
+	}
 }
 
 template <typename T> void ShowTag(T &buf, const std::string &tag)

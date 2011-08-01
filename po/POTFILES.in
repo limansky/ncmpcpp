@@ -5,3 +5,5 @@ src/status.cpp
 src/playlist.cpp
 src/display.cpp
 src/browser.cpp
+src/search_engine.cpp
+src/helpers.h
