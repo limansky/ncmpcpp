@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-02 01:42+0400\n"
+"POT-Creation-Date: 2011-08-02 16:05+0400\n"
 "PO-Revision-Date: 2011-08-01 23:38+0300\n"
 "Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
@@ -1111,8 +1111,65 @@ msgstr "Моно"
 msgid "Stereo"
 msgstr "Стерео"
 
-#~ msgid "songs"
-#~ msgstr "песен"
+#: src/media_library.cpp:69 src/media_library.cpp:160
+#: src/media_library.cpp:166
+#, fuzzy
+msgid "Albums"
+msgstr "Альбом"
+
+#: src/media_library.cpp:81
+#, fuzzy
+msgid "Songs"
+msgstr "песен"
+
+#: src/media_library.cpp:133 src/media_library.cpp:325
+#, fuzzy
+msgid "No albums found."
+msgstr "Ничего не найдено"
+
+#: src/media_library.cpp:160
+msgid "sorted by"
+msgstr ""
+
+#: src/media_library.cpp:259
+msgid "Fetching albums..."
+msgstr ""
+
+#: src/media_library.cpp:597
+msgid ""
+"Your MPD version is too old to handle this function properly, please upgrade."
+msgstr ""
+
+#: src/media_library.cpp:619
+msgid "Invalid tag type in left column of the media library"
+msgstr ""
+
+#: src/media_library.cpp:626
+#, c-format
+msgid "Can't jump to media library because the song has no %s tag set."
+msgstr ""
+
+#: src/media_library.cpp:632
+msgid "Jumping to song..."
+msgstr ""
+
+#: src/media_library.cpp:714
+#, c-format
+msgid "Adding songs of %s \"%s\""
+msgstr ""
+
+#: src/media_library.cpp:717
+#, c-format
+msgid "Adding songs from album \"%s\""
+msgstr ""
+
+#: src/media_library.cpp:742
+msgid "All tracks"
+msgstr ""
+
+#: src/media_library.cpp:748
+msgid "<no album>"
+msgstr ""
 
 #~ msgid "years"
 #~ msgstr "лет"

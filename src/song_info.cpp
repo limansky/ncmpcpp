@@ -135,7 +135,7 @@ void SongInfo::PrepareSong(MPD::Song &s)
 	
 	for (const Metadata *m = Tags; m->Name; ++m)
 	{
-		*w << fmtBold << "\n" << TO_WSTRING(m->Name) << ": " << fmtBoldEnd;
+		*w << fmtBold << "\n" << m->Name << ": " << fmtBoldEnd;
 		ShowTag(*w, s.GetTags(m->Get));
 	}
 }

@@ -28,6 +28,7 @@
 #include "mpdpp.h"
 #include "playlist.h"
 #include "status.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -65,7 +66,7 @@ void MediaLibrary::Init()
 	Artists->SetSelectSuffix(&Config.selected_item_suffix);
 	Artists->SetItemDisplayer(DisplayPrimaryTags);
 	
-	Albums = new Menu<SearchConstraints>(itsMiddleColStartX, MainStartY, itsMiddleColWidth, MainHeight, Config.titles_visibility ? "Albums" : "", Config.main_color, brNone);
+	Albums = new Menu<SearchConstraints>(itsMiddleColStartX, MainStartY, itsMiddleColWidth, MainHeight, Config.titles_visibility ? _("Albums") : "", Config.main_color, brNone);
 	Albums->HighlightColor(Config.main_highlight_color);
 	Albums->CyclicScrolling(Config.use_cyclic_scrolling);
 	Albums->CenteredCursor(Config.centered_cursor);
@@ -77,7 +78,7 @@ void MediaLibrary::Init()
 	
 	static Display::ScreenFormat sf = { this, &Config.song_library_format };
 	
-	Songs = new Menu<MPD::Song>(itsRightColStartX, MainStartY, itsRightColWidth, MainHeight, Config.titles_visibility ? "Songs" : "", Config.main_color, brNone);
+	Songs = new Menu<MPD::Song>(itsRightColStartX, MainStartY, itsRightColWidth, MainHeight, Config.titles_visibility ? _("Songs") : "", Config.main_color, brNone);
 	Songs->HighlightColor(Config.main_highlight_color);
 	Songs->CyclicScrolling(Config.use_cyclic_scrolling);
 	Songs->CenteredCursor(Config.centered_cursor);
@@ -129,7 +130,7 @@ void MediaLibrary::Refresh()
 	Songs->Display();
 	if (Albums->Empty())
 	{
-		*Albums << XY(0, 0) << "No albums found.";
+		*Albums << XY(0, 0) << _("No albums found.");
 		Albums->Window::Refresh();
 	}
 }
@@ -156,13 +157,13 @@ void MediaLibrary::SwitchTo()
 				{
 					std::string item_type = IntoStr(Config.media_lib_primary_tag);
 					ToLower(item_type);
-					Albums->SetTitle("Albums (sorted by " + item_type + ")");
+					Albums->SetTitle(std::string(_("Albums")) + "(" + _("sorted by") + " " + item_type + ")");
 				}
 				else
 					Albums->SetTitle("");
 			}
 			else
-				Albums->SetTitle(Config.titles_visibility ? "Albums" : "");
+				Albums->SetTitle(Config.titles_visibility ? _("Albums") : "");
 		}
 	}
 	
@@ -255,7 +256,7 @@ void MediaLibrary::Update()
 	{
 		Songs->Clear();
 		MPD::TagList artists;
-		*Albums << XY(0, 0) << "Fetching albums...";
+		*Albums << XY(0, 0) << _("Fetching albums...");
 		Albums->Window::Refresh();
 		Mpd.BlockIdle(1);
 		Mpd.GetList(artists, Config.media_lib_primary_tag);
@@ -321,7 +322,7 @@ void MediaLibrary::Update()
 		Mpd.AddSearch(Config.media_lib_primary_tag, locale_to_utf_cpy(hasTwoColumns ? Albums->Current().PrimaryTag : Artists->Current()));
 		if (Albums->Empty()) // left for compatibility with <mpd-0.14
 		{
-			*Albums << XY(0, 0) << "No albums found.";
+			*Albums << XY(0, 0) << _("No albums found.");
 			Albums->Window::Refresh();
 		}
 		else
@@ -593,7 +594,7 @@ void MediaLibrary::LocateSong(const MPD::Song &s)
 		// <mpd-0.14.* has no ability to search for empty tags, which sometimes
 		// leaves albums column empty. since this function relies on this column
 		// being non-empty, it has to be disabled for these versions.
-		ShowMessage("Your MPD version is too old to handle this function properly, please upgrade.");
+		ShowMessage(_("Your MPD version is too old to handle this function properly, please upgrade."));
 		return;
 	}
 	std::string primary_tag;
@@ -615,20 +616,20 @@ void MediaLibrary::LocateSong(const MPD::Song &s)
 			primary_tag = s.GetPerformer();
 			break;
 		default:
-			ShowMessage("Invalid tag type in left column of the media library");
+			ShowMessage(_("Invalid tag type in left column of the media library"));
 			return;
 	}
 	if (primary_tag.empty())
 	{
 		std::string item_type = IntoStr(Config.media_lib_primary_tag);
 		ToLower(item_type);
-		ShowMessage("Can't jump to media library because the song has no %s tag set.", item_type.c_str());
+		ShowMessage(_("Can't jump to media library because the song has no %s tag set."), item_type.c_str());
 		return;
 	}
 	
 	if (myScreen != this)
 		SwitchTo();
-	Statusbar() << "Jumping to song...";
+	Statusbar() << _("Jumping to song...");
 	Global::wFooter->Refresh();
 	
 	if (!hasTwoColumns)
@@ -710,10 +711,10 @@ void MediaLibrary::AddToPlaylist(bool add_n_play)
 			{
 				std::string tag_type = IntoStr(Config.media_lib_primary_tag);
 				ToLower(tag_type);
-				ShowMessage("Adding songs of %s \"%s\"", tag_type.c_str(), Artists->Current().c_str());
+				ShowMessage(_("Adding songs of %s \"%s\""), tag_type.c_str(), Artists->Current().c_str());
 			}
 			else if (w == Albums)
-				ShowMessage("Adding songs from album \"%s\"", Albums->Current().Album.c_str());
+				ShowMessage(_("Adding songs from album \"%s\""), Albums->Current().Album.c_str());
 		}
 	}
 
@@ -738,13 +739,13 @@ std::string MediaLibrary::SongToString(const MPD::Song &s, void *)
 std::string MediaLibrary::AlbumToString(const SearchConstraints &sc, void *ptr)
 {
 	if (sc.Year == AllTracksMarker)
-		return "All tracks";
+		return _("All tracks");
 	std::string result;
 	if (static_cast<MediaLibrary *>(ptr)->hasTwoColumns)
 		(result += sc.PrimaryTag.empty() ? Config.empty_tag : sc.PrimaryTag) += " - ";
 	if ((!static_cast<MediaLibrary *>(ptr)->hasTwoColumns || Config.media_lib_primary_tag != MPD_TAG_DATE) && !sc.Year.empty())
 		((result += "(") += sc.Year) += ") ";
-	result += sc.Album.empty() ? "<no album>" : sc.Album;
+	result += sc.Album.empty() ? _("<no album>") : sc.Album;
 	return result;
 }
 
