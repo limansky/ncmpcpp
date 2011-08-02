@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-02 20:07+0400\n"
+"POT-Creation-Date: 2011-08-03 01:44+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Media library"
 msgstr ""
 
-#: src/help.cpp:161 src/help.cpp:384
+#: src/help.cpp:161 src/help.cpp:384 src/playlist_editor.cpp:89
 msgid "Playlist editor"
 msgstr ""
 
@@ -584,7 +584,9 @@ msgstr ""
 msgid "Scroll"
 msgstr ""
 
-#: src/help.cpp:357 src/help.cpp:370 src/help.cpp:396 src/help.cpp:417
+#: src/help.cpp:357 src/help.cpp:370 src/help.cpp:376 src/help.cpp:380
+#: src/help.cpp:386 src/help.cpp:390 src/help.cpp:396 src/help.cpp:402
+#: src/help.cpp:406 src/help.cpp:410 src/help.cpp:417
 msgid "Left click"
 msgstr ""
 
@@ -593,7 +595,9 @@ msgstr ""
 msgid "Highlight"
 msgstr ""
 
-#: src/help.cpp:358 src/help.cpp:371 src/help.cpp:397 src/help.cpp:418
+#: src/help.cpp:358 src/help.cpp:371 src/help.cpp:377 src/help.cpp:381
+#: src/help.cpp:387 src/help.cpp:391 src/help.cpp:397 src/help.cpp:403
+#: src/help.cpp:407 src/help.cpp:411 src/help.cpp:418
 msgid "Right click"
 msgstr ""
 
@@ -636,16 +640,6 @@ msgstr ""
 
 #: src/help.cpp:375
 msgid "Left/middle column"
-msgstr ""
-
-#: src/help.cpp:376 src/help.cpp:380 src/help.cpp:386 src/help.cpp:390
-#: src/help.cpp:402 src/help.cpp:406 src/help.cpp:410
-msgid "Left Click"
-msgstr ""
-
-#: src/help.cpp:377 src/help.cpp:381 src/help.cpp:387 src/help.cpp:391
-#: src/help.cpp:403 src/help.cpp:407 src/help.cpp:411
-msgid "Right Click"
 msgstr ""
 
 #: src/help.cpp:379 src/help.cpp:389 src/help.cpp:409
@@ -841,7 +835,7 @@ msgstr ""
 msgid "Screen is too small to display dialog window!"
 msgstr ""
 
-#: src/playlist.cpp:380
+#: src/playlist.cpp:380 src/playlist_editor.cpp:143
 msgid "item"
 msgid_plural "items"
 msgstr[0] ""
@@ -895,7 +889,7 @@ msgstr ""
 msgid "Added folder: %s"
 msgstr ""
 
-#: src/browser.cpp:200
+#: src/browser.cpp:200 src/playlist_editor.cpp:209
 #, c-format
 msgid "Loading playlist %s..."
 msgstr ""
@@ -1126,4 +1120,17 @@ msgstr ""
 
 #: src/media_library.cpp:748
 msgid "<no album>"
+msgstr ""
+
+#: src/playlist_editor.cpp:49
+msgid "Playlists"
+msgstr ""
+
+#: src/playlist_editor.cpp:57 src/playlist_editor.cpp:143
+#: src/playlist_editor.cpp:145
+msgid "Playlist's content"
+msgstr ""
+
+#: src/playlist_editor.cpp:174
+msgid "Playlist is empty."
 msgstr ""

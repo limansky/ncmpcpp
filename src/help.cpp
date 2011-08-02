@@ -373,22 +373,22 @@ void Help::GetKeybindings()
 	
 	*w << "\n\n   " << fmtBold << _("Mouse") << " - " << _("Media library") << "\n -----------------------------------------\n" << fmtBoldEnd;
 	*w << fmtBold << "\t" << _("Left/middle column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Highlight") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Add to playlist") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Highlight") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Add to playlist") << "\n";
 	*w << "\n";
 	*w << fmtBold << "\t" << _("Right column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Add to playlist") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Add to playlist and play") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Add to playlist") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Add to playlist and play") << "\n";
 	
 	
 	*w << "\n\n   " << fmtBold << _("Mouse") << " - " << _("Playlist editor") << "\n -----------------------------------------\n" << fmtBoldEnd;
 	*w << fmtBold << "\t" << _("Left column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Highlight") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Add to playlist") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Highlight") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Add to playlist") << "\n";
 	*w << "\n";
 	*w << fmtBold << "\t" << _("Right column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Add to playlist") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Add to playlist and play") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Add to playlist") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Add to playlist and play") << "\n";
 	
 	
 #	ifdef HAVE_TAGLIB_H
@@ -399,16 +399,16 @@ void Help::GetKeybindings()
 	
 	*w << "\n\n   " << fmtBold << _("Mouse") << " - " << _("Tag editor") << "\n -----------------------------------------\n" << fmtBoldEnd;
 	*w << fmtBold << "\t" << _("Left column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Enter directory/highlight album") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Switch to directories/albums view") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Enter directory/highlight album") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Switch to directories/albums view") << "\n";
 	*w << "\n";
 	*w << fmtBold << "\t" << _("Middle column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Highlight") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Change value/execute command") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Highlight") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Change value/execute command") << "\n";
 	*w << "\n";
 	*w << fmtBold << "\t" << _("Right column") << ":\n" << fmtBoldEnd;
-	*w << "\t\t" << _("Left Click") << "		: "			<< _("Highlight") << "\n";
-	*w << "\t\t" << _("Right Click") << "		: "			<< _("Change value") << "\n";
+	*w << "\t\t" << _("Left click") << "		: "			<< _("Highlight") << "\n";
+	*w << "\t\t" << _("Right click") << "		: "			<< _("Change value") << "\n";
 #	endif // HAVE_TAGLIB_H
 	
 	

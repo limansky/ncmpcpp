@@ -29,6 +29,7 @@
 #include "mpdpp.h"
 #include "status.h"
 #include "tag_editor.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -44,16 +45,16 @@ void PlaylistEditor::Init()
 	LeftColumnWidth = COLS/3-1;
 	RightColumnStartX = LeftColumnWidth+1;
 	RightColumnWidth = COLS-LeftColumnWidth-1;
-	
-	Playlists = new Menu<std::string>(0, MainStartY, LeftColumnWidth, MainHeight, Config.titles_visibility ? "Playlists" : "", Config.main_color, brNone);
+
+	Playlists = new Menu<std::string>(0, MainStartY, LeftColumnWidth, MainHeight, Config.titles_visibility ? _("Playlists") : "", Config.main_color, brNone);
 	Playlists->HighlightColor(Config.active_column_color);
 	Playlists->CyclicScrolling(Config.use_cyclic_scrolling);
 	Playlists->CenteredCursor(Config.centered_cursor);
 	Playlists->SetItemDisplayer(Display::Generic);
-	
+
 	static Display::ScreenFormat sf = { this, &Config.song_list_format };
-	
-	Content = new Menu<MPD::Song>(RightColumnStartX, MainStartY, RightColumnWidth, MainHeight, Config.titles_visibility ? "Playlist's content" : "", Config.main_color, brNone);
+
+	Content = new Menu<MPD::Song>(RightColumnStartX, MainStartY, RightColumnWidth, MainHeight, Config.titles_visibility ? _("Playlist's content") : "", Config.main_color, brNone);
 	Content->HighlightColor(Config.main_highlight_color);
 	Content->CyclicScrolling(Config.use_cyclic_scrolling);
 	Content->CenteredCursor(Config.centered_cursor);
@@ -85,7 +86,7 @@ void PlaylistEditor::Resize()
 
 std::basic_string<my_char_t> PlaylistEditor::Title()
 {
-	return U("Playlist editor");
+	return TO_WSTRING(_("Playlist editor"));
 }
 
 void PlaylistEditor::Refresh()
@@ -139,9 +140,9 @@ void PlaylistEditor::Update()
 		MPD::SongList list;
 		Mpd.GetPlaylistContent(locale_to_utf_cpy(Playlists->Current()), list);
 		if (!list.empty())
-			Content->SetTitle(Config.titles_visibility ? "Playlist's content (" + IntoStr(list.size()) + " item" + (list.size() == 1 ? ")" : "s)") : "");
+			Content->SetTitle(Config.titles_visibility ? _("Playlist's content") + std::string("(") + IntoStr(list.size()) + " " + ngettext("item", "items", list.size()) : "");
 		else
-			Content->SetTitle(Config.titles_visibility ? "Playlist's content" : "");
+			Content->SetTitle(Config.titles_visibility ? _("Playlist's content") : "");
 		bool bold = 0;
 		for (MPD::SongList::const_iterator it = list.begin(); it != list.end(); ++it)
 		{
@@ -170,7 +171,7 @@ void PlaylistEditor::Update()
 	
 	if (Content->ReallyEmpty())
 	{
-		*Content << XY(0, 0) << "Playlist is empty.";
+		*Content << XY(0, 0) << _("Playlist is empty.");
 		Content->Window::Refresh();
 	}
 }
@@ -205,7 +206,7 @@ void PlaylistEditor::AddToPlaylist(bool add_n_play)
 	{
 		Mpd.GetPlaylistContent(locale_to_utf_cpy(Playlists->Current()), list);
 		if (myPlaylist->Add(list, add_n_play))
-			ShowMessage("Loading playlist %s...", Playlists->Current().c_str());
+			ShowMessage(_("Loading playlist %s..."), Playlists->Current().c_str());
 	}
 	else if (w == Content && !Content->Empty())
 		Content->Bold(Content->Choice(), myPlaylist->Add(Content->Current(), Content->isBold(), add_n_play));
