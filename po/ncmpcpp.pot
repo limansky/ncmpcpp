@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-02 16:05+0400\n"
+"POT-Creation-Date: 2011-08-02 20:07+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Playlist"
 msgstr ""
 
-#: src/help.cpp:234
+#: src/help.cpp:234 src/help.cpp:358
 msgid "Play"
 msgstr ""
 
@@ -538,7 +538,7 @@ msgstr ""
 msgid "Go to parent directory (left column, directories view)"
 msgstr ""
 
-#: src/help.cpp:338
+#: src/help.cpp:338 src/help.cpp:418
 msgid "Enable/disable output"
 msgstr ""
 
@@ -565,11 +565,15 @@ msgid "Left click on progressbar"
 msgstr ""
 
 #: src/help.cpp:350
-msgid ": Go to chosen position in played track"
+msgid "Go to chosen position in played track"
 msgstr ""
 
 #: src/help.cpp:352
-msgid ": Change volume"
+msgid "Mouse wheel on \"Volume: xx\""
+msgstr ""
+
+#: src/help.cpp:352
+msgid "Change volume"
 msgstr ""
 
 #: src/help.cpp:353
@@ -577,7 +581,7 @@ msgid "Mouse wheel on main window"
 msgstr ""
 
 #: src/help.cpp:353
-msgid ": Scroll"
+msgid "Scroll"
 msgstr ""
 
 #: src/help.cpp:357 src/help.cpp:370 src/help.cpp:396 src/help.cpp:417
@@ -586,15 +590,11 @@ msgstr ""
 
 #: src/help.cpp:357 src/help.cpp:376 src/help.cpp:386 src/help.cpp:396
 #: src/help.cpp:406 src/help.cpp:410 src/help.cpp:417
-msgid ": Highlight"
+msgid "Highlight"
 msgstr ""
 
 #: src/help.cpp:358 src/help.cpp:371 src/help.cpp:397 src/help.cpp:418
 msgid "Right click"
-msgstr ""
-
-#: src/help.cpp:358
-msgid ": Play"
 msgstr ""
 
 #: src/help.cpp:362
@@ -602,7 +602,7 @@ msgid "Left click on directory"
 msgstr ""
 
 #: src/help.cpp:362
-msgid ": Enter directory"
+msgid "Enter directory"
 msgstr ""
 
 #: src/help.cpp:363
@@ -611,7 +611,7 @@ msgstr ""
 
 #: src/help.cpp:363 src/help.cpp:365 src/help.cpp:377 src/help.cpp:380
 #: src/help.cpp:387 src/help.cpp:390
-msgid ": Add to playlist"
+msgid "Add to playlist"
 msgstr ""
 
 #: src/help.cpp:365
@@ -623,15 +623,15 @@ msgid "Right click on song/playlist"
 msgstr ""
 
 #: src/help.cpp:366 src/help.cpp:381 src/help.cpp:391
-msgid ": Add to playlist and play"
+msgid "Add to playlist and play"
 msgstr ""
 
 #: src/help.cpp:370
-msgid ": Highlight/switch value"
+msgid "Highlight/switch value"
 msgstr ""
 
 #: src/help.cpp:371 src/help.cpp:411
-msgid ": Change value"
+msgid "Change value"
 msgstr ""
 
 #: src/help.cpp:375
@@ -657,23 +657,19 @@ msgid "Left column"
 msgstr ""
 
 #: src/help.cpp:397 src/help.cpp:407
-msgid ": Change value/execute command"
+msgid "Change value/execute command"
 msgstr ""
 
 #: src/help.cpp:402
-msgid ": Enter directory/highlight album"
+msgid "Enter directory/highlight album"
 msgstr ""
 
 #: src/help.cpp:403
-msgid ": Switch to directories/albums view"
+msgid "Switch to directories/albums view"
 msgstr ""
 
 #: src/help.cpp:405
 msgid "Middle column"
-msgstr ""
-
-#: src/help.cpp:418
-msgid ": Enable/disable output"
 msgstr ""
 
 #: src/status.cpp:340
