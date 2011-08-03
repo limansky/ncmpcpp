@@ -10,3 +10,4 @@ src/helpers.h
 src/song_info.cpp
 src/media_library.cpp
 src/playlist_editor.cpp
+src/ncmpcpp.cpp

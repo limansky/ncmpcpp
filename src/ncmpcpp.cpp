@@ -56,6 +56,7 @@
 #include "tag_editor.h"
 #include "tiny_tag_editor.h"
 #include "visualizer.h"
+#include "i18n.h"
 
 #define CHECK_PLAYLIST_FOR_FILTERING									\
 			if (myPlaylist->Items->isFiltered())						\
@@ -67,7 +68,7 @@
 #define CHECK_MPD_MUSIC_DIR										\
 			if (Config.mpd_music_dir.empty())						\
 			{										\
-				ShowMessage("configuration variable mpd_music_dir is not set!");	\
+				ShowMessage(_("configuration variable mpd_music_dir is not set!"));	\
 				continue;								\
 			}
 
@@ -104,7 +105,7 @@ namespace
 		if (COLS < 20 || MainHeight < 3)
 		{
 			DestroyScreen();
-			std::cout << "Screen is too small!\n";
+			std::cout << _("Screen is too small!\n");
 			exit(1);
 		}
 	}
@@ -200,7 +201,7 @@ namespace
 			RedrawStatusbar = 1;
 			NcmpcppStatusChanged(&Mpd, StatusChanges(), 0);
 			design_changed = 0;
-			ShowMessage("User interface: %s", Config.new_design ? "Alternative" : "Classic");
+			ShowMessage(_("User interface: %s"), Config.new_design ? _("Alternative") : _("Classic"));
 		}
 		wFooter->Refresh();
 	}
@@ -210,7 +211,7 @@ namespace
 	{
 		if (signal == SIGPIPE)
 		{
-			ShowMessage("Broken pipe signal caught!");
+			ShowMessage(_("Broken pipe signal caught!"));
 		}
 		else if (signal == SIGWINCH)
 		{
@@ -350,10 +351,10 @@ int main(int argc, char *argv[])
 		{
 			if (!wFooter->FDCallbacksListEmpty())
 				wFooter->ClearFDCallbacksList();
-			ShowMessage("Attempting to reconnect...");
+			ShowMessage(_("Attempting to reconnect..."));
 			if (Mpd.Connect())
 			{
-				ShowMessage("Connected to %s!", Mpd.GetHostname().c_str());
+				ShowMessage(_("Connected to %s!"), Mpd.GetHostname().c_str());
 				if (Mpd.SupportsIdle())
 				{
 					wFooter->AddFDCallback(Mpd.GetFD(), StatusbarMPDCallback);
@@ -409,20 +410,20 @@ int main(int argc, char *argv[])
 			else
 			{
 				*wHeader << XY(0, Config.new_design ? 3 : 0)
-				<< fmtBold << char(Key.Help[0]) << fmtBoldEnd << ":Help  "
-				<< fmtBold << char(Key.Playlist[0]) << fmtBoldEnd << ":Playlist  "
-				<< fmtBold << char(Key.Browser[0]) << fmtBoldEnd << ":Browse  "
-				<< fmtBold << char(Key.SearchEngine[0]) << fmtBoldEnd << ":Search  "
-				<< fmtBold << char(Key.MediaLibrary[0]) << fmtBoldEnd << ":Library  "
-				<< fmtBold << char(Key.PlaylistEditor[0]) << fmtBoldEnd << ":Playlist editor";
+				<< fmtBold << char(Key.Help[0]) << fmtBoldEnd << ":" << _("Help") << "  "
+				<< fmtBold << char(Key.Playlist[0]) << fmtBoldEnd << ":" << _("Playlist") << "  "
+				<< fmtBold << char(Key.Browser[0]) << fmtBoldEnd << ":" << _("Browse") << "  "
+				<< fmtBold << char(Key.SearchEngine[0]) << fmtBoldEnd << ":" << _("Search") << "  "
+				<< fmtBold << char(Key.MediaLibrary[0]) << fmtBoldEnd << ":" << _("Library") << "  "
+				<< fmtBold << char(Key.PlaylistEditor[0]) << fmtBoldEnd << ":" << _("Playlist editor");
 #				ifdef HAVE_TAGLIB_H
-				*wHeader << "  " << fmtBold << char(Key.TagEditor[0]) << fmtBoldEnd << ":Tag editor";
+				*wHeader << "  " << fmtBold << char(Key.TagEditor[0]) << fmtBoldEnd << ":" << _("Tag editor");
 #				endif // HAVE_TAGLIB_H
 #				ifdef ENABLE_VISUALIZER
-				*wHeader << "  " << fmtBold << char(Key.Visualizer[0]) << fmtBoldEnd << ":Music visualizer";
+				*wHeader << "  " << fmtBold << char(Key.Visualizer[0]) << fmtBoldEnd << ":" << _("Music visualizer");
 #				endif // ENABLE_VISUALIZER
 #				ifdef ENABLE_CLOCK
-				*wHeader << "  " << fmtBold << char(Key.Clock[0]) << fmtBoldEnd << ":Clock";
+				*wHeader << "  " << fmtBold << char(Key.Clock[0]) << fmtBoldEnd << ":" << _("Clock");
 #				endif // ENABLE_CLOCK
 				if (Config.new_design)
 				{
@@ -683,7 +684,7 @@ int main(int argc, char *argv[])
 						for (size_t i = 0; i < myPlaylist->Items->Size(); ++i)
 							myPlaylist->Items->Select(i, 0);
 						myPlaylist->FixPositions(list.front());
-						ShowMessage("Selected items deleted!");
+						ShowMessage(_("Selected items deleted!"));
 					}
 				}
 				else
@@ -719,7 +720,7 @@ int main(int argc, char *argv[])
 			{
 				std::string name = myScreen == myBrowser ? myBrowser->Main()->Current().name : myPlaylistEditor->Playlists->Current();
 				LockStatusbar();
-				Statusbar() << "Delete playlist \"" << Shorten(TO_WSTRING(name), COLS-28) << "\" ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "]";
+				Statusbar() << _("Delete playlist") << "\"" << Shorten(TO_WSTRING(name), COLS-28) << "\" ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "]";
 				wFooter->Refresh();
 				int answer = 0;
 				do
@@ -733,14 +734,14 @@ int main(int argc, char *argv[])
 				{
 					if (Mpd.DeletePlaylist(locale_to_utf_cpy(name)))
 					{
-						static const char msg[] = "Playlist \"%s\" deleted!";
-						ShowMessage(msg, Shorten(TO_WSTRING(name), COLS-static_strlen(msg)).c_str());
+						static const char* msg = _("Playlist \"%s\" deleted!");
+						ShowMessage(msg, Shorten(TO_WSTRING(name), COLS - strlen(msg)).c_str());
 						if (myBrowser->Main() && !myBrowser->isLocal() && myBrowser->CurrentDir() == "/")
 							myBrowser->GetDirectory("/");
 					}
 				}
 				else
-					ShowMessage("Aborted!");
+					ShowMessage(_("Aborted!"));
 				if (myPlaylistEditor->Main()) // check if initialized
 					myPlaylistEditor->Playlists->Clear(); // make playlists list update itself
 			}
@@ -754,12 +755,12 @@ int main(int argc, char *argv[])
 				
 				if (item.type == itSong && !Config.allow_physical_files_deletion)
 				{
-					ShowMessage("Deleting files is disabled by default, see man page for more details");
+					ShowMessage(_("Deleting files is disabled by default, see man page for more details"));
 					continue;
 				}
 				if (item.type == itDirectory && !Config.allow_physical_directories_deletion)
 				{
-					ShowMessage("Deleting directories is disabled by default, see man page for more details");
+					ShowMessage(_("Deleting directories is disabled by default, see man page for more details"));
 					continue;
 				}
 				if (item.type == itDirectory && item.song) // parent dir
@@ -768,9 +769,10 @@ int main(int argc, char *argv[])
 				std::string name = item.type == itSong ? item.song->GetName() : item.name;
 				LockStatusbar();
 				if (myBrowser->Main()->hasSelected())
-					Statusbar() << "Delete selected items ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
+					Statusbar() << _("Delete selected items?") << " [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
 				else
-					Statusbar() << "Delete " << (item.type == itSong ? "file" : item.type == itDirectory ? "directory" : "playlist") << " \"" << Shorten(TO_WSTRING(name), COLS-30) << "\" ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
+					Statusbar() << (item.type == itSong ? _("Delete file") : item.type == itDirectory ? _("Delete directory") : _("Delete playlist")) 
+								<< " \"" << Shorten(TO_WSTRING(name), COLS-30) << "\" ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
 				wFooter->Refresh();
 				int answer = 0;
 				do
@@ -793,13 +795,13 @@ int main(int argc, char *argv[])
 						name = it.type == itSong ? it.song->GetName() : it.name;
 						if (myBrowser->DeleteItem(it))
 						{
-							static const char msg[] = "\"%s\" deleted!";
-							ShowMessage(msg, Shorten(TO_WSTRING(name), COLS-static_strlen(msg)).c_str());
+							static const char* msg = _("\"%s\" deleted!");
+							ShowMessage(msg, Shorten(TO_WSTRING(name), COLS - strlen(msg)).c_str());
 						}
 						else
 						{
-							static const char msg[] = "Couldn't remove \"%s\": %s";
-							ShowMessage(msg, Shorten(TO_WSTRING(name), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+							static const char* msg = _("Couldn't remove \"%s\": %s");
+							ShowMessage(msg, Shorten(TO_WSTRING(name), COLS - strlen(msg)-25).c_str(), strerror(errno));
 							success = 0;
 							break;
 						}
@@ -813,7 +815,7 @@ int main(int argc, char *argv[])
 					}
 				}
 				else
-					ShowMessage("Aborted!");
+					ShowMessage(_("Aborted!"));
 				
 			}
 #			endif // !WIN32
@@ -824,7 +826,7 @@ int main(int argc, char *argv[])
 					std::vector<size_t> list;
 					myPlaylistEditor->Content->GetSelected(list);
 					std::string playlist = locale_to_utf_cpy(myPlaylistEditor->Playlists->Current());
-					ShowMessage("Deleting selected items...");
+					ShowMessage(_("Deleting selected items..."));
 					Mpd.StartCommandsList();
 					for (std::vector<size_t>::reverse_iterator it = list.rbegin(); it != list.rend(); ++it)
 					{
@@ -832,7 +834,7 @@ int main(int argc, char *argv[])
 						myPlaylistEditor->Content->DeleteOption(*it);
 					}
 					Mpd.CommitCommandsList();
-					ShowMessage("Selected items deleted from playlist \"%s\"!", myPlaylistEditor->Playlists->Current().c_str());
+					ShowMessage(_("Selected items deleted from playlist \"%s\"!"), myPlaylistEditor->Playlists->Current().c_str());
 				}
 				else
 				{
@@ -878,13 +880,13 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.SavePlaylist))
 		{
 			LockStatusbar();
-			Statusbar() << "Save playlist as: ";
+			Statusbar() << _("Save playlist as") << ": ";
 			std::string playlist_name = wFooter->GetString();
 			std::string real_playlist_name = locale_to_utf_cpy(playlist_name);
 			UnlockStatusbar();
 			if (playlist_name.find("/") != std::string::npos)
 			{
-				ShowMessage("Playlist name cannot contain slashes!");
+				ShowMessage(_("Playlist name cannot contain slashes!"));
 				continue;
 			}
 			if (!playlist_name.empty())
@@ -896,21 +898,21 @@ int main(int argc, char *argv[])
 						Mpd.AddToPlaylist(real_playlist_name, (*myPlaylist->Items)[i]);
 					Mpd.CommitCommandsList();
 					if (Mpd.GetErrorMessage().empty())
-						ShowMessage("Filtered items added to playlist \"%s\"", playlist_name.c_str());
+						ShowMessage(_("Filtered items added to playlist \"%s\""), playlist_name.c_str());
 				}
 				else
 				{
 					int result = Mpd.SavePlaylist(real_playlist_name);
 					if (result == MPD_ERROR_SUCCESS)
 					{
-						ShowMessage("Playlist saved as: %s", playlist_name.c_str());
+						ShowMessage(_("Playlist saved as: %s"), playlist_name.c_str());
 						if (myPlaylistEditor->Main()) // check if initialized
 							myPlaylistEditor->Playlists->Clear(); // make playlist's list update itself
 					}
 					else if (result == MPD_SERVER_ERROR_EXIST)
 					{
 						LockStatusbar();
-						Statusbar() << "Playlist already exists, overwrite: " << playlist_name << " ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
+						Statusbar() << _("Playlist already exists, overwrite") << ": " << playlist_name << " ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
 						wFooter->Refresh();
 						int answer = 0;
 						while (answer != 'y' && answer != 'n')
@@ -924,10 +926,10 @@ int main(int argc, char *argv[])
 						{
 							Mpd.DeletePlaylist(real_playlist_name);
 							if (Mpd.SavePlaylist(real_playlist_name) == MPD_ERROR_SUCCESS)
-								ShowMessage("Playlist overwritten!");
+								ShowMessage(_("Playlist overwritten!"));
 						}
 						else
-							ShowMessage("Aborted!");
+							ShowMessage(_("Aborted!"));
 						if (myPlaylistEditor->Main()) // check if initialized
 							myPlaylistEditor->Playlists->Clear(); // make playlist's list update itself
 						if (myScreen == myPlaylist)
@@ -1223,7 +1225,7 @@ int main(int argc, char *argv[])
 			CHECK_PLAYLIST_FOR_FILTERING;
 			if (!myPlaylist->Items->hasSelected())
 			{
-				ShowMessage("No selected items to move!");
+				ShowMessage(_("No selected items to move!"));
 				continue;
 			}
 			// remove search results as we may move them to different positions, but
@@ -1273,13 +1275,13 @@ int main(int argc, char *argv[])
 			if (myScreen == myPlaylistEditor && myPlaylistEditor->Playlists->Empty())
 				continue;
 			LockStatusbar();
-			Statusbar() << (myScreen == myPlaylistEditor ? "Add to playlist: " : "Add: ");
+			Statusbar() << (myScreen == myPlaylistEditor ? _("Add to playlist") : _("Add")) << ": ";
 			std::string path = wFooter->GetString();
 			locale_to_utf(path);
 			UnlockStatusbar();
 			if (!path.empty())
 			{
-				Statusbar() << "Adding...";
+				Statusbar() << _("Adding...");
 				wFooter->Refresh();
 				if (myScreen == myPlaylistEditor)
 				{
@@ -1302,7 +1304,7 @@ int main(int argc, char *argv[])
 		{
 			if (!Mpd.GetTotalTime())
 			{
-				ShowMessage("Unknown item length!");
+				ShowMessage(_("Unknown item length!"));
 				continue;
 			}
 			
@@ -1392,7 +1394,7 @@ int main(int argc, char *argv[])
 			if (myScreen == myPlaylist)
 			{
 				Config.columns_in_playlist = !Config.columns_in_playlist;
-				ShowMessage("Playlist display mode: %s", Config.columns_in_playlist ? "Columns" : "Classic");
+				ShowMessage(_("Playlist display mode: %s"), Config.columns_in_playlist ? _("Columns") : _("Classic"));
 				
 				if (Config.columns_in_playlist)
 				{
@@ -1410,14 +1412,14 @@ int main(int argc, char *argv[])
 			else if (myScreen == myBrowser)
 			{
 				Config.columns_in_browser = !Config.columns_in_browser;
-				ShowMessage("Browser display mode: %s", Config.columns_in_browser ? "Columns" : "Classic");
+				ShowMessage(_("Browser display mode: %s"), Config.columns_in_browser ? _("Columns") : _("Classic"));
 				myBrowser->Main()->SetTitle(Config.columns_in_browser && Config.titles_visibility ? Display::Columns() : "");
 				
 			}
 			else if (myScreen == mySearcher)
 			{
 				Config.columns_in_search_engine = !Config.columns_in_search_engine;
-				ShowMessage("Search engine display mode: %s", Config.columns_in_search_engine ? "Columns" : "Classic");
+				ShowMessage(_("Search engine display mode: %s"), Config.columns_in_search_engine ? _("Columns") : _("Classic"));
 				if (mySearcher->Main()->Size() > SearchEngine::StaticOptions)
 					mySearcher->Main()->SetTitle(Config.columns_in_search_engine && Config.titles_visibility ? Display::Columns() : "");
 			}
@@ -1425,7 +1427,7 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleSeparatorsInPlaylist))
 		{
 			Config.playlist_separate_albums = !Config.playlist_separate_albums;
-			ShowMessage("Separators between albums in playlist: %s", Config.playlist_separate_albums ? "On" : "Off");
+			ShowMessage(_("Separators between albums in playlist: %s"), Config.playlist_separate_albums ? _("On") : _("Off"));
 		}
 #		ifdef HAVE_CURL_CURL_H
 		else if (Keypressed(input, Key.ToggleLyricsDB))
@@ -1436,7 +1438,7 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleAutoCenter))
 		{
 			Config.autocenter_mode = !Config.autocenter_mode;
-			ShowMessage("Auto center mode: %s", Config.autocenter_mode ? "On" : "Off");
+			ShowMessage(_("Auto center mode: %s"), Config.autocenter_mode ? _("On") : _("Off"));
 			if (Config.autocenter_mode && myPlaylist->isPlaying() && !myPlaylist->Items->isFiltered())
 				myPlaylist->Items->Highlight(myPlaylist->NowPlaying);
 		}
@@ -1518,7 +1520,7 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.SetCrossfade))
 		{
 			LockStatusbar();
-			Statusbar() << "Set crossfade to: ";
+			Statusbar() << _("Set crossfade to") << ": ";
 			std::string crossfade = wFooter->GetString(3);
 			UnlockStatusbar();
 			int cf = StrToInt(crossfade);
@@ -1549,7 +1551,7 @@ int main(int argc, char *argv[])
 				{
 					bool success = 1;
 					SongList list;
-					ShowMessage("Updating tags...");
+					ShowMessage(_("Updating tags..."));
 					Mpd.StartSearch(1);
 					Mpd.AddSearch(Config.media_lib_primary_tag, locale_to_utf_cpy(myLibrary->Artists->Current()));
 					Mpd.CommitSearch(list);
@@ -1560,12 +1562,12 @@ int main(int argc, char *argv[])
 					{
 						(*it)->Localize();
 						(*it)->SetTags(set, new_tag);
-						ShowMessage("Updating tags in \"%s\"...", (*it)->GetName().c_str());
+						ShowMessage(_("Updating tags in \"%s\"..."), (*it)->GetName().c_str());
 						std::string path = Config.mpd_music_dir + (*it)->GetFile();
 						if (!TagEditor::WriteTags(**it))
 						{
-							static const char msg[] = "Error while updating tags in \"%s\"!";
-							ShowMessage(msg, Shorten(TO_WSTRING((*it)->GetFile()), COLS-static_strlen(msg)).c_str());
+							static const char* msg = _("Error while updating tags in \"%s\"!");
+							ShowMessage(msg, Shorten(TO_WSTRING((*it)->GetFile()), COLS-strlen(msg)).c_str());
 							success = 0;
 							break;
 						}
@@ -1573,7 +1575,7 @@ int main(int argc, char *argv[])
 					if (success)
 					{
 						Mpd.UpdateDirectory(locale_to_utf_cpy(FindSharedDir(list)));
-						ShowMessage("Tags updated successfully!");
+						ShowMessage(_("Tags updated successfully!"));
 					}
 					FreeSongList(list);
 				}
@@ -1581,31 +1583,31 @@ int main(int argc, char *argv[])
 			else if (myScreen->ActiveWindow() == myLibrary->Albums && !myLibrary->Albums->Empty())
 			{
 				LockStatusbar();
-				Statusbar() << fmtBold << "Album: " << fmtBoldEnd;
+				Statusbar() << fmtBold << _("Album") << ": " << fmtBoldEnd;
 				std::string new_album = wFooter->GetString(myLibrary->Albums->Current().Album);
 				UnlockStatusbar();
 				if (!new_album.empty() && new_album != myLibrary->Albums->Current().Album)
 				{
 					bool success = 1;
-					ShowMessage("Updating tags...");
+					ShowMessage(_("Updating tags..."));
 					for (size_t i = 0;  i < myLibrary->Songs->Size(); ++i)
 					{
 						(*myLibrary->Songs)[i].Localize();
-						ShowMessage("Updating tags in \"%s\"...", (*myLibrary->Songs)[i].GetName().c_str());
+						ShowMessage(_("Updating tags in \"%s\"..."), (*myLibrary->Songs)[i].GetName().c_str());
 						std::string path = Config.mpd_music_dir + (*myLibrary->Songs)[i].GetFile();
 						TagLib::FileRef f(locale_to_utf_cpy(path).c_str());
 						if (f.isNull())
 						{
-							static const char msg[] = "Error while opening file \"%s\"!";
-							ShowMessage(msg, Shorten(TO_WSTRING((*myLibrary->Songs)[i].GetFile()), COLS-static_strlen(msg)).c_str());
+							static const char* msg = _("Error while opening file \"%s\"!");
+							ShowMessage(msg, Shorten(TO_WSTRING((*myLibrary->Songs)[i].GetFile()), COLS-strlen(msg)).c_str());
 							success = 0;
 							break;
 						}
 						f.tag()->setAlbum(ToWString(new_album));
 						if (!f.save())
 						{
-							static const char msg[] = "Error while writing tags in \"%s\"!";
-							ShowMessage(msg, Shorten(TO_WSTRING((*myLibrary->Songs)[i].GetFile()), COLS-static_strlen(msg)).c_str());
+							static const char* msg = _("Error while writing tags in \"%s\"!");
+							ShowMessage(msg, Shorten(TO_WSTRING((*myLibrary->Songs)[i].GetFile()), COLS-strlen(msg)).c_str());
 							success = 0;
 							break;
 						}
@@ -1613,7 +1615,7 @@ int main(int argc, char *argv[])
 					if (success)
 					{
 						Mpd.UpdateDirectory(locale_to_utf_cpy(FindSharedDir(myLibrary->Songs)));
-						ShowMessage("Tags updated successfully!");
+						ShowMessage(_("Tags updated successfully!"));
 					}
 				}
 			}
@@ -1623,7 +1625,7 @@ int main(int argc, char *argv[])
 			{
 				std::string old_dir = myTagEditor->Dirs->Current().first;
 				LockStatusbar();
-				Statusbar() << fmtBold << "Directory: " << fmtBoldEnd;
+				Statusbar() << fmtBold << _("Directory") << ": " << fmtBoldEnd;
 				std::string new_dir = wFooter->GetString(old_dir);
 				UnlockStatusbar();
 				if (!new_dir.empty() && new_dir != old_dir)
@@ -1632,14 +1634,14 @@ int main(int argc, char *argv[])
 					std::string full_new_dir = Config.mpd_music_dir + myTagEditor->CurrentDir() + "/" + locale_to_utf_cpy(new_dir);
 					if (rename(full_old_dir.c_str(), full_new_dir.c_str()) == 0)
 					{
-						static const char msg[] = "Directory renamed to \"%s\"";
-						ShowMessage(msg, Shorten(TO_WSTRING(new_dir), COLS-static_strlen(msg)).c_str());
+						static const char* msg = _("Directory renamed to \"%s\"");
+						ShowMessage(msg, Shorten(TO_WSTRING(new_dir), COLS-strlen(msg)).c_str());
 						Mpd.UpdateDirectory(myTagEditor->CurrentDir());
 					}
 					else
 					{
-						static const char msg[] = "Couldn't rename \"%s\": %s";
-						ShowMessage(msg, Shorten(TO_WSTRING(old_dir), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+						static const char* msg = _("Couldn't rename \"%s\": %s");
+						ShowMessage(msg, Shorten(TO_WSTRING(old_dir), COLS-strlen(msg)-25).c_str(), strerror(errno));
 					}
 				}
 			}
@@ -1653,7 +1655,7 @@ int main(int argc, char *argv[])
 			{
 				std::string old_dir = myBrowser->Main()->Current().name;
 				LockStatusbar();
-				Statusbar() << fmtBold << "Directory: " << fmtBoldEnd;
+				Statusbar() << fmtBold << _("Directory") << ": " << fmtBoldEnd;
 				std::string new_dir = wFooter->GetString(old_dir);
 				UnlockStatusbar();
 				if (!new_dir.empty() && new_dir != old_dir)
@@ -1669,16 +1671,16 @@ int main(int argc, char *argv[])
 					int rename_result = rename(full_old_dir.c_str(), full_new_dir.c_str());
 					if (rename_result == 0)
 					{
-						static const char msg[] = "Directory renamed to \"%s\"";
-						ShowMessage(msg, Shorten(TO_WSTRING(new_dir), COLS-static_strlen(msg)).c_str());
+						static const char* msg = _("Directory renamed to \"%s\"");
+						ShowMessage(msg, Shorten(TO_WSTRING(new_dir), COLS-strlen(msg)).c_str());
 						if (!myBrowser->isLocal())
 							Mpd.UpdateDirectory(locale_to_utf_cpy(FindSharedDir(old_dir, new_dir)));
 						myBrowser->GetDirectory(myBrowser->CurrentDir());
 					}
 					else
 					{
-						static const char msg[] = "Couldn't rename \"%s\": %s";
-						ShowMessage(msg, Shorten(TO_WSTRING(old_dir), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+						static const char* msg = _("Couldn't rename \"%s\": %s");
+						ShowMessage(msg, Shorten(TO_WSTRING(old_dir), COLS-strlen(msg)-25).c_str(), strerror(errno));
 					}
 				}
 			}
@@ -1694,15 +1696,15 @@ int main(int argc, char *argv[])
 			{
 				std::string old_name = myScreen->ActiveWindow() == myPlaylistEditor->Playlists ? myPlaylistEditor->Playlists->Current() : myBrowser->Main()->Current().name;
 				LockStatusbar();
-				Statusbar() << fmtBold << "Playlist: " << fmtBoldEnd;
+				Statusbar() << fmtBold << _("Playlist") << ": " << fmtBoldEnd;
 				std::string new_name = wFooter->GetString(old_name);
 				UnlockStatusbar();
 				if (!new_name.empty() && new_name != old_name)
 				{
 					if (Mpd.Rename(locale_to_utf_cpy(old_name), locale_to_utf_cpy(new_name)))
 					{
-						static const char msg[] = "Playlist renamed to \"%s\"";
-						ShowMessage(msg, Shorten(TO_WSTRING(new_name), COLS-static_strlen(msg)).c_str());
+						static const char* msg = _("Playlist renamed to \"%s\"");
+						ShowMessage(msg, Shorten(TO_WSTRING(new_name), COLS-strlen(msg)).c_str());
 						if (myBrowser->Main() && !myBrowser->isLocal())
 							myBrowser->GetDirectory("/");
 						if (myPlaylistEditor->Main())
@@ -1743,7 +1745,7 @@ int main(int argc, char *argv[])
 		{
 			if (!Mpd.GetTotalTime())
 			{
-				ShowMessage("Unknown item length!");
+				ShowMessage(_("Unknown item length!"));
 				continue;
 			}
 			
@@ -1752,7 +1754,7 @@ int main(int argc, char *argv[])
 				continue;
 			
 			LockStatusbar();
-			Statusbar() << "Position to go (in %/mm:ss/seconds(s)): ";
+			Statusbar() << _("Position to go (in %/mm:ss/seconds(s))") << ": ";
 			std::string position = wFooter->GetString();
 			UnlockStatusbar();
 			
@@ -1766,7 +1768,7 @@ int main(int argc, char *argv[])
 				if (newpos >= 0 && newpos <= Mpd.GetTotalTime())
 					Mpd.Seek(newpos);
 				else
-					ShowMessage("Out of bounds, 0:00-%s possible for mm:ss, %s given.", s->GetLength().c_str(), MPD::Song::ShowTime(newpos).c_str());
+					ShowMessage(_("Out of bounds, 0:00-%s possible for mm:ss, %s given."), s->GetLength().c_str(), MPD::Song::ShowTime(newpos).c_str());
 			}
 			else if (position.find('s') != std::string::npos) // probably position in seconds
 			{
@@ -1774,7 +1776,7 @@ int main(int argc, char *argv[])
 				if (newpos >= 0 && newpos <= Mpd.GetTotalTime())
 					Mpd.Seek(newpos);
 				else
-					ShowMessage("Out of bounds, 0-%d possible for seconds, %d given.", s->GetTotalLength(), newpos);
+					ShowMessage(_("Out of bounds, 0-%d possible for seconds, %d given."), s->GetTotalLength(), newpos);
 			}
 			else
 			{
@@ -1782,7 +1784,7 @@ int main(int argc, char *argv[])
 				if (newpos >= 0 && newpos <= 100)
 					Mpd.Seek(Mpd.GetTotalTime()*newpos/100.0);
 				else
-					ShowMessage("Out of bounds, 0-100 possible for %%, %d given.", newpos);
+					ShowMessage(_("Out of bounds, 0-100 possible for %%, %d given."), newpos);
 			}
 			UpdateStatusImmediately = 1;
 		}
@@ -1791,7 +1793,7 @@ int main(int argc, char *argv[])
 			if (myScreen->allowsSelection())
 			{
 				myScreen->ReverseSelection();
-				ShowMessage("Selection reversed!");
+				ShowMessage(_("Selection reversed!"));
 			}
 		}
 		else if (Keypressed(input, Key.DeselectAll))
@@ -1803,7 +1805,7 @@ int main(int argc, char *argv[])
 					continue;
 				for (size_t i = 0; i < mList->Size(); ++i)
 					mList->Select(i, 0);
-				ShowMessage("Items deselected!");
+				ShowMessage(_("Items deselected!"));
 			}
 		}
 		else if (Keypressed(input, Key.SelectAlbum))
@@ -1838,7 +1840,7 @@ int main(int argc, char *argv[])
 							else
 								mList->Select(pos, 1);
 						}
-						ShowMessage("Album around cursor position selected.");
+						ShowMessage(_("Album around cursor position selected."));
 					}
 				}
 			}
@@ -1853,7 +1855,7 @@ int main(int argc, char *argv[])
 			if (Config.ask_before_clearing_main_playlist)
 			{
 				LockStatusbar();
-				Statusbar() << "Do you really want to crop playlist";
+				Statusbar() << _("Do you really want to crop playlist");
 				if (myScreen->ActiveWindow() == myPlaylistEditor->Content)
 					*wFooter << " \"" << myPlaylistEditor->Playlists->Current() << "\"";
 				*wFooter << " ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
@@ -1868,7 +1870,7 @@ int main(int argc, char *argv[])
 				UnlockStatusbar();
 				if (answer != 'y')
 				{
-					ShowMessage("Aborted!");
+					ShowMessage(_("Aborted!"));
 					continue;
 				}
 			}
@@ -1885,24 +1887,24 @@ int main(int argc, char *argv[])
 				if (myPlaylist->isPlaying() && !myPlaylist->Items->isSelected(myPlaylist->NowPlaying))
 					Mpd.DeleteID(myPlaylist->NowPlayingSong()->GetID());
 				
-				ShowMessage("Deleting all items but selected...");
+				ShowMessage(_("Deleting all items but selected..."));
 				Mpd.CommitCommandsList();
-				ShowMessage("Items deleted!");
+				ShowMessage(_("Items deleted!"));
 			}
 			else
 			{
 				if (!myPlaylist->isPlaying())
 				{
-					ShowMessage("Nothing is playing now!");
+					ShowMessage(_("Nothing is playing now!"));
 					continue;
 				}
 				Mpd.StartCommandsList();
 				for (int i = myPlaylist->Items->Size()-1; i >= 0; --i)
 					if (i != myPlaylist->NowPlaying)
 						Mpd.Delete(i);
-				ShowMessage("Deleting all items except now playing one...");
+				ShowMessage(_("Deleting all items except now playing one..."));
 				Mpd.CommitCommandsList();
-				ShowMessage("Items deleted!");
+				ShowMessage(_("Items deleted!"));
 			}
 		}
 		else if (Keypressed(input, Key.Clear))
@@ -1914,7 +1916,7 @@ int main(int argc, char *argv[])
 			||  Config.ask_before_clearing_main_playlist)
 			{
 				LockStatusbar();
-				Statusbar() << "Do you really want to clear playlist";
+				Statusbar() << _("Do you really want to clear playlist");
 				if (myScreen->ActiveWindow() == myPlaylistEditor->Content)
 					*wFooter << " \"" << myPlaylistEditor->Playlists->Current() << "\"";
 				*wFooter << " ? [" << fmtBold << 'y' << fmtBoldEnd << '/' << fmtBold << 'n' << fmtBoldEnd << "] ";
@@ -1929,19 +1931,19 @@ int main(int argc, char *argv[])
 				UnlockStatusbar();
 				if (answer != 'y')
 				{
-					ShowMessage("Aborted!");
+					ShowMessage(_("Aborted!"));
 					continue;
 				}
 			}
 			
 			if (myPlaylist->Items->isFiltered())
 			{
-				ShowMessage("Deleting filtered items...");
+				ShowMessage(_("Deleting filtered items..."));
 				Mpd.StartCommandsList();
 				for (int i = myPlaylist->Items->Size()-1; i >= 0; --i)
 					Mpd.Delete((*myPlaylist->Items)[i].GetPosition());
 				Mpd.CommitCommandsList();
-				ShowMessage("Filtered items deleted!");
+				ShowMessage(_("Filtered items deleted!"));
 			}
 			else
 			{
@@ -1952,7 +1954,7 @@ int main(int argc, char *argv[])
 				}
 				else
 				{
-					ShowMessage("Clearing playlist...");
+					ShowMessage(_("Clearing playlist..."));
 					Mpd.ClearPlaylist();
 				}
 			}
@@ -1975,16 +1977,16 @@ int main(int argc, char *argv[])
 				continue;
 			
 			LockStatusbar();
-			Statusbar() << fmtBold << "Apply filter: " << fmtBoldEnd;
+			Statusbar() << fmtBold << _("Apply filter") << ": " << fmtBoldEnd;
 			wFooter->SetGetStringHelper(StatusbarApplyFilterImmediately);
 			wFooter->GetString(mList->GetFilter());
 			wFooter->SetGetStringHelper(StatusbarGetStringHelper);
 			UnlockStatusbar();
 			
 			if (mList->isFiltered())
-				ShowMessage("Using filter \"%s\"", mList->GetFilter().c_str());
+				ShowMessage(_("Using filter \"%s\""), mList->GetFilter().c_str());
 			else
-				ShowMessage("Filtering disabled");
+				ShowMessage(_("Filtering disabled"));
 			
 			if (myScreen == myPlaylist)
 			{
@@ -2000,20 +2002,20 @@ int main(int argc, char *argv[])
 			if (mList)
 			{
 				LockStatusbar();
-				Statusbar() << "Find " << (Keypressed(input, Key.FindForward) ? "forward" : "backward") << ": ";
+				Statusbar() << _("Find") << " " << (Keypressed(input, Key.FindForward) ? _("forward") : _("backward")) << ": ";
 				std::string findme = wFooter->GetString();
 				UnlockStatusbar();
 				myPlaylist->UpdateTimer();
 				
 				if (!findme.empty())
-					ShowMessage("Searching...");
+					ShowMessage(_("Searching..."));
 				
 				bool success = mList->Search(findme, myScreen == mySearcher ? SearchEngine::StaticOptions : 0, REG_ICASE | Config.regex_type);
 				
 				if (findme.empty())
 					continue;
 				
-				success ? ShowMessage("Searching finished!") : ShowMessage("Unable to find \"%s\"", findme.c_str());
+				success ? ShowMessage(_("Searching finished!")) : ShowMessage(_("Unable to find \"%s\""), findme.c_str());
 				
 				if (Keypressed(input, Key.FindForward))
 					mList->NextFound(Config.wrapped_search);
@@ -2030,14 +2032,14 @@ int main(int argc, char *argv[])
 				)
 			{
 				LockStatusbar();
-				Statusbar() << "Find: ";
+				Statusbar() << ("Find") << ": ";
 				std::string findme = wFooter->GetString();
 				UnlockStatusbar();
 				
-				ShowMessage("Searching...");
+				ShowMessage(_("Searching..."));
 				Screen<Scrollpad> *s = static_cast<Screen<Scrollpad> *>(myScreen);
 				s->Main()->RemoveFormatting();
-				ShowMessage("%s", findme.empty() || s->Main()->SetFormatting(fmtReverse, TO_WSTRING(findme), fmtReverseEnd, 0) ? "Done!" : "No matching patterns found");
+				ShowMessage("%s", findme.empty() || s->Main()->SetFormatting(fmtReverse, TO_WSTRING(findme), fmtReverseEnd, 0) ? _("Done!") : _("No matching patterns found"));
 				s->Main()->Flush();
 			}
 		}
@@ -2056,12 +2058,12 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleFindMode))
 		{
 			Config.wrapped_search = !Config.wrapped_search;
-			ShowMessage("Search mode: %s", Config.wrapped_search ? "Wrapped" : "Normal");
+			ShowMessage(_("Search mode: %s"), Config.wrapped_search ? _("Wrapped") : _("Normal"));
 		}
 		else if (Keypressed(input, Key.ToggleReplayGainMode) && Mpd.Version() >= 16)
 		{
 			LockStatusbar();
-			Statusbar() << "Replay gain mode ? [" << fmtBold << 'o' << fmtBoldEnd << "ff/" << fmtBold << 't' << fmtBoldEnd << "rack/" << fmtBold << 'a' << fmtBoldEnd << "lbum]";
+			Statusbar() << _("Replay gain mode ?") << " [" << fmtBold << 'o' << fmtBoldEnd << "ff/" << fmtBold << 't' << fmtBoldEnd << "rack/" << fmtBold << 'a' << fmtBoldEnd << "lbum]";
 			wFooter->Refresh();
 			int answer = 0;
 			do
@@ -2072,35 +2074,35 @@ int main(int argc, char *argv[])
 			while (answer != 'o' && answer != 't' && answer != 'a');
 			UnlockStatusbar();
 			Mpd.SetReplayGainMode(answer == 't' ? rgmTrack : (answer == 'a' ? rgmAlbum : rgmOff));
-			ShowMessage("Replay gain mode: %s", Mpd.GetReplayGainMode().c_str());
+			ShowMessage(_("Replay gain mode: %s"), Mpd.GetReplayGainMode().c_str());
 		}
 		else if (Keypressed(input, Key.ToggleSpaceMode))
 		{
 			Config.space_selects = !Config.space_selects;
-			ShowMessage("Space mode: %s item", Config.space_selects ? "Select/deselect" : "Add");
+			ShowMessage(_("Space mode: %s item"), Config.space_selects ? _("Select/deselect") : _("Add"));
 		}
 		else if (Keypressed(input, Key.ToggleAddMode))
 		{
 			Config.ncmpc_like_songs_adding = !Config.ncmpc_like_songs_adding;
-			ShowMessage("Add mode: %s", Config.ncmpc_like_songs_adding ? "Add item to playlist, remove if already added" : "Always add item to playlist");
+			ShowMessage(_("Add mode: %s"), Config.ncmpc_like_songs_adding ? _("Add item to playlist, remove if already added") : _("Always add item to playlist"));
 		}
 		else if (Keypressed(input, Key.ToggleMouse))
 		{
 			Config.mouse_support = !Config.mouse_support;
 			mousemask(Config.mouse_support ? ALL_MOUSE_EVENTS : 0, 0);
-			ShowMessage("Mouse support %s", Config.mouse_support ? "enabled" : "disabled");
+			ShowMessage(_("Mouse support %s"), Config.mouse_support ? _("enabled") : _("disabled"));
 		}
 		else if (Keypressed(input, Key.ToggleBitrateVisibility))
 		{
 			Config.display_bitrate = !Config.display_bitrate;
-			ShowMessage("Bitrate visibility %s", Config.display_bitrate ? "enabled" : "disabled");
+			ShowMessage(_("Bitrate visibility %s"), Config.display_bitrate ? _("enabled") : _("disabled"));
 		}
 		else if (Keypressed(input, Key.SwitchTagTypeList))
 		{
 			if (myScreen == myPlaylist)
 			{
 				LockStatusbar();
-				Statusbar() << "Add random ? [" << fmtBold << 's' << fmtBoldEnd << "ongs/" << fmtBold << 'a' << fmtBoldEnd << "rtists/al" << fmtBold << 'b' << fmtBoldEnd << "ums] ";
+				Statusbar() << _("Add random ?") << " [" << fmtBold << 's' << fmtBoldEnd << "ongs/" << fmtBold << 'a' << fmtBoldEnd << "rtists/al" << fmtBold << 'b' << fmtBoldEnd << "ums] ";
 				wFooter->Refresh();
 				int answer = 0;
 				do
@@ -2112,11 +2114,11 @@ int main(int argc, char *argv[])
 				UnlockStatusbar();
 				
 				mpd_tag_type tag_type = IntoTagItem(answer);
-				std::string tag_type_str = answer == 's' ? "song" : IntoStr(tag_type);
+				std::string tag_type_str = answer == 's' ? _("song") : IntoStr(tag_type);
 				ToLower(tag_type_str);
 				
 				LockStatusbar();
-				Statusbar() << "Number of random " << tag_type_str << "s: ";
+				Statusbar() << _("Number of random") << " " << tag_type_str << "s: ";
 				size_t number = StrToLong(wFooter->GetString());
 				UnlockStatusbar();
 				if (number && (answer == 's' ? Mpd.AddRandomSongs(number) : Mpd.AddRandomTag(tag_type, number)))
@@ -2126,7 +2128,7 @@ int main(int argc, char *argv[])
 			{
 				Config.browser_sort_by_mtime = !Config.browser_sort_by_mtime;
 				myBrowser->Main()->Sort<CaseInsensitiveSorting>(myBrowser->CurrentDir() != "/");
-				ShowMessage("Sort songs by: %s", Config.browser_sort_by_mtime ? "Modification time" : "Name");
+				ShowMessage(_("Sort songs by: %s"), Config.browser_sort_by_mtime ? _("Modification time") : _("Name"));
 			}
 			else if (myScreen->ActiveWindow() == myLibrary->Artists
 			||	 (myLibrary->Columns() == 2 && myScreen->ActiveWindow() == myLibrary->Albums))
@@ -2163,7 +2165,7 @@ int main(int argc, char *argv[])
 						myLibrary->Artists->Clear();
 						myLibrary->Artists->Display();
 					}
-					ShowMessage("Switched to list of %s tag", item_type.c_str());
+					ShowMessage(_("Switched to list of %s tag"), item_type.c_str());
 				}
 			}
 			else if (myScreen == myLyrics)
