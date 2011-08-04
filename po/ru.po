@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-03 16:52+0400\n"
-"PO-Revision-Date: 2011-08-03 17:23+0300\n"
-"Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
+"POT-Creation-Date: 2011-08-03 23:31+0400\n"
+"PO-Revision-Date: 2011-08-03 23:33+0300\n"
+"Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -812,12 +812,12 @@ msgid "Database has changed, you need to select your item(s) once again!"
 msgstr ""
 
 #: src/status.cpp:622
-msgid " Vol: "
-msgstr " Грм.:"
+msgid "Vol"
+msgstr "Грм"
 
 #: src/status.cpp:622
-msgid " Volume: "
-msgstr " Громкость: "
+msgid "Volume"
+msgstr "Громкость"
 
 #: src/status.cpp:625
 msgid "n/a"
@@ -1256,9 +1256,8 @@ msgid "<no album>"
 msgstr ""
 
 #: src/playlist_editor.cpp:49
-#, fuzzy
 msgid "Playlists"
-msgstr "Список"
+msgstr "Списки"
 
 #: src/playlist_editor.cpp:57
 #: src/playlist_editor.cpp:143
@@ -1389,19 +1388,18 @@ msgid "Playlist name cannot contain slashes!"
 msgstr ""
 
 #: src/ncmpcpp.cpp:901
-#, fuzzy, c-format
+#, c-format
 msgid "Filtered items added to playlist \"%s\""
-msgstr "Добавлено в список: %s"
+msgstr "Отфильтрованные элементы добавлены в список \"%s\""
 
 #: src/ncmpcpp.cpp:908
-#, fuzzy, c-format
+#, c-format
 msgid "Playlist saved as: %s"
-msgstr "Список отсортирован!"
+msgstr "Список сохранен как: %s"
 
 #: src/ncmpcpp.cpp:915
-#, fuzzy
 msgid "Playlist already exists, overwrite"
-msgstr "Список уже был отсортирован"
+msgstr "Список уже cуществует, перезаписать"
 
 #: src/ncmpcpp.cpp:929
 msgid "Playlist overwritten!"

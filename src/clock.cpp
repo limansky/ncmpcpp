@@ -102,7 +102,7 @@ void Clock::SwitchTo()
 
 std::basic_string<my_char_t> Clock::Title()
 {
-	return U("Clock");
+	return TO_WSTRING(_("Clock"));
 }
 
 void Clock::Update()

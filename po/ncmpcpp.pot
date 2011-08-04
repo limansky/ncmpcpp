@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-03 16:52+0400\n"
+"POT-Creation-Date: 2011-08-03 23:31+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -726,11 +726,11 @@ msgid "Database has changed, you need to select your item(s) once again!"
 msgstr ""
 
 #: src/status.cpp:622
-msgid " Vol: "
+msgid "Vol"
 msgstr ""
 
 #: src/status.cpp:622
-msgid " Volume: "
+msgid "Volume"
 msgstr ""
 
 #: src/status.cpp:625

@@ -619,7 +619,7 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 	}
 	if (changed.Volume && Config.display_volume_level && (Config.header_visibility || Config.new_design))
 	{
-		VolumeState = Config.new_design ? _(" Vol: ") : _(" Volume: ");
+		VolumeState = std::string(" ") + (Config.new_design ? _("Vol") : _("Volume")) + ": ";
 		int volume = Mpd.GetVolume();
 		if (volume < 0)
 			VolumeState += _("n/a");
