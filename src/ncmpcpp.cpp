@@ -1427,7 +1427,7 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleSeparatorsInPlaylist))
 		{
 			Config.playlist_separate_albums = !Config.playlist_separate_albums;
-			ShowMessage(_("Separators between albums in playlist: %s"), Config.playlist_separate_albums ? _("On") : _("Off"));
+			ShowMessage(_("Separators between albums in playlist: %s"), Config.playlist_separate_albums ? _("on") : _("off"));
 		}
 #		ifdef HAVE_CURL_CURL_H
 		else if (Keypressed(input, Key.ToggleLyricsDB))
@@ -1438,7 +1438,7 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleAutoCenter))
 		{
 			Config.autocenter_mode = !Config.autocenter_mode;
-			ShowMessage(_("Auto center mode: %s"), Config.autocenter_mode ? _("On") : _("Off"));
+			ShowMessage(_("Auto center mode: %s"), Config.autocenter_mode ? _("on") : _("off"));
 			if (Config.autocenter_mode && myPlaylist->isPlaying() && !myPlaylist->Items->isFiltered())
 				myPlaylist->Items->Highlight(myPlaylist->NowPlaying);
 		}

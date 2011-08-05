@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-03 16:52+0400\n"
+"POT-Creation-Date: 2011-08-03 17:29+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -686,10 +686,12 @@ msgid "Repeat mode is %s"
 msgstr ""
 
 #: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
 msgid "off"
 msgstr ""
 
 #: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
 msgid "on"
 msgstr ""
 
@@ -1306,14 +1308,6 @@ msgstr ""
 #: src/ncmpcpp.cpp:1430
 #, c-format
 msgid "Separators between albums in playlist: %s"
-msgstr ""
-
-#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
-msgid "On"
-msgstr ""
-
-#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
-msgid "Off"
 msgstr ""
 
 #: src/ncmpcpp.cpp:1441

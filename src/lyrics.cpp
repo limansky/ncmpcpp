@@ -136,7 +136,7 @@ std::basic_string<my_char_t> Lyrics::Title()
 void Lyrics::SpacePressed()
 {
 	Config.now_playing_lyrics = !Config.now_playing_lyrics;
-	ShowMessage("Reload lyrics if song changes: %s", Config.now_playing_lyrics ? "On" : "Off");
+	ShowMessage("Reload lyrics if song changes: %s", Config.now_playing_lyrics ? "on" : "off");
 }
 
 #ifdef HAVE_CURL_CURL_H
