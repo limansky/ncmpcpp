@@ -35,6 +35,7 @@
 #include "playlist.h"
 #include "search_engine.h"
 #include "tag_editor.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -63,7 +64,7 @@ void TinyTagEditor::SwitchTo()
 {
 	if (itsEdited.isStream())
 	{
-		ShowMessage("Streams cannot be edited!");
+		ShowMessage(_("Streams cannot be edited!"));
 	}
 	else if (GetTags())
 	{
@@ -80,7 +81,8 @@ void TinyTagEditor::SwitchTo()
 			full_path += Config.mpd_music_dir;
 		full_path += itsEdited.GetFile();
 		
-		std::string message = "Couldn't read file \"";
+		std::string message = _("Couldn't read file");
+        message += "\"";
 		message += Shorten(TO_WSTRING(full_path), COLS-message.length()-3);
 		message += "\"!";
 		ShowMessage("%s", message.c_str());
@@ -89,7 +91,7 @@ void TinyTagEditor::SwitchTo()
 
 std::basic_string<my_char_t> TinyTagEditor::Title()
 {
-	return U("Tiny tag editor");
+	return TO_WSTRING(_("Tiny tag editor"));
 }
 
 void TinyTagEditor::EnterPressed()
@@ -109,7 +111,7 @@ void TinyTagEditor::EnterPressed()
 	}
 	else if (option == 20)
 	{
-		Statusbar() << fmtBold << "Filename: " << fmtBoldEnd;
+		Statusbar() << fmtBold << _("Filename") << ": " << fmtBoldEnd;
 		std::string filename = s.GetNewName().empty() ? s.GetName() : s.GetNewName();
 		size_t dot = filename.rfind(".");
 		std::string extension = filename.substr(dot);
@@ -117,16 +119,16 @@ void TinyTagEditor::EnterPressed()
 		std::string new_name = Global::wFooter->GetString(filename);
 		s.SetNewName(new_name + extension);
 		w->at(option).Clear();
-		w->at(option) << fmtBold << "Filename:" << fmtBoldEnd << ' ' << (s.GetNewName().empty() ? s.GetName() : s.GetNewName());
+		w->at(option) << fmtBold << _("Filename") << ':' << fmtBoldEnd << ' ' << (s.GetNewName().empty() ? s.GetName() : s.GetNewName());
 	}
 	UnlockStatusbar();
 	
 	if (option == 22)
 	{
-		ShowMessage("Updating tags...");
+		ShowMessage(_("Updating tags..."));
 		if (TagEditor::WriteTags(s))
 		{
-			ShowMessage("Tags updated!");
+			ShowMessage(_("Tags updated!"));
 			if (s.isFromDB())
 			{
 				Mpd.UpdateDirectory(locale_to_utf_cpy(s.GetDirectory()));
@@ -142,7 +144,7 @@ void TinyTagEditor::EnterPressed()
 			}
 		}
 		else
-			ShowMessage("Error while writing tags!");
+			ShowMessage(_("Error while writing tags!"));
 	}
 	if (option > 21)
 		myOldScreen->SwitchTo();
@@ -216,14 +218,14 @@ bool TinyTagEditor::GetTags()
 	
 	w->Highlight(8);
 	
-	w->at(0) << fmtBold << Config.color1 << "Song name: " << fmtBoldEnd << Config.color2 << s.GetName() << clEnd;
-	w->at(1) << fmtBold << Config.color1 << "Location in DB: " << fmtBoldEnd << Config.color2;
+	w->at(0) << fmtBold << Config.color1 << _("Song name") << ": " << fmtBoldEnd << Config.color2 << s.GetName() << clEnd;
+	w->at(1) << fmtBold << Config.color1 << _("Location in DB") << ": " << fmtBoldEnd << Config.color2;
 	ShowTag(w->at(1), s.GetDirectory());
 	w->at(1) << clEnd;
-	w->at(3) << fmtBold << Config.color1 << "Length: " << fmtBoldEnd << Config.color2 << s.GetLength() << clEnd;
-	w->at(4) << fmtBold << Config.color1 << "Bitrate: " << fmtBoldEnd << Config.color2 << f.audioProperties()->bitrate() << " kbps" << clEnd;
-	w->at(5) << fmtBold << Config.color1 << "Sample rate: " << fmtBoldEnd << Config.color2 << f.audioProperties()->sampleRate() << " Hz" << clEnd;
-	w->at(6) << fmtBold << Config.color1 << "Channels: " << fmtBoldEnd << Config.color2 << (f.audioProperties()->channels() == 1 ? "Mono" : "Stereo") << clDefault;
+	w->at(3) << fmtBold << Config.color1 << _("Length") << ": " << fmtBoldEnd << Config.color2 << s.GetLength() << clEnd;
+	w->at(4) << fmtBold << Config.color1 << _("Bitrate") << ": " << fmtBoldEnd << Config.color2 << f.audioProperties()->bitrate() << " " << _("kbps") << clEnd;
+	w->at(5) << fmtBold << Config.color1 << _("Sample rate") << ": " << fmtBoldEnd << Config.color2 << f.audioProperties()->sampleRate() << " " << _("Hz") << clEnd;
+	w->at(6) << fmtBold << Config.color1 << _("Channels") << ": " << fmtBoldEnd << Config.color2 << (f.audioProperties()->channels() == 1 ? _("Mono") : _("Stereo")) << clDefault;
 	
 	unsigned pos = 8;
 	for (const SongInfo::Metadata *m = SongInfo::Tags; m->Name; ++m, ++pos)
@@ -232,10 +234,10 @@ bool TinyTagEditor::GetTags()
 		ShowTag(w->at(pos), s.GetTags(m->Get));
 	}
 	
-	w->at(20) << fmtBold << "Filename:" << fmtBoldEnd << ' ' << s.GetName();
+	w->at(20) << fmtBold << _("Filename") << ":" << fmtBoldEnd << ' ' << s.GetName();
 	
-	w->at(22) << "Save";
-	w->at(23) << "Cancel";
+	w->at(22) << _("Save");
+	w->at(23) << _("Cancel");
 	return true;
 }
 

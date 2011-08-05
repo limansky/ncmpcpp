@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-05 20:08+0400\n"
+"POT-Creation-Date: 2011-08-06 01:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Refetch artist info"
 msgstr ""
 
-#: src/help.cpp:320 src/help.cpp:395
+#: src/help.cpp:320 src/help.cpp:395 src/tiny_tag_editor.cpp:94
 msgid "Tiny tag editor"
 msgstr ""
 
@@ -516,7 +516,7 @@ msgstr ""
 msgid "Edit tag"
 msgstr ""
 
-#: src/help.cpp:322
+#: src/help.cpp:322 src/tiny_tag_editor.cpp:239
 msgid "Save"
 msgstr ""
 
@@ -787,7 +787,8 @@ msgid "Title"
 msgstr ""
 
 #: src/playlist.cpp:83 src/display.cpp:43 src/search_engine.cpp:69
-#: src/song_info.cpp:121
+#: src/song_info.cpp:121 src/tiny_tag_editor.cpp:114
+#: src/tiny_tag_editor.cpp:122 src/tiny_tag_editor.cpp:237
 msgid "Filename"
 msgstr ""
 
@@ -799,7 +800,7 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/playlist.cpp:87
+#: src/playlist.cpp:87 src/tiny_tag_editor.cpp:240
 msgid "Cancel"
 msgstr ""
 
@@ -1038,35 +1039,35 @@ msgstr[1] ""
 msgid "Song info"
 msgstr ""
 
-#: src/song_info.cpp:125
+#: src/song_info.cpp:125 src/tiny_tag_editor.cpp:225
 msgid "Length"
 msgstr ""
 
-#: src/song_info.cpp:129
+#: src/song_info.cpp:129 src/tiny_tag_editor.cpp:226
 msgid "Bitrate"
 msgstr ""
 
-#: src/song_info.cpp:129
+#: src/song_info.cpp:129 src/tiny_tag_editor.cpp:226
 msgid "kbps"
 msgstr ""
 
-#: src/song_info.cpp:130
+#: src/song_info.cpp:130 src/tiny_tag_editor.cpp:227
 msgid "Sample rate"
 msgstr ""
 
-#: src/song_info.cpp:130
+#: src/song_info.cpp:130 src/tiny_tag_editor.cpp:227
 msgid "Hz"
 msgstr ""
 
-#: src/song_info.cpp:131
+#: src/song_info.cpp:131 src/tiny_tag_editor.cpp:228
 msgid "Channels"
 msgstr ""
 
-#: src/song_info.cpp:131
+#: src/song_info.cpp:131 src/tiny_tag_editor.cpp:228
 msgid "Mono"
 msgstr ""
 
-#: src/song_info.cpp:131
+#: src/song_info.cpp:131 src/tiny_tag_editor.cpp:228
 msgid "Stereo"
 msgstr ""
 
@@ -1109,21 +1110,21 @@ msgstr ""
 msgid "Jumping to song..."
 msgstr ""
 
-#: src/media_library.cpp:714
+#: src/media_library.cpp:717
 #, c-format
 msgid "Adding songs of %s \"%s\""
 msgstr ""
 
-#: src/media_library.cpp:717
+#: src/media_library.cpp:720
 #, c-format
 msgid "Adding songs from album \"%s\""
 msgstr ""
 
-#: src/media_library.cpp:742
+#: src/media_library.cpp:745
 msgid "All tracks"
 msgstr ""
 
-#: src/media_library.cpp:748
+#: src/media_library.cpp:751
 msgid "<no album>"
 msgstr ""
 
@@ -1319,7 +1320,7 @@ msgstr ""
 msgid "Set crossfade to"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1554 src/ncmpcpp.cpp:1592
+#: src/ncmpcpp.cpp:1554 src/ncmpcpp.cpp:1592 src/tiny_tag_editor.cpp:128
 msgid "Updating tags..."
 msgstr ""
 
@@ -1591,4 +1592,28 @@ msgstr ""
 
 #: src/lyrics.cpp:327
 msgid "Using all lyrics databases"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:67
+msgid "Streams cannot be edited!"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:84
+msgid "Couldn't read file"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:131
+msgid "Tags updated!"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:147
+msgid "Error while writing tags!"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:221
+msgid "Song name"
+msgstr ""
+
+#: src/tiny_tag_editor.cpp:222
+msgid "Location in DB"
 msgstr ""
