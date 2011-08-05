@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-03 17:29+0400\n"
+"POT-Creation-Date: 2011-08-05 20:08+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -484,7 +484,7 @@ msgstr ""
 msgid "Clear current playlist"
 msgstr ""
 
-#: src/help.cpp:309
+#: src/help.cpp:309 src/lyrics.cpp:131
 msgid "Lyrics"
 msgstr ""
 
@@ -686,12 +686,12 @@ msgid "Repeat mode is %s"
 msgstr ""
 
 #: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
-#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
+#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441 src/lyrics.cpp:139
 msgid "off"
 msgstr ""
 
 #: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
-#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441
+#: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441 src/lyrics.cpp:139
 msgid "on"
 msgstr ""
 
@@ -728,11 +728,11 @@ msgid "Database has changed, you need to select your item(s) once again!"
 msgstr ""
 
 #: src/status.cpp:622
-msgid " Vol: "
+msgid "Vol"
 msgstr ""
 
 #: src/status.cpp:622
-msgid " Volume: "
+msgid "Volume"
 msgstr ""
 
 #: src/status.cpp:625
@@ -904,7 +904,7 @@ msgstr ""
 msgid "Deleting \"%s\"..."
 msgstr ""
 
-#: src/browser.cpp:508 src/ncmpcpp.cpp:803
+#: src/browser.cpp:508 src/ncmpcpp.cpp:803 src/lyrics.cpp:310
 #, c-format
 msgid "Couldn't remove \"%s\": %s"
 msgstr ""
@@ -1557,4 +1557,38 @@ msgstr ""
 #: src/ncmpcpp.cpp:2168
 #, c-format
 msgid "Switched to list of %s tag"
+msgstr ""
+
+#: src/lyrics.cpp:125
+msgid "Song must have both artist and title tag set!"
+msgstr ""
+
+#: src/lyrics.cpp:139
+#, c-format
+msgid "Reload lyrics if song changes: %s"
+msgstr ""
+
+#: src/lyrics.cpp:160
+msgid "Fetching lyrics from"
+msgstr ""
+
+#: src/lyrics.cpp:179
+msgid "Lyrics weren't found."
+msgstr ""
+
+#: src/lyrics.cpp:275
+msgid "External editor is not set!"
+msgstr ""
+
+#: src/lyrics.cpp:279
+msgid "Opening lyrics in external editor..."
+msgstr ""
+
+#: src/lyrics.cpp:325
+#, c-format
+msgid "Using lyrics database: %s"
+msgstr ""
+
+#: src/lyrics.cpp:327
+msgid "Using all lyrics databases"
 msgstr ""

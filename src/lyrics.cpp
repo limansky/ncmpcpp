@@ -122,13 +122,13 @@ void Lyrics::SwitchTo()
 			Global::RedrawHeader = 1;
 		}
 		else
-			ShowMessage("Song must have both artist and title tag set!");
+			ShowMessage(_("Song must have both artist and title tag set!"));
 	}
 }
 
 std::basic_string<my_char_t> Lyrics::Title()
 {
-	std::basic_string<my_char_t> result = U("Lyrics: ");
+	std::basic_string<my_char_t> result = TO_WSTRING(_("Lyrics")) + L": ";
 	result += Scroller(TO_WSTRING(itsSong.toString("{%a - %t}")), itsScrollBegin, w->GetWidth()-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
 	return result;
 }
@@ -136,7 +136,7 @@ std::basic_string<my_char_t> Lyrics::Title()
 void Lyrics::SpacePressed()
 {
 	Config.now_playing_lyrics = !Config.now_playing_lyrics;
-	ShowMessage("Reload lyrics if song changes: %s", Config.now_playing_lyrics ? "on" : "off");
+	ShowMessage(_("Reload lyrics if song changes: %s"), Config.now_playing_lyrics ? _("on") : _("off"));
 }
 
 #ifdef HAVE_CURL_CURL_H
@@ -157,7 +157,7 @@ void *Lyrics::Download()
 	bool fetcher_defined = itsFetcher && *itsFetcher;
 	for (LyricsFetcher **plugin = fetcher_defined ? itsFetcher : lyricsPlugins; *plugin != 0; ++plugin)
 	{
-		*w << "Fetching lyrics from " << fmtBold << (*plugin)->name() << fmtBoldEnd << "... ";
+		*w << _("Fetching lyrics from") << " " << fmtBold << (*plugin)->name() << fmtBoldEnd << "... ";
 		result = (*plugin)->fetch(artist, title);
 		if (result.first == false)
 			*w << clRed << result.second << clEnd << "\n";
@@ -176,7 +176,7 @@ void *Lyrics::Download()
 		*w << result.second;
 	}
 	else
-		*w << "\nLyrics weren't found.";
+		*w << "\n" << _("Lyrics weren't found.");
 	
 	isReadyToTake = 1;
 	pthread_exit(0);
@@ -272,11 +272,11 @@ void Lyrics::Edit()
 	
 	if (Config.external_editor.empty())
 	{
-		ShowMessage("External editor is not set!");
+		ShowMessage(_("External editor is not set!"));
 		return;
 	}
 	
-	ShowMessage("Opening lyrics in external editor...");
+	ShowMessage(_("Opening lyrics in external editor..."));
 	
 	if (Config.use_console_editor)
 	{
@@ -307,8 +307,8 @@ void Lyrics::Refetch()
 {
 	if (remove(itsFilename.c_str()) && errno != ENOENT)
 	{
-		static const char msg[] = "Couldn't remove \"%s\": %s";
-		ShowMessage(msg, Shorten(TO_WSTRING(itsFilename), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+		static const char* msg = _("Couldn't remove \"%s\": %s");
+		ShowMessage(msg, Shorten(TO_WSTRING(itsFilename), COLS-strlen(msg)-25).c_str(), strerror(errno));
 		return;
 	}
 	Load();
@@ -322,9 +322,9 @@ void Lyrics::ToggleFetcher()
 	else
 		itsFetcher = &lyricsPlugins[0];
 	if (*itsFetcher)
-		ShowMessage("Using lyrics database: %s", (*itsFetcher)->name());
+		ShowMessage(_("Using lyrics database: %s"), (*itsFetcher)->name());
 	else
-		ShowMessage("Using all lyrics databases");
+		ShowMessage(_("Using all lyrics databases"));
 }
 
 void Lyrics::Take()
