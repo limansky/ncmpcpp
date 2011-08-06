@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-06 01:39+0400\n"
+"POT-Creation-Date: 2011-08-06 23:30+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,6 +108,7 @@ msgid "Playlist editor"
 msgstr ""
 
 #: src/help.cpp:163 src/help.cpp:325 src/help.cpp:400 src/ncmpcpp.cpp:420
+#: src/tag_editor.cpp:183
 msgid "Tag editor"
 msgstr ""
 
@@ -516,7 +517,7 @@ msgstr ""
 msgid "Edit tag"
 msgstr ""
 
-#: src/help.cpp:322 src/tiny_tag_editor.cpp:239
+#: src/help.cpp:322 src/tiny_tag_editor.cpp:239 src/tag_editor.cpp:98
 msgid "Save"
 msgstr ""
 
@@ -789,6 +790,7 @@ msgstr ""
 #: src/playlist.cpp:83 src/display.cpp:43 src/search_engine.cpp:69
 #: src/song_info.cpp:121 src/tiny_tag_editor.cpp:114
 #: src/tiny_tag_editor.cpp:122 src/tiny_tag_editor.cpp:237
+#: src/tag_editor.cpp:92
 msgid "Filename"
 msgstr ""
 
@@ -800,7 +802,8 @@ msgstr ""
 msgid "Reverse"
 msgstr ""
 
-#: src/playlist.cpp:87 src/tiny_tag_editor.cpp:240
+#: src/playlist.cpp:87 src/tiny_tag_editor.cpp:240 src/tag_editor.cpp:121
+#: src/tag_editor.cpp:387
 msgid "Cancel"
 msgstr ""
 
@@ -981,7 +984,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/search_engine.cpp:417
+#: src/search_engine.cpp:417 src/tag_editor.cpp:97
 msgid "Reset"
 msgstr ""
 
@@ -1072,7 +1075,7 @@ msgid "Stereo"
 msgstr ""
 
 #: src/media_library.cpp:69 src/media_library.cpp:160
-#: src/media_library.cpp:166
+#: src/media_library.cpp:166 src/tag_editor.cpp:67
 msgid "Albums"
 msgstr ""
 
@@ -1088,7 +1091,7 @@ msgstr ""
 msgid "sorted by"
 msgstr ""
 
-#: src/media_library.cpp:259
+#: src/media_library.cpp:259 src/tag_editor.cpp:234
 msgid "Fetching albums..."
 msgstr ""
 
@@ -1206,7 +1209,7 @@ msgid "Playlist \"%s\" deleted!"
 msgstr ""
 
 #: src/ncmpcpp.cpp:744 src/ncmpcpp.cpp:818 src/ncmpcpp.cpp:932
-#: src/ncmpcpp.cpp:1873 src/ncmpcpp.cpp:1934
+#: src/ncmpcpp.cpp:1873 src/ncmpcpp.cpp:1934 src/tag_editor.cpp:548
 msgid "Aborted!"
 msgstr ""
 
@@ -1343,7 +1346,7 @@ msgstr ""
 msgid "Error while opening file \"%s\"!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1609
+#: src/ncmpcpp.cpp:1609 src/tag_editor.cpp:620
 #, c-format
 msgid "Error while writing tags in \"%s\"!"
 msgstr ""
@@ -1464,7 +1467,7 @@ msgstr ""
 msgid "Unable to find \"%s\""
 msgstr ""
 
-#: src/ncmpcpp.cpp:2042
+#: src/ncmpcpp.cpp:2042 src/tag_editor.cpp:644 src/tag_editor.cpp:651
 msgid "Done!"
 msgstr ""
 
@@ -1602,7 +1605,7 @@ msgstr ""
 msgid "Couldn't read file"
 msgstr ""
 
-#: src/tiny_tag_editor.cpp:131
+#: src/tiny_tag_editor.cpp:131 src/tag_editor.cpp:628
 msgid "Tags updated!"
 msgstr ""
 
@@ -1616,4 +1619,180 @@ msgstr ""
 
 #: src/tiny_tag_editor.cpp:222
 msgid "Location in DB"
+msgstr ""
+
+#: src/tag_editor.cpp:74
+msgid "Directories"
+msgstr ""
+
+#: src/tag_editor.cpp:83
+msgid "Tag types"
+msgstr ""
+
+#: src/tag_editor.cpp:95
+msgid "Options"
+msgstr ""
+
+#: src/tag_editor.cpp:100
+msgid "Capitalize First Letters"
+msgstr ""
+
+#: src/tag_editor.cpp:101
+msgid "lower all letters"
+msgstr ""
+
+#: src/tag_editor.cpp:103
+msgid "Tags"
+msgstr ""
+
+#: src/tag_editor.cpp:118 src/tag_editor.cpp:397
+msgid "Get tags from filename"
+msgstr ""
+
+#: src/tag_editor.cpp:119 src/tag_editor.cpp:397
+msgid "Rename files"
+msgstr ""
+
+#: src/tag_editor.cpp:128 src/tag_editor.cpp:384
+msgid "Legend"
+msgstr ""
+
+#: src/tag_editor.cpp:130 src/tag_editor.cpp:383
+msgid "Preview"
+msgstr ""
+
+#: src/tag_editor.cpp:346
+msgid "No subdirs found"
+msgstr ""
+
+#: src/tag_editor.cpp:362
+#, c-format
+msgid "%a - artist"
+msgstr ""
+
+#: src/tag_editor.cpp:363
+#, c-format
+msgid "%A - album artist"
+msgstr ""
+
+#: src/tag_editor.cpp:364
+msgid "%t - title"
+msgstr ""
+
+#: src/tag_editor.cpp:365
+msgid "%b - album"
+msgstr ""
+
+#: src/tag_editor.cpp:366
+msgid "%y - year"
+msgstr ""
+
+#: src/tag_editor.cpp:367
+#, c-format
+msgid "%n - track number"
+msgstr ""
+
+#: src/tag_editor.cpp:368
+#, c-format
+msgid "%g - genre"
+msgstr ""
+
+#: src/tag_editor.cpp:369
+#, c-format
+msgid "%c - composer"
+msgstr ""
+
+#: src/tag_editor.cpp:370
+#, c-format
+msgid "%p - performer"
+msgstr ""
+
+#: src/tag_editor.cpp:371
+#, c-format
+msgid "%d - disc"
+msgstr ""
+
+#: src/tag_editor.cpp:372
+#, c-format
+msgid "%C - comment"
+msgstr ""
+
+#: src/tag_editor.cpp:373
+msgid "Files"
+msgstr ""
+
+#: src/tag_editor.cpp:382 src/tag_editor.cpp:414 src/tag_editor.cpp:420
+#: src/tag_editor.cpp:493
+msgid "Pattern"
+msgstr ""
+
+#: src/tag_editor.cpp:386
+msgid "Proceed"
+msgstr ""
+
+#: src/tag_editor.cpp:391
+msgid "Recent patterns"
+msgstr ""
+
+#: src/tag_editor.cpp:427
+msgid "Parsing..."
+msgstr ""
+
+#: src/tag_editor.cpp:450
+#, c-format
+msgid "File \"%s\" would have an empty name!"
+msgstr ""
+
+#: src/tag_editor.cpp:479
+msgid "Operation finished!"
+msgstr ""
+
+#: src/tag_editor.cpp:525
+msgid "Number tracks?"
+msgstr ""
+
+#: src/tag_editor.cpp:545
+msgid "Tracks numbered!"
+msgstr ""
+
+#: src/tag_editor.cpp:584
+msgid "Screen is too small to display additional windows!"
+msgstr ""
+
+#: src/tag_editor.cpp:598
+msgid "New filename"
+msgstr ""
+
+#: src/tag_editor.cpp:609
+msgid "Changes reset"
+msgstr ""
+
+#: src/tag_editor.cpp:614
+msgid "Writing changes..."
+msgstr ""
+
+#: src/tag_editor.cpp:617
+#, c-format
+msgid "Writing tags in \"%s\"..."
+msgstr ""
+
+#: src/tag_editor.cpp:641 src/tag_editor.cpp:648
+msgid "Processing..."
+msgstr ""
+
+#: src/tag_editor.cpp:669
+#, c-format
+msgid "Switched to %s view"
+msgstr ""
+
+#: src/tag_editor.cpp:669
+msgid "albums"
+msgstr ""
+
+#: src/tag_editor.cpp:669
+msgid "directories"
+msgstr ""
+
+#: src/tag_editor.cpp:1214
+msgid "Error while parsing filename!"
 msgstr ""

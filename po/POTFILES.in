@@ -13,3 +13,4 @@ src/playlist_editor.cpp
 src/ncmpcpp.cpp
 src/lyrics.cpp
 src/tiny_tag_editor.cpp
+src/tag_editor.cpp
