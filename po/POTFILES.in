@@ -14,3 +14,4 @@ src/ncmpcpp.cpp
 src/lyrics.cpp
 src/tiny_tag_editor.cpp
 src/tag_editor.cpp
+src/server_info.cpp

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-06 23:30+0400\n"
+"POT-Creation-Date: 2011-08-07 02:08+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Clock screen"
 msgstr ""
 
-#: src/help.cpp:175
+#: src/help.cpp:175 src/server_info.cpp:37
 msgid "MPD server info"
 msgstr ""
 
@@ -1795,4 +1795,48 @@ msgstr ""
 
 #: src/tag_editor.cpp:1214
 msgid "Error while parsing filename!"
+msgstr ""
+
+#: src/server_info.cpp:56
+msgid "Screen is too small to display this window!"
+msgstr ""
+
+#: src/server_info.cpp:103
+msgid "Version"
+msgstr ""
+
+#: src/server_info.cpp:104
+msgid "Uptime"
+msgstr ""
+
+#: src/server_info.cpp:107
+msgid "Time playing"
+msgstr ""
+
+#: src/server_info.cpp:109
+msgid "Total playtime"
+msgstr ""
+
+#: src/server_info.cpp:112
+msgid "Artist names"
+msgstr ""
+
+#: src/server_info.cpp:113
+msgid "Album names"
+msgstr ""
+
+#: src/server_info.cpp:114
+msgid "Songs in database"
+msgstr ""
+
+#: src/server_info.cpp:116
+msgid "Last DB update"
+msgstr ""
+
+#: src/server_info.cpp:118
+msgid "URL Handlers:"
+msgstr ""
+
+#: src/server_info.cpp:122
+msgid "Tag Types:"
 msgstr ""

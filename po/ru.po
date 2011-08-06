@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-06 23:30+0400\n"
-"PO-Revision-Date: 2011-08-06 23:35+0300\n"
+"POT-Creation-Date: 2011-08-07 02:08+0400\n"
+"PO-Revision-Date: 2011-08-07 02:12+0300\n"
 "Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -148,6 +148,7 @@ msgid "Clock screen"
 msgstr "Режим часов"
 
 #: src/help.cpp:175
+#: src/server_info.cpp:37
 msgid "MPD server info"
 msgstr "Информация о сервере MPD"
 
@@ -1983,5 +1984,49 @@ msgstr "каталоги"
 
 #: src/tag_editor.cpp:1214
 msgid "Error while parsing filename!"
+msgstr ""
+
+#: src/server_info.cpp:56
+msgid "Screen is too small to display this window!"
+msgstr "Размер экрана недостаточен для показа этого окна!"
+
+#: src/server_info.cpp:103
+msgid "Version"
+msgstr "Версия"
+
+#: src/server_info.cpp:104
+msgid "Uptime"
+msgstr ""
+
+#: src/server_info.cpp:107
+msgid "Time playing"
+msgstr "Общее время"
+
+#: src/server_info.cpp:109
+msgid "Total playtime"
+msgstr ""
+
+#: src/server_info.cpp:112
+msgid "Artist names"
+msgstr "Всего исполнителей:"
+
+#: src/server_info.cpp:113
+msgid "Album names"
+msgstr "Всего альбомов:"
+
+#: src/server_info.cpp:114
+msgid "Songs in database"
+msgstr "Песен в базе данных"
+
+#: src/server_info.cpp:116
+msgid "Last DB update"
+msgstr ""
+
+#: src/server_info.cpp:118
+msgid "URL Handlers:"
+msgstr ""
+
+#: src/server_info.cpp:122
+msgid "Tag Types:"
 msgstr ""
 

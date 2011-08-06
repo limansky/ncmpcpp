@@ -23,6 +23,7 @@
 
 #include "global.h"
 #include "server_info.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -33,7 +34,7 @@ ServerInfo *myServerInfo = new ServerInfo;
 void ServerInfo::Init()
 {
 	SetDimensions();
-	w = new Scrollpad((COLS-itsWidth)/2, (MainHeight-itsHeight)/2+MainStartY, itsWidth, itsHeight, "MPD server info", Config.main_color, Config.window_border);
+	w = new Scrollpad((COLS-itsWidth)/2, (MainHeight-itsHeight)/2+MainStartY, itsWidth, itsHeight, _("MPD server info"), Config.main_color, Config.window_border);
 	
 	Mpd.GetURLHandlers(itsURLHandlers);
 	Mpd.GetTagTypes(itsTagTypes);
@@ -52,7 +53,7 @@ void ServerInfo::SwitchTo()
 	}
 	if (MainHeight < 5)
 	{
-		ShowMessage("Screen is too small to display this window!");
+		ShowMessage(_("Screen is too small to display this window!"));
 		return;
 	}
 	
@@ -99,26 +100,26 @@ void ServerInfo::Update()
 	Mpd.UpdateStats();
 	w->Clear();
 	
-	*w << fmtBold << U("Version: ") << fmtBoldEnd << U("0.") << Mpd.Version() << U(".*\n");
-	*w << fmtBold << U("Uptime: ") << fmtBoldEnd;
+	*w << fmtBold << TO_WSTRING(_("Version")) << U(": ") << fmtBoldEnd << U("0.") << Mpd.Version() << U(".*\n");
+	*w << fmtBold << TO_WSTRING(_("Uptime")) << U(": ") << fmtBoldEnd;
 	ShowTime(*w, Mpd.Uptime(), 1);
 	*w << '\n';
-	*w << fmtBold << U("Time playing: ") << fmtBoldEnd << MPD::Song::ShowTime(Mpd.PlayTime()) << '\n';
+	*w << fmtBold << TO_WSTRING(_("Time playing")) << U(": ") << fmtBoldEnd << MPD::Song::ShowTime(Mpd.PlayTime()) << '\n';
 	*w << '\n';
-	*w << fmtBold << U("Total playtime: ") << fmtBoldEnd;
+	*w << fmtBold << TO_WSTRING(_("Total playtime")) << U(": ") << fmtBoldEnd;
 	ShowTime(*w, Mpd.DBPlayTime(), 1);
 	*w << '\n';
-	*w << fmtBold << U("Artist names: ") << fmtBoldEnd << Mpd.NumberOfArtists() << '\n';
-	*w << fmtBold << U("Album names: ") << fmtBoldEnd << Mpd.NumberOfAlbums() << '\n';
-	*w << fmtBold << U("Songs in database: ") << fmtBoldEnd << Mpd.NumberOfSongs() << '\n';
+	*w << fmtBold << TO_WSTRING(_("Artist names")) << U(": ") << fmtBoldEnd << Mpd.NumberOfArtists() << '\n';
+	*w << fmtBold << TO_WSTRING(_("Album names")) << U(": ") << fmtBoldEnd << Mpd.NumberOfAlbums() << '\n';
+	*w << fmtBold << TO_WSTRING(_("Songs in database")) << U(": ") << fmtBoldEnd << Mpd.NumberOfSongs() << '\n';
 	*w << '\n';
-	*w << fmtBold << U("Last DB update: ") << fmtBoldEnd << Timestamp(Mpd.DBUpdateTime()) << '\n';
+	*w << fmtBold << TO_WSTRING(_("Last DB update")) << U(": ") << fmtBoldEnd << Timestamp(Mpd.DBUpdateTime()) << '\n';
 	*w << '\n';
-	*w << fmtBold << U("URL Handlers:") << fmtBoldEnd;
+	*w << fmtBold << TO_WSTRING(_("URL Handlers:")) << fmtBoldEnd;
 	for (MPD::TagList::const_iterator it = itsURLHandlers.begin(); it != itsURLHandlers.end(); ++it)
 		*w << (it != itsURLHandlers.begin() ? U(", ") : U(" ")) << *it;
 	*w << U("\n\n");
-	*w << fmtBold << U("Tag Types:") << fmtBoldEnd;
+	*w << fmtBold << TO_WSTRING(_("Tag Types:")) << fmtBoldEnd;
 	for (MPD::TagList::const_iterator it = itsTagTypes.begin(); it != itsTagTypes.end(); ++it)
 		*w << (it != itsTagTypes.begin() ? U(", ") : U(" ")) << *it;
 	
