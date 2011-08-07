@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
 "POT-Creation-Date: 2011-08-07 02:08+0400\n"
-"PO-Revision-Date: 2011-08-07 02:12+0300\n"
+"PO-Revision-Date: 2011-08-07 16:02+0300\n"
 "Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -97,7 +97,7 @@ msgstr "Режим справки"
 
 #: src/help.cpp:157
 msgid "Playlist screen"
-msgstr "Режим списка"
+msgstr "Режим плейлиста"
 
 #: src/help.cpp:158
 msgid "Browse screen"
@@ -121,7 +121,7 @@ msgstr ""
 #: src/playlist_editor.cpp:89
 #: src/ncmpcpp.cpp:418
 msgid "Playlist editor"
-msgstr "Редактор списка"
+msgstr "Редактор плейлистов"
 
 #: src/help.cpp:163
 #: src/help.cpp:325
@@ -219,7 +219,7 @@ msgstr ""
 
 #: src/help.cpp:194
 msgid "Add selected items to playlist/m3u file"
-msgstr "Добавить выделенные элементы в список/m3u-файл"
+msgstr "Добавить выделенные элементы в плейлист/m3u-файл"
 
 #: src/help.cpp:196
 msgid "Toggle repeat mode"
@@ -247,7 +247,7 @@ msgstr ""
 
 #: src/help.cpp:203
 msgid "Shuffle playlist"
-msgstr "Перемешать список"
+msgstr "Перемешать плейлист"
 
 #: src/help.cpp:204
 msgid "Toggle crossfade mode"
@@ -340,7 +340,7 @@ msgstr "Выход"
 #: src/ncmpcpp.cpp:414
 #: src/ncmpcpp.cpp:1699
 msgid "Playlist"
-msgstr "Список"
+msgstr "Плейлист"
 
 #: src/help.cpp:234
 #: src/help.cpp:358
@@ -349,7 +349,7 @@ msgstr "Воспроизвести"
 
 #: src/help.cpp:235
 msgid "Add random songs/artists/albums to playlist"
-msgstr ""
+msgstr "Добавить случайные песни/исполнителей/альбомы в плейлист"
 
 #: src/help.cpp:236
 msgid "Delete item/selected items from playlist"
@@ -357,7 +357,7 @@ msgstr ""
 
 #: src/help.cpp:237
 msgid "Clear playlist"
-msgstr "Очистить список воспроизведения"
+msgstr "Очистить плейлист"
 
 #: src/help.cpp:238
 msgid "Clear playlist but hold currently playing/selected items"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: src/help.cpp:244
 msgid "Add url/file/directory to playlist"
-msgstr "Добавить url/файл/папку в список воспроизведения"
+msgstr "Добавить url/файл/папку в плейлист"
 
 #: src/help.cpp:246
 #: src/help.cpp:275
@@ -396,11 +396,11 @@ msgstr ""
 
 #: src/help.cpp:248
 msgid "Save playlist"
-msgstr "Сохранить список воспроизведения"
+msgstr "Сохранить плейлист"
 
 #: src/help.cpp:249
 msgid "Sort/reverse playlist"
-msgstr "Сортировать/обратить список"
+msgstr "Сортировать/обратить плейлист"
 
 #: src/help.cpp:250
 msgid "Go to currently playing position"
@@ -423,7 +423,7 @@ msgstr ""
 #: src/help.cpp:256
 #: src/help.cpp:273
 msgid "Add item to playlist"
-msgstr "Добавить элемент в список воспроизведения"
+msgstr "Добавить элемент в плейлист"
 
 #: src/help.cpp:258
 msgid "Edit song's tags/Rename playlist/directory"
@@ -503,11 +503,11 @@ msgstr ""
 
 #: src/help.cpp:294
 msgid "Playlist Editor"
-msgstr "Редактор списка воспроизведения"
+msgstr "Редактор плейлиста"
 
 #: src/help.cpp:297
 msgid "Add item to playlist and play"
-msgstr "Добавить элемент в список и воспроизвести"
+msgstr "Добавить элемент в плейлист и воспроизвести"
 
 #: src/help.cpp:298
 msgid "Add to playlist/select item"
@@ -523,7 +523,7 @@ msgstr ""
 
 #: src/help.cpp:306
 msgid "Clear current playlist"
-msgstr "Очистить текущий список воспроизведения"
+msgstr "Очистить текущий плейлист"
 
 #: src/help.cpp:309
 #: src/lyrics.cpp:131
@@ -697,7 +697,7 @@ msgstr ""
 #: src/help.cpp:390
 #: src/ncmpcpp.cpp:1278
 msgid "Add to playlist"
-msgstr "Добавить в список воспроизведения"
+msgstr "Добавить в плейлист"
 
 #: src/help.cpp:365
 msgid "Left click on song/playlist"
@@ -711,7 +711,7 @@ msgstr ""
 #: src/help.cpp:381
 #: src/help.cpp:391
 msgid "Add to playlist and play"
-msgstr "Добавить в список и воспроизвести"
+msgstr "Добавить в плейлист и воспроизвести"
 
 #: src/help.cpp:370
 msgid "Highlight/switch value"
@@ -929,8 +929,9 @@ msgid "Cancel"
 msgstr "Отмена"
 
 #: src/playlist.cpp:177
+#, fuzzy
 msgid "Reversing playlist order..."
-msgstr "Обращение списка..."
+msgstr "Обращение плейлист..."
 
 #: src/playlist.cpp:184
 msgid "Playlist reversed!"
@@ -946,19 +947,19 @@ msgstr ""
 
 #: src/playlist.cpp:200
 msgid "Sorting playlist..."
-msgstr "Сортировка списка..."
+msgstr "Сортировка плейлиста..."
 
 #: src/playlist.cpp:214
 msgid "Playlist is already sorted"
-msgstr "Список уже был отсортирован"
+msgstr "Плейлист уже был отсортирован"
 
 #: src/playlist.cpp:234
 msgid "Playlist sorted!"
-msgstr "Список отсортирован!"
+msgstr "Плейлист отсортирован!"
 
 #: src/playlist.cpp:234
 msgid "Error while sorting playlist!"
-msgstr "Ошибка сортировки списка!"
+msgstr "Ошибка сортировки плейлиста!"
 
 #: src/playlist.cpp:306
 msgid "Screen is too small to display dialog window!"
@@ -983,7 +984,7 @@ msgstr "осталось"
 #: src/playlist.cpp:466
 #, c-format
 msgid "Added to playlist: %s"
-msgstr "Добавлено в список: %s"
+msgstr "Добавлено в плейлист: %s"
 
 #: src/display.cpp:40
 msgid "Time"
@@ -1030,7 +1031,7 @@ msgstr "Добавлена папка: %s"
 #: src/playlist_editor.cpp:209
 #, c-format
 msgid "Loading playlist %s..."
-msgstr "Загружается список %s"
+msgstr "Загружается плейлист %s"
 
 #: src/browser.cpp:503
 #, c-format
@@ -1090,7 +1091,7 @@ msgstr "База данных"
 #: src/search_engine.cpp:150
 #: src/search_engine.cpp:413
 msgid "Current playlist"
-msgstr "Текущий список"
+msgstr "Текущий плейлист"
 
 #: src/search_engine.cpp:156
 #: src/search_engine.cpp:414
@@ -1288,17 +1289,17 @@ msgstr ""
 
 #: src/playlist_editor.cpp:49
 msgid "Playlists"
-msgstr "Списки"
+msgstr "Плейлисты"
 
 #: src/playlist_editor.cpp:57
 #: src/playlist_editor.cpp:143
 #: src/playlist_editor.cpp:145
 msgid "Playlist's content"
-msgstr "Содержимое списка"
+msgstr "Содержимое плейлиста"
 
 #: src/playlist_editor.cpp:174
 msgid "Playlist is empty."
-msgstr "Список пуст."
+msgstr "Плейлист пуст."
 
 #: src/ncmpcpp.cpp:71
 msgid "configuration variable mpd_music_dir is not set!"
@@ -1361,12 +1362,12 @@ msgstr ""
 #: src/ncmpcpp.cpp:723
 #: src/ncmpcpp.cpp:774
 msgid "Delete playlist"
-msgstr "Удалить список"
+msgstr "Удалить плейлист"
 
 #: src/ncmpcpp.cpp:737
 #, c-format
 msgid "Playlist \"%s\" deleted!"
-msgstr "Список \"%s\" удален!"
+msgstr "Плейлист \"%s\" удален!"
 
 #: src/ncmpcpp.cpp:744
 #: src/ncmpcpp.cpp:818
@@ -1409,11 +1410,11 @@ msgstr "Удаляются выбранные элементы..."
 #: src/ncmpcpp.cpp:837
 #, c-format
 msgid "Selected items deleted from playlist \"%s\"!"
-msgstr "Выбранные элементы удалены из списка \"%s\"!"
+msgstr "Выбранные элементы удалены из плейлиста \"%s\"!"
 
 #: src/ncmpcpp.cpp:883
 msgid "Save playlist as"
-msgstr "Сохранить список как"
+msgstr "Сохранить плейлист как"
 
 #: src/ncmpcpp.cpp:889
 msgid "Playlist name cannot contain slashes!"
@@ -1422,20 +1423,20 @@ msgstr ""
 #: src/ncmpcpp.cpp:901
 #, c-format
 msgid "Filtered items added to playlist \"%s\""
-msgstr "Отфильтрованные элементы добавлены в список \"%s\""
+msgstr "Отфильтрованные элементы добавлены в плейлист \"%s\""
 
 #: src/ncmpcpp.cpp:908
 #, c-format
 msgid "Playlist saved as: %s"
-msgstr "Список сохранен как: %s"
+msgstr "Плейлист сохранен как: %s"
 
 #: src/ncmpcpp.cpp:915
 msgid "Playlist already exists, overwrite"
-msgstr "Список уже cуществует, перезаписать"
+msgstr "Плейлист уже существует, перезаписать"
 
 #: src/ncmpcpp.cpp:929
 msgid "Playlist overwritten!"
-msgstr "Список перезаписан!"
+msgstr "Плейлист перезаписан!"
 
 #: src/ncmpcpp.cpp:1228
 msgid "No selected items to move!"
@@ -1458,7 +1459,7 @@ msgstr ""
 #: src/ncmpcpp.cpp:1397
 #, c-format
 msgid "Playlist display mode: %s"
-msgstr "Режим отображения списка: %s"
+msgstr "Режим отображения плейлиста: %s"
 
 #: src/ncmpcpp.cpp:1397
 #: src/ncmpcpp.cpp:1415
@@ -1538,7 +1539,7 @@ msgstr "Не могу переименовать \"%s\": %s"
 #: src/ncmpcpp.cpp:1706
 #, c-format
 msgid "Playlist renamed to \"%s\""
-msgstr "Список переименован в \"%s\""
+msgstr "Плейлист переименован в \"%s\""
 
 #: src/ncmpcpp.cpp:1757
 msgid "Position to go (in %/mm:ss/seconds(s))"
@@ -1606,7 +1607,7 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:1957
 msgid "Clearing playlist..."
-msgstr "Список очищается..."
+msgstr "Плейлист очищается..."
 
 #: src/ncmpcpp.cpp:1987
 #, c-format
@@ -1691,11 +1692,11 @@ msgstr "Режим добавления: %s"
 
 #: src/ncmpcpp.cpp:2087
 msgid "Add item to playlist, remove if already added"
-msgstr "Добавить элемент в список, убрать если уже добавлен"
+msgstr "Добавить элемент в плейлист, убрать если уже добавлен"
 
 #: src/ncmpcpp.cpp:2087
 msgid "Always add item to playlist"
-msgstr "Всегда добавлять элемент в список воспроизведения"
+msgstr "Всегда добавлять элемент в плейлист"
 
 #: src/ncmpcpp.cpp:2093
 #, c-format
