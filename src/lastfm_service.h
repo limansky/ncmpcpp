@@ -50,9 +50,9 @@ struct LastfmService
 		virtual void postProcess(std::string &data);
 		
 		virtual const char *methodName() = 0;
+		virtual const char *msgParseFailed() const;
 		
 		static const char *baseURL;
-		static const char *msgParseFailed;
 };
 
 struct ArtistInfo : public LastfmService

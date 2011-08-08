@@ -25,10 +25,9 @@
 #include "conv.h"
 #include "curl_handle.h"
 #include "settings.h"
+#include "i18n.h"
 
 const char *LastfmService::baseURL = "http://ws.audioscrobbler.com/2.0/?api_key=d94e5b6e26469a2d1ffae8ef20131b79&method=";
-
-const char *LastfmService::msgParseFailed = "Fetched data could not be parsed";
 
 LastfmService::Result LastfmService::fetch(Args &args)
 {
@@ -95,6 +94,11 @@ void LastfmService::postProcess(std::string &data)
 	Trim(data);
 }
 
+const char* LastfmService::msgParseFailed() const
+{
+    return _("Fetched data could not be parsed");
+}
+
 /***********************************************************************/
 
 bool ArtistInfo::checkArgs(const Args &args)
@@ -104,7 +108,7 @@ bool ArtistInfo::checkArgs(const Args &args)
 
 void ArtistInfo::colorizeOutput(NCurses::Scrollpad &w)
 {
-	w.SetFormatting(fmtBold, U("\n\nSimilar artists:\n"), fmtBoldEnd, false);
+	w.SetFormatting(fmtBold, U("\n\n") + TO_WSTRING(_("Similar artists:")) + U("\n"), fmtBoldEnd, false);
 	w.SetFormatting(Config.color2, U("\n * "), clEnd, true);
 	// below is used so format won't be removed using RemoveFormatting() by accident.
 	w.ForgetFormatting();
@@ -126,13 +130,13 @@ bool ArtistInfo::parse(std::string &data)
 	
 	if (parse_failed)
 	{
-		data = msgParseFailed;
+		data = msgParseFailed();
 		return false;
 	}
 	
 	if (a == b)
 	{
-		data = "No description available for this artist.";
+		data = _("No description available for this artist.");
 		return false;
 	}
 	
@@ -156,7 +160,7 @@ bool ArtistInfo::parse(std::string &data)
 	
 	postProcess(data);
 	
-	data += "\n\nSimilar artists:\n";
+	data += std::string("\n\n") + _("Similar artists:") + "\n";
 	for (size_t i = 1; i < similars.size(); ++i)
 	{
 		 data += "\n * ";

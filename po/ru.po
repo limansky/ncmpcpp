@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-07 02:08+0400\n"
-"PO-Revision-Date: 2011-08-07 16:02+0300\n"
-"Last-Translator: Mike Limansky <limanski@narod.ru>\n"
+"POT-Creation-Date: 2011-08-08 17:11+0400\n"
+"PO-Revision-Date: 2011-08-08 17:12+0300\n"
+"Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -543,6 +543,7 @@ msgid "Refetch lyrics"
 msgstr ""
 
 #: src/help.cpp:315
+#: src/lastfm.cpp:161
 msgid "Artist info"
 msgstr "Информация об исполнителе"
 
@@ -1041,6 +1042,7 @@ msgstr "Удаляется \"%s\"..."
 #: src/browser.cpp:508
 #: src/ncmpcpp.cpp:803
 #: src/lyrics.cpp:310
+#: src/lastfm.cpp:207
 #, c-format
 msgid "Couldn't remove \"%s\": %s"
 msgstr "Не могу удалить \"%s\": %s"
@@ -2029,5 +2031,26 @@ msgstr ""
 
 #: src/server_info.cpp:122
 msgid "Tag Types:"
+msgstr ""
+
+#: src/lastfm.cpp:150
+msgid "Fetching informations..."
+msgstr ""
+
+#: src/lastfm.cpp:200
+msgid "couldn't save file"
+msgstr "не могу сохранить файл"
+
+#: src/lastfm_service.cpp:99
+msgid "Fetched data could not be parsed"
+msgstr ""
+
+#: src/lastfm_service.cpp:111
+#: src/lastfm_service.cpp:163
+msgid "Similar artists:"
+msgstr ""
+
+#: src/lastfm_service.cpp:139
+msgid "No description available for this artist."
 msgstr ""
 

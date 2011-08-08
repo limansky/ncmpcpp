@@ -35,6 +35,7 @@
 
 #include "charset.h"
 #include "global.h"
+#include "i18n.h"
 
 using Global::MainHeight;
 using Global::MainStartY;
@@ -146,7 +147,7 @@ void Lastfm::Load()
 	}
 	else
 	{
-		*w << "Fetching informations... ";
+		*w << _("Fetching informations...");
 		pthread_create(&itsDownloader, 0, DownloadWrapper, this);
 		isDownloadInProgress = 1;
 	}
@@ -157,7 +158,7 @@ void Lastfm::SetTitleAndFolder()
 {
 	if (dynamic_cast<ArtistInfo *>(itsService.get()))
 	{
-		itsTitle = U("Artist info - ");
+		itsTitle = TO_WSTRING(_("Artist info")) + U(" - ");
 		itsTitle += TO_WSTRING(itsArgs.find("artist")->second);
 		itsFolder = home_path + HOME_FOLDER + "artists";
 	}
@@ -196,15 +197,15 @@ void Lastfm::Save(const std::string &data)
 		output.close();
 	}
 	else
-		Error("couldn't save file \"" << itsFilename << "\"");
+		Error(_("couldn't save file") << " \"" << itsFilename << "\"");
 }
 
 void Lastfm::Refetch()
 {
 	if (remove(itsFilename.c_str()) && errno != ENOENT)
 	{
-		static const char msg[] = "Couldn't remove \"%s\": %s";
-		ShowMessage(msg, Shorten(TO_WSTRING(itsFilename), COLS-static_strlen(msg)-25).c_str(), strerror(errno));
+		static const char* msg = _("Couldn't remove \"%s\": %s");
+		ShowMessage(msg, Shorten(TO_WSTRING(itsFilename), COLS-strlen(msg)-25).c_str(), strerror(errno));
 		return;
 	}
 	Load();
