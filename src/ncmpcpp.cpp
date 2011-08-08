@@ -436,7 +436,7 @@ int main(int argc, char *argv[])
 			if (!Config.new_design)
 			{
 				*wHeader << Config.volume_color;
-				*wHeader << XY(wHeader->GetWidth()-VolumeState.length(), 0) << VolumeState;
+				*wHeader << XY(wHeader->GetWidth()-Window::Length(TO_WSTRING(VolumeState)), 0) << VolumeState;
 				*wHeader << clEnd;
 			}
 			wHeader->Refresh();

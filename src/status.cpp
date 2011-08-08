@@ -450,8 +450,9 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 				String2Buffer(TO_WSTRING(utf_to_locale_cpy(np.toString(Config.new_header_first_line))), first);
 				String2Buffer(TO_WSTRING(utf_to_locale_cpy(np.toString(Config.new_header_second_line))), second);
 				
+				const size_t volume_len = Window::Length(TO_WSTRING(VolumeState));
 				size_t first_len = Window::Length(first.Str());
-				size_t first_margin = (std::max(tracklength.length()+1, VolumeState.length()))*2;
+				size_t first_margin = (std::max(tracklength.length()+1, volume_len))*2;
 				size_t first_start = first_len < COLS-first_margin ? (COLS-first_len)/2 : tracklength.length()+1;
 				
 				size_t second_len = Window::Length(second.Str());
@@ -461,13 +462,13 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 				if (!Global::SeekingInProgress)
 					*wHeader << XY(0, 0) << wclrtoeol << tracklength;
 				*wHeader << XY(first_start, 0);
-				first.Write(*wHeader, first_line_scroll_begin, COLS-tracklength.length()-VolumeState.length()-1, U(" ** "));
+				first.Write(*wHeader, first_line_scroll_begin, COLS-tracklength.length()-volume_len-1, U(" ** "));
 				
 				*wHeader << XY(0, 1) << wclrtoeol << fmtBold << player_state << fmtBoldEnd;
 				*wHeader << XY(second_start, 1);
 				second.Write(*wHeader, second_line_scroll_begin, COLS-player_state.length()-8-2, U(" ** "));
 				
-				*wHeader << XY(wHeader->GetWidth()-VolumeState.length(), 0) << Config.volume_color << VolumeState << clEnd;
+				*wHeader << XY(wHeader->GetWidth()-volume_len, 0) << Config.volume_color << VolumeState << clEnd;
 				
 				changed.StatusFlags = 1;
 			}
@@ -629,7 +630,7 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 			VolumeState += "%";
 		}
 		*wHeader << Config.volume_color;
-		*wHeader << XY(wHeader->GetWidth()-VolumeState.length(), 0) << VolumeState;
+		*wHeader << XY(wHeader->GetWidth() - Window::Length(TO_WSTRING(VolumeState)), 0) << VolumeState;
 		*wHeader << clEnd;
 		wHeader->Refresh();
 	}
