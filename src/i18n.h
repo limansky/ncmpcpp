@@ -4,6 +4,12 @@
 
 #include "config.h"
 
+inline std::string getlang()
+{
+	const char* l = getenv("LANG");
+	return l ? std::string(l).substr(0, 2) : std::string();
+}
+
 #ifdef ENABLE_NLS
 #include <libintl.h>
 

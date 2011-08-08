@@ -453,6 +453,7 @@ void NcmpcppConfig::SetDefaults()
 	// default screens sequence
 	screens_seq.push_back(myPlaylist);
 	screens_seq.push_back(myBrowser);
+	lastfm_preferred_language = getlang();
 }
 
 void NcmpcppKeys::Read()
