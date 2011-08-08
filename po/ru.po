@@ -555,17 +555,17 @@ msgstr ""
 #: src/help.cpp:395
 #: src/tiny_tag_editor.cpp:94
 msgid "Tiny tag editor"
-msgstr ""
+msgstr "Мини-редактор тегов"
 
 #: src/help.cpp:321
 msgid "Edit tag"
-msgstr ""
+msgstr "Редактировать тег"
 
 #: src/help.cpp:322
 #: src/tiny_tag_editor.cpp:239
 #: src/tag_editor.cpp:98
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: src/help.cpp:326
 msgid "Change tag/filename for one song (left column)"
@@ -662,7 +662,7 @@ msgstr "Левая кнопка"
 #: src/help.cpp:410
 #: src/help.cpp:417
 msgid "Highlight"
-msgstr ""
+msgstr "Выделить"
 
 #: src/help.cpp:358
 #: src/help.cpp:371
