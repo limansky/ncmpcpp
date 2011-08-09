@@ -17,3 +17,4 @@ src/tag_editor.cpp
 src/server_info.cpp
 src/lastfm.cpp
 src/lastfm_service.cpp
+src/visualizer.cpp

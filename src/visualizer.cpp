@@ -98,7 +98,7 @@ void Visualizer::Resize()
 
 std::basic_string<my_char_t> Visualizer::Title()
 {
-	return U("Music visualizer");
+	return TO_WSTRING(_("Music visualizer"));
 }
 
 void Visualizer::Update()
@@ -133,7 +133,7 @@ void Visualizer::SpacePressed()
 {
 #	ifdef HAVE_FFTW3_H
 	Config.visualizer_use_wave = !Config.visualizer_use_wave;
-	ShowMessage("Visualization type: %s", Config.visualizer_use_wave ? "Sound wave" : "Frequency spectrum");
+	ShowMessage(_("Visualization type: %s"), Config.visualizer_use_wave ? _("Sound wave") : _("Frequency spectrum"));
 #	endif // HAVE_FFTW3_H
 }
 
@@ -195,7 +195,7 @@ void Visualizer::DrawFrequencySpectrum(int16_t *buf, ssize_t data)
 void Visualizer::SetFD()
 {
 	if (itsFifo < 0 && (itsFifo = open(Config.visualizer_fifo_path.c_str(), O_RDONLY | O_NONBLOCK)) < 0)
-		ShowMessage("Couldn't open \"%s\" for reading PCM data: %s", Config.visualizer_fifo_path.c_str(), strerror(errno));
+		ShowMessage(_("Couldn't open \"%s\" for reading PCM data: %s"), Config.visualizer_fifo_path.c_str(), strerror(errno));
 }
 
 void Visualizer::ResetFD()
@@ -214,7 +214,7 @@ void Visualizer::FindOutputID()
 			if (outputs[i].first == Config.visualizer_output_name)
 				itsOutputID = i;
 		if (itsOutputID == -1)
-			ShowMessage("There is no output named \"%s\"!", Config.visualizer_output_name.c_str());
+			ShowMessage(_("There is no output named \"%s\"!"), Config.visualizer_output_name.c_str());
 	}
 }
 
