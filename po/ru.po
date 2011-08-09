@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-08 17:11+0400\n"
-"PO-Revision-Date: 2011-08-08 17:12+0300\n"
+"POT-Creation-Date: 2011-08-09 12:24+0400\n"
+"PO-Revision-Date: 2011-08-09 14:35+0300\n"
 "Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -187,11 +187,11 @@ msgstr ""
 
 #: src/help.cpp:185
 msgid "Decrease volume"
-msgstr ""
+msgstr "Уменьшить громкость"
 
 #: src/help.cpp:186
 msgid "Increase volume"
-msgstr ""
+msgstr "Увеличить громкость"
 
 #: src/help.cpp:188
 msgid "Toggle space mode (select/add)"
@@ -264,15 +264,15 @@ msgstr ""
 #: src/help.cpp:208
 #: src/ncmpcpp.cpp:1980
 msgid "Apply filter"
-msgstr ""
+msgstr "Применить фильтр"
 
 #: src/help.cpp:209
 msgid "Forward find"
-msgstr ""
+msgstr "Искать вперед"
 
 #: src/help.cpp:210
 msgid "Backward find"
-msgstr ""
+msgstr "Искать назад"
 
 #: src/help.cpp:211
 msgid "Go to previous found position"
@@ -288,7 +288,7 @@ msgstr ""
 
 #: src/help.cpp:214
 msgid "Locate song in browser"
-msgstr ""
+msgstr "Открыть песню в браузере"
 
 #: src/help.cpp:215
 msgid "Locate current song in media library"
@@ -296,7 +296,7 @@ msgstr ""
 
 #: src/help.cpp:217
 msgid "Locate current song in tag editor"
-msgstr ""
+msgstr "Перейти к текущей песне в редакторе тегов"
 
 #: src/help.cpp:219
 msgid "Toggle display mode"
@@ -312,7 +312,7 @@ msgstr ""
 
 #: src/help.cpp:222
 msgid "Go to given position in current song (in % by default)"
-msgstr ""
+msgstr "Перейти к указанной позиции в текущей песне (в % по умолчанию)"
 
 #: src/help.cpp:223
 msgid "Show song info"
@@ -320,7 +320,7 @@ msgstr "Показать информацию о песне"
 
 #: src/help.cpp:225
 msgid "Show artist info"
-msgstr ""
+msgstr "Показать информацию об исполнителе"
 
 #: src/help.cpp:226
 msgid "Toggle lyrics database"
@@ -328,7 +328,7 @@ msgstr ""
 
 #: src/help.cpp:228
 msgid "Show/hide song's lyrics"
-msgstr ""
+msgstr "Показать/скрыть текст песни"
 
 #: src/help.cpp:230
 msgid "Quit"
@@ -477,13 +477,13 @@ msgstr ""
 #: src/help.cpp:295
 #: src/help.cpp:330
 msgid "Previous column"
-msgstr ""
+msgstr "Предыдущий столбец"
 
 #: src/help.cpp:285
 #: src/help.cpp:296
 #: src/help.cpp:331
 msgid "Next column"
-msgstr ""
+msgstr "Следующий столбец"
 
 #: src/help.cpp:286
 msgid "Add to playlist and play song/album/artist's songs"
@@ -528,7 +528,7 @@ msgstr "Очистить текущий плейлист"
 #: src/help.cpp:309
 #: src/lyrics.cpp:131
 msgid "Lyrics"
-msgstr ""
+msgstr "Текст песни"
 
 #: src/help.cpp:310
 msgid "Switch for following lyrics of now playing song"
@@ -614,7 +614,7 @@ msgstr ""
 
 #: src/help.cpp:349
 msgid "Play/pause"
-msgstr ""
+msgstr "Играть/пауза"
 
 #: src/help.cpp:350
 msgid "Left click on progressbar"
@@ -630,7 +630,7 @@ msgstr ""
 
 #: src/help.cpp:352
 msgid "Change volume"
-msgstr ""
+msgstr "Изменить громкость"
 
 #: src/help.cpp:353
 msgid "Mouse wheel on main window"
@@ -767,72 +767,84 @@ msgstr "[воспроизведение]"
 msgid "Playing:"
 msgstr "Играет:"
 
-#: src/status.cpp:528
+#: src/status.cpp:355
+msgid "[paused]"
+msgstr "[пауза]"
+
+#: src/status.cpp:355
+msgid "[Paused]"
+msgstr "[Пауза]"
+
+#: src/status.cpp:368
+msgid "[stopped]"
+msgstr "[остановлено]"
+
+#: src/status.cpp:529
 #, c-format
 msgid "Repeat mode is %s"
 msgstr "Режим повторения %s"
 
-#: src/status.cpp:528
-#: src/status.cpp:533
-#: src/status.cpp:538
-#: src/status.cpp:543
+#: src/status.cpp:529
+#: src/status.cpp:534
+#: src/status.cpp:539
+#: src/status.cpp:544
 #: src/ncmpcpp.cpp:1430
 #: src/ncmpcpp.cpp:1441
 #: src/lyrics.cpp:139
 msgid "off"
 msgstr "выключен"
 
-#: src/status.cpp:528
-#: src/status.cpp:533
-#: src/status.cpp:538
-#: src/status.cpp:543
+#: src/status.cpp:529
+#: src/status.cpp:534
+#: src/status.cpp:539
+#: src/status.cpp:544
 #: src/ncmpcpp.cpp:1430
 #: src/ncmpcpp.cpp:1441
 #: src/lyrics.cpp:139
 msgid "on"
 msgstr "включен"
 
-#: src/status.cpp:533
+#: src/status.cpp:534
 #, c-format
 msgid "Random mode is %s"
 msgstr "Режим случайного воспроизведения %s"
 
-#: src/status.cpp:538
+#: src/status.cpp:539
 #, c-format
 msgid "Single mode is %s"
 msgstr ""
 
-#: src/status.cpp:543
+#: src/status.cpp:544
 #, c-format
 msgid "Consume mode is %s"
 msgstr ""
 
-#: src/status.cpp:549
+#: src/status.cpp:550
 #, c-format
 msgid "Crossfade set to %d seconds"
 msgstr ""
 
-#: src/status.cpp:557
+#: src/status.cpp:558
 msgid "Database update started!"
 msgstr "Обновление базы данных началось!"
 
-#: src/status.cpp:557
+#: src/status.cpp:558
 msgid "Database update finished!"
 msgstr "Обновление базы данных закончилось!"
 
-#: src/status.cpp:561
+#: src/status.cpp:562
 msgid "Database has changed, you need to select your item(s) once again!"
 msgstr ""
 
-#: src/status.cpp:622
+#: src/status.cpp:623
 msgid "Vol"
 msgstr "Грм"
 
-#: src/status.cpp:622
+#: src/status.cpp:623
 msgid "Volume"
 msgstr "Громкость"
 
-#: src/status.cpp:625
+#: src/status.cpp:626
 msgid "n/a"
 msgstr ""
 
@@ -1314,18 +1326,18 @@ msgstr "Размер экрана слишком маленький!\n"
 #: src/ncmpcpp.cpp:204
 #, c-format
 msgid "User interface: %s"
-msgstr ""
+msgstr "Интерфейс: %s"
 
 #: src/ncmpcpp.cpp:204
 msgid "Alternative"
-msgstr ""
+msgstr "Альтернативный"
 
 #: src/ncmpcpp.cpp:204
 #: src/ncmpcpp.cpp:1397
 #: src/ncmpcpp.cpp:1415
 #: src/ncmpcpp.cpp:1422
 msgid "Classic"
-msgstr ""
+msgstr "Классический"
 
 #: src/ncmpcpp.cpp:214
 msgid "Broken pipe signal caught!"
@@ -1378,7 +1390,7 @@ msgstr "Плейлист \"%s\" удален!"
 #: src/ncmpcpp.cpp:1934
 #: src/tag_editor.cpp:548
 msgid "Aborted!"
-msgstr ""
+msgstr "Прервано!"
 
 #: src/ncmpcpp.cpp:758
 msgid "Deleting files is disabled by default, see man page for more details"
@@ -1585,7 +1597,7 @@ msgstr ""
 #: src/ncmpcpp.cpp:1892
 #: src/ncmpcpp.cpp:1907
 msgid "Items deleted!"
-msgstr ""
+msgstr "Элементы удалены!"
 
 #: src/ncmpcpp.cpp:1898
 msgid "Nothing is playing now!"
@@ -1650,7 +1662,7 @@ msgstr ""
 #: src/tag_editor.cpp:644
 #: src/tag_editor.cpp:651
 msgid "Done!"
-msgstr ""
+msgstr "Готово!"
 
 #: src/ncmpcpp.cpp:2042
 msgid "No matching patterns found"
@@ -1765,7 +1777,7 @@ msgstr ""
 
 #: src/lyrics.cpp:275
 msgid "External editor is not set!"
-msgstr ""
+msgstr "Внешний редактор не выбран!"
 
 #: src/lyrics.cpp:279
 msgid "Opening lyrics in external editor..."
@@ -1791,7 +1803,7 @@ msgstr "Не могу прочитать файл"
 #: src/tiny_tag_editor.cpp:131
 #: src/tag_editor.cpp:628
 msgid "Tags updated!"
-msgstr ""
+msgstr "Теги обновлены!"
 
 #: src/tiny_tag_editor.cpp:147
 msgid "Error while writing tags!"
@@ -1815,39 +1827,39 @@ msgstr ""
 
 #: src/tag_editor.cpp:95
 msgid "Options"
-msgstr ""
+msgstr "Настройки"
 
 #: src/tag_editor.cpp:100
 msgid "Capitalize First Letters"
-msgstr ""
+msgstr "Сделать Первые Буквы Заглавными"
 
 #: src/tag_editor.cpp:101
 msgid "lower all letters"
-msgstr ""
+msgstr "сделать все буквы строчными"
 
 #: src/tag_editor.cpp:103
 msgid "Tags"
-msgstr ""
+msgstr "Теги"
 
 #: src/tag_editor.cpp:118
 #: src/tag_editor.cpp:397
 msgid "Get tags from filename"
-msgstr ""
+msgstr "Получить теги из имени файла"
 
 #: src/tag_editor.cpp:119
 #: src/tag_editor.cpp:397
 msgid "Rename files"
-msgstr ""
+msgstr "Переименовать файлы"
 
 #: src/tag_editor.cpp:128
 #: src/tag_editor.cpp:384
 msgid "Legend"
-msgstr ""
+msgstr "Легенда"
 
 #: src/tag_editor.cpp:130
 #: src/tag_editor.cpp:383
 msgid "Preview"
-msgstr ""
+msgstr "Предварительный просмотр"
 
 #: src/tag_editor.cpp:346
 msgid "No subdirs found"
@@ -1856,7 +1868,7 @@ msgstr "Подкаталоги не найдены"
 #: src/tag_editor.cpp:362
 #, c-format
 msgid "%a - artist"
-msgstr ""
+msgstr "%a - исполнитель"
 
 #: src/tag_editor.cpp:363
 #, c-format
@@ -1865,11 +1877,11 @@ msgstr "%A - исполнитель альбома"
 
 #: src/tag_editor.cpp:364
 msgid "%t - title"
-msgstr ""
+msgstr "%t - заголовок"
 
 #: src/tag_editor.cpp:365
 msgid "%b - album"
-msgstr ""
+msgstr "%b - альбом"
 
 #: src/tag_editor.cpp:366
 msgid "%y - year"
@@ -1878,12 +1890,12 @@ msgstr "%y - год"
 #: src/tag_editor.cpp:367
 #, c-format
 msgid "%n - track number"
-msgstr ""
+msgstr "%n - номер дорожки"
 
 #: src/tag_editor.cpp:368
 #, c-format
 msgid "%g - genre"
-msgstr ""
+msgstr "%g - жанр"
 
 #: src/tag_editor.cpp:369
 #, c-format
@@ -1898,7 +1910,7 @@ msgstr "%p - performer"
 #: src/tag_editor.cpp:371
 #, c-format
 msgid "%d - disc"
-msgstr ""
+msgstr "%d - диск"
 
 #: src/tag_editor.cpp:372
 #, c-format
@@ -1914,7 +1926,7 @@ msgstr "Файлы"
 #: src/tag_editor.cpp:420
 #: src/tag_editor.cpp:493
 msgid "Pattern"
-msgstr ""
+msgstr "Шаблон"
 
 #: src/tag_editor.cpp:386
 msgid "Proceed"
@@ -2007,7 +2019,7 @@ msgstr "Общее время"
 
 #: src/server_info.cpp:109
 msgid "Total playtime"
-msgstr ""
+msgstr "Общее время"
 
 #: src/server_info.cpp:112
 msgid "Artist names"
@@ -2048,7 +2060,7 @@ msgstr ""
 #: src/lastfm_service.cpp:111
 #: src/lastfm_service.cpp:163
 msgid "Similar artists:"
-msgstr ""
+msgstr "Похожие исполнители:"
 
 #: src/lastfm_service.cpp:139
 msgid "No description available for this artist."

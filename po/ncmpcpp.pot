@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-08 17:11+0400\n"
+"POT-Creation-Date: 2011-08-09 12:24+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -681,62 +681,74 @@ msgstr ""
 msgid "Playing:"
 msgstr ""
 
-#: src/status.cpp:528
+#: src/status.cpp:355
+msgid "[paused]"
+msgstr ""
+
+#: src/status.cpp:355
+msgid "[Paused]"
+msgstr ""
+
+#: src/status.cpp:368
+msgid "[stopped]"
+msgstr ""
+
+#: src/status.cpp:529
 #, c-format
 msgid "Repeat mode is %s"
 msgstr ""
 
-#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+#: src/status.cpp:529 src/status.cpp:534 src/status.cpp:539 src/status.cpp:544
 #: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441 src/lyrics.cpp:139
 msgid "off"
 msgstr ""
 
-#: src/status.cpp:528 src/status.cpp:533 src/status.cpp:538 src/status.cpp:543
+#: src/status.cpp:529 src/status.cpp:534 src/status.cpp:539 src/status.cpp:544
 #: src/ncmpcpp.cpp:1430 src/ncmpcpp.cpp:1441 src/lyrics.cpp:139
 msgid "on"
 msgstr ""
 
-#: src/status.cpp:533
+#: src/status.cpp:534
 #, c-format
 msgid "Random mode is %s"
 msgstr ""
 
-#: src/status.cpp:538
+#: src/status.cpp:539
 #, c-format
 msgid "Single mode is %s"
 msgstr ""
 
-#: src/status.cpp:543
+#: src/status.cpp:544
 #, c-format
 msgid "Consume mode is %s"
 msgstr ""
 
-#: src/status.cpp:549
+#: src/status.cpp:550
 #, c-format
 msgid "Crossfade set to %d seconds"
 msgstr ""
 
-#: src/status.cpp:557
+#: src/status.cpp:558
 msgid "Database update started!"
 msgstr ""
 
-#: src/status.cpp:557
+#: src/status.cpp:558
 msgid "Database update finished!"
 msgstr ""
 
-#: src/status.cpp:561
+#: src/status.cpp:562
 msgid "Database has changed, you need to select your item(s) once again!"
 msgstr ""
 
-#: src/status.cpp:622
+#: src/status.cpp:623
 msgid "Vol"
 msgstr ""
 
-#: src/status.cpp:622
+#: src/status.cpp:623
 msgid "Volume"
 msgstr ""
 
-#: src/status.cpp:625
+#: src/status.cpp:626
 msgid "n/a"
 msgstr ""
 

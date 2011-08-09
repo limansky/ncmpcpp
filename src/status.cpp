@@ -352,7 +352,7 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 			}
 			case MPD::psPause:
 			{
-				player_state = Config.new_design ? "[paused] " : "[Paused] ";
+				player_state = std::string(Config.new_design ? _("[paused]") : _("[Paused]")) + " ";
 				break;
 			}
 			case MPD::psStop:
@@ -365,7 +365,7 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 				if (Config.new_design)
 				{
 					*wHeader << XY(0, 0) << wclrtoeol << XY(0, 1) << wclrtoeol;
-					player_state = "[stopped]";
+					player_state = _("[stopped]");
 					changed.Volume = 1;
 					changed.StatusFlags = 1;
 				}
