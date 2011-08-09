@@ -231,6 +231,25 @@ namespace
 #		endif // USE_PDCURSES
 		WindowTitle("");
 	}
+
+	Window& add_selector(Window& w, const char* label, const char key)
+	{
+
+		const char* h = strchr(label, key);
+
+		if (h)
+		{
+			while (label != h)
+				w << *label++;
+			w << fmtBold << key << fmtBoldEnd << ++label;
+		}
+		else
+		{
+			w << fmtBold << key << fmtBoldEnd << " - " << label;
+		}
+
+		return w;
+	}
 }
 
 int main(int argc, char *argv[])
@@ -2102,7 +2121,11 @@ int main(int argc, char *argv[])
 			if (myScreen == myPlaylist)
 			{
 				LockStatusbar();
-				Statusbar() << _("Add random ?") << " [" << fmtBold << 's' << fmtBoldEnd << "ongs/" << fmtBold << 'a' << fmtBoldEnd << "rtists/al" << fmtBold << 'b' << fmtBoldEnd << "ums] ";
+				Window& w = Statusbar();
+				w << _("Add random ?") << " ["; 
+				add_selector(w, _("songs"), 's') << "/";
+				add_selector(w, _("artist"), 'a') << "/";
+				add_selector(w, _("albums"), 'b') << "] ";
 				wFooter->Refresh();
 				int answer = 0;
 				do
