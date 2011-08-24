@@ -2137,15 +2137,21 @@ int main(int argc, char *argv[])
 				UnlockStatusbar();
 				
 				mpd_tag_type tag_type = IntoTagItem(answer);
-				std::string tag_type_str = answer == 's' ? _("song") : IntoStr(tag_type);
-				ToLower(tag_type_str);
 				
 				LockStatusbar();
-				Statusbar() << _("Number of random") << " " << tag_type_str << "s: ";
+				std::string ask_number = answer == 's' ? _("Number of random songs") :
+										 answer == 'a' ? _("Number of random artists") :
+										 _("Number of random albums");
+				Statusbar() << ask_number << ": ";
 				size_t number = StrToLong(wFooter->GetString());
 				UnlockStatusbar();
 				if (number && (answer == 's' ? Mpd.AddRandomSongs(number) : Mpd.AddRandomTag(tag_type, number)))
-					ShowMessage("%zu random %s%s added to playlist!", number, tag_type_str.c_str(), number == 1 ? "" : "s");
+				{
+					const char* message = answer == 's' ? ngettext("%zu random song added to playlist!", "%zu random songs added to playlist!", number) :
+										  answer == 'a' ? ngettext("%zu random artist added to playlist!", "%zu random artists added to playlist!", number) :
+										  				  ngettext("%zu random album added to playlist!", "%zu random albums added to playlist!", number);
+					ShowMessage(message, number);
+				}
 			}
 			else if (myScreen == myBrowser && !myBrowser->isLocal())
 			{

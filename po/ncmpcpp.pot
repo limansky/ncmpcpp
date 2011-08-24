@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-09 19:15+0400\n"
+"POT-Creation-Date: 2011-08-25 02:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -984,7 +984,7 @@ msgstr ""
 msgid "Found"
 msgstr ""
 
-#: src/search_engine.cpp:174 src/ncmpcpp.cpp:2140
+#: src/search_engine.cpp:174
 msgid "song"
 msgid_plural "songs"
 msgstr[0] ""
@@ -1567,24 +1567,53 @@ msgstr ""
 msgid "albums"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2144
-msgid "Number of random"
+#: src/ncmpcpp.cpp:2142
+msgid "Number of random songs"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2154
+#: src/ncmpcpp.cpp:2143
+msgid "Number of random artists"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2144
+msgid "Number of random albums"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2150
+#, c-format
+msgid "%zu random song added to playlist!"
+msgid_plural "%zu random songs added to playlist!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/ncmpcpp.cpp:2151
+#, c-format
+msgid "%zu random artist added to playlist!"
+msgid_plural "%zu random artists added to playlist!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/ncmpcpp.cpp:2152
+#, c-format
+msgid "%zu random album added to playlist!"
+msgid_plural "%zu random albums added to playlist!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/ncmpcpp.cpp:2160
 #, c-format
 msgid "Sort songs by: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2154
+#: src/ncmpcpp.cpp:2160
 msgid "Modification time"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2154
+#: src/ncmpcpp.cpp:2160
 msgid "Name"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2191
+#: src/ncmpcpp.cpp:2197
 #, c-format
 msgid "Switched to list of %s tag"
 msgstr ""
