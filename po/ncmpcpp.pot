@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-25 02:06+0300\n"
+"POT-Creation-Date: 2011-08-27 20:10+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -700,7 +700,8 @@ msgid "Repeat mode is %s"
 msgstr ""
 
 #: src/status.cpp:529 src/status.cpp:534 src/status.cpp:539 src/status.cpp:544
-#: src/ncmpcpp.cpp:1449 src/ncmpcpp.cpp:1460 src/lyrics.cpp:139
+#: src/ncmpcpp.cpp:1449 src/ncmpcpp.cpp:1460 src/ncmpcpp.cpp:2087
+#: src/lyrics.cpp:139
 msgid "off"
 msgstr ""
 
@@ -1006,7 +1007,7 @@ msgstr ""
 msgid "y"
 msgstr ""
 
-#: src/helpers.h:165
+#: src/helpers.h:165 src/ncmpcpp.cpp:2174
 msgid "year"
 msgid_plural "years"
 msgstr[0] ""
@@ -1292,7 +1293,7 @@ msgstr ""
 msgid "No selected items to move!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1297 src/ncmpcpp.cpp:2101
+#: src/ncmpcpp.cpp:1297 src/ncmpcpp.cpp:2105
 msgid "Add"
 msgstr ""
 
@@ -1502,118 +1503,146 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2085
+#: src/ncmpcpp.cpp:2086
 msgid "Replay gain mode ?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2096
+#: src/ncmpcpp.cpp:2088
+msgid "track"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2089
+msgid "album"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2100
 #, c-format
 msgid "Replay gain mode: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2101
+#: src/ncmpcpp.cpp:2105
 #, c-format
 msgid "Space mode: %s item"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2101
+#: src/ncmpcpp.cpp:2105
 msgid "Select/deselect"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2106
+#: src/ncmpcpp.cpp:2110
 #, c-format
 msgid "Add mode: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2106
+#: src/ncmpcpp.cpp:2110
 msgid "Add item to playlist, remove if already added"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2106
+#: src/ncmpcpp.cpp:2110
 msgid "Always add item to playlist"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2112
+#: src/ncmpcpp.cpp:2116
 #, c-format
 msgid "Mouse support %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2112 src/ncmpcpp.cpp:2117
+#: src/ncmpcpp.cpp:2116 src/ncmpcpp.cpp:2121
 msgid "enabled"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2112 src/ncmpcpp.cpp:2117
+#: src/ncmpcpp.cpp:2116 src/ncmpcpp.cpp:2121
 msgid "disabled"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2117
+#: src/ncmpcpp.cpp:2121
 #, c-format
 msgid "Bitrate visibility %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2125
+#: src/ncmpcpp.cpp:2129
 msgid "Add random ?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2126
+#: src/ncmpcpp.cpp:2130
 msgid "songs"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2127
+#: src/ncmpcpp.cpp:2131 src/ncmpcpp.cpp:2172
 msgid "artist"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2128 src/tag_editor.cpp:669
+#: src/ncmpcpp.cpp:2132 src/tag_editor.cpp:669
 msgid "albums"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2142
+#: src/ncmpcpp.cpp:2146
 msgid "Number of random songs"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2143
+#: src/ncmpcpp.cpp:2147
 msgid "Number of random artists"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2144
+#: src/ncmpcpp.cpp:2148
 msgid "Number of random albums"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2150
+#: src/ncmpcpp.cpp:2154
 #, c-format
 msgid "%zu random song added to playlist!"
 msgid_plural "%zu random songs added to playlist!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/ncmpcpp.cpp:2151
+#: src/ncmpcpp.cpp:2155
 #, c-format
 msgid "%zu random artist added to playlist!"
 msgid_plural "%zu random artists added to playlist!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/ncmpcpp.cpp:2152
+#: src/ncmpcpp.cpp:2156
 #, c-format
 msgid "%zu random album added to playlist!"
 msgid_plural "%zu random albums added to playlist!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/ncmpcpp.cpp:2160
+#: src/ncmpcpp.cpp:2164
 #, c-format
 msgid "Sort songs by: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2160
+#: src/ncmpcpp.cpp:2164
 msgid "Modification time"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2160
+#: src/ncmpcpp.cpp:2164
 msgid "Name"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2197
+#: src/ncmpcpp.cpp:2171
+msgid "Tag type ?"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2173
+msgid "albumArtist"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2175
+msgid "genre"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2176
+msgid "composer"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2177
+msgid "performer"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2208
 #, c-format
 msgid "Switched to list of %s tag"
 msgstr ""

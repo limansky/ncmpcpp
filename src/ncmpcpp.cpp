@@ -2082,7 +2082,11 @@ int main(int argc, char *argv[])
 		else if (Keypressed(input, Key.ToggleReplayGainMode) && Mpd.Version() >= 16)
 		{
 			LockStatusbar();
-			Statusbar() << _("Replay gain mode ?") << " [" << fmtBold << 'o' << fmtBoldEnd << "ff/" << fmtBold << 't' << fmtBoldEnd << "rack/" << fmtBold << 'a' << fmtBoldEnd << "lbum]";
+			Window& w = Statusbar();
+			w << _("Replay gain mode ?") << " [";
+			add_selector(w, _("off"), 'o') << "/";
+			add_selector(w, _("track"), 't') << '/';
+			add_selector(w, _("album"), 'a') << "]";
 			wFooter->Refresh();
 			int answer = 0;
 			do
@@ -2163,7 +2167,14 @@ int main(int argc, char *argv[])
 			||	 (myLibrary->Columns() == 2 && myScreen->ActiveWindow() == myLibrary->Albums))
 			{
 				LockStatusbar();
-				Statusbar() << "Tag type ? [" << fmtBold << 'a' << fmtBoldEnd << "rtist/album" << fmtBold << 'A' << fmtBoldEnd << "rtist/" << fmtBold << 'y' << fmtBoldEnd << "ear/" << fmtBold << 'g' << fmtBoldEnd << "enre/" << fmtBold << 'c' << fmtBoldEnd << "omposer/" << fmtBold << 'p' << fmtBoldEnd << "erformer] ";
+				Window& w = Statusbar();
+				w << _("Tag type ?") << " [";
+				add_selector(w, _("artist"), 'a') << "/";
+				add_selector(w, _("albumArtist"), 'A') << "/";
+				add_selector(w, _("year"), 'y') << "/";
+				add_selector(w, _("genre"), 'g') << "/";
+				add_selector(w, _("composer"), 'c') << "/";
+				add_selector(w, _("performer"), 'p') << "]";
 				wFooter->Refresh();
 				int answer = 0;
 				do
