@@ -441,6 +441,9 @@ int main(int argc, char *argv[])
 #				ifdef ENABLE_VISUALIZER
 				*wHeader << "  " << fmtBold << char(Key.Visualizer[0]) << fmtBoldEnd << ":" << _("Music visualizer");
 #				endif // ENABLE_VISUALIZER
+#				ifdef ENABLE_OUTPUTS
+				*wHeader << "  " << fmtBold << char(Key.Outputs[0]) << fmtBoldEnd << ":Outputs";
+#				endif // ENABLE_OUTPUTS
 #				ifdef ENABLE_CLOCK
 				*wHeader << "  " << fmtBold << char(Key.Clock[0]) << fmtBoldEnd << ":" << _("Clock");
 #				endif // ENABLE_CLOCK
