@@ -201,10 +201,10 @@ void NcmpcppErrorCallback(MPD::Connection *, int errorid, const char *msg, void 
 	if ((errorid >> 8) == MPD_SERVER_ERROR_PERMISSION)
 	{
 		wFooter->SetGetStringHelper(0);
-		Statusbar() << "Password: ";
+		Statusbar() << _("Password") << ": ";
 		Mpd.SetPassword(wFooter->GetString(-1, 0, 1));
 		if (Mpd.SendPassword())
-			ShowMessage("Password accepted!");
+			ShowMessage(_("Password accepted!"));
 		wFooter->SetGetStringHelper(StatusbarGetStringHelper);
 	}
 	else if ((errorid >> 8) == MPD_SERVER_ERROR_NO_EXIST && myScreen == myBrowser)
@@ -280,7 +280,7 @@ void NcmpcppStatusChanged(MPD::Connection *, MPD::StatusChanges changed, void *)
 		{
 			myPlaylist->Items->Reset();
 			myPlaylist->Items->Window::Clear();
-			ShowMessage("Cleared playlist!");
+			ShowMessage(_("Cleared playlist!"));
 		}
 		
 		if (!Global::BlockItemListUpdate)

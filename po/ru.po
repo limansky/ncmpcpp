@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-08-27 20:10+0400\n"
-"PO-Revision-Date: 2011-08-27 20:12+0300\n"
-"Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
+"POT-Creation-Date: 2011-09-01 01:04+0400\n"
+"PO-Revision-Date: 2011-09-01 01:21+0300\n"
+"Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -119,14 +119,14 @@ msgstr ""
 #: src/help.cpp:161
 #: src/help.cpp:384
 #: src/playlist_editor.cpp:89
-#: src/ncmpcpp.cpp:437
+#: src/ncmpcpp.cpp:439
 msgid "Playlist editor"
 msgstr "Редактор плейлистов"
 
 #: src/help.cpp:163
 #: src/help.cpp:325
 #: src/help.cpp:400
-#: src/ncmpcpp.cpp:439
+#: src/ncmpcpp.cpp:441
 #: src/tag_editor.cpp:183
 msgid "Tag editor"
 msgstr "Редактор тэгов"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: src/help.cpp:169
 #: src/help.cpp:343
-#: src/ncmpcpp.cpp:442
+#: src/ncmpcpp.cpp:444
 #: src/visualizer.cpp:101
 msgid "Music visualizer"
 msgstr ""
@@ -156,7 +156,7 @@ msgstr "Информация о сервере MPD"
 #: src/help.cpp:177
 #: src/help.cpp:348
 msgid "Global"
-msgstr ""
+msgstr "Глобальные"
 
 #: src/help.cpp:178
 msgid "Stop"
@@ -168,11 +168,11 @@ msgstr "Пауза"
 
 #: src/help.cpp:180
 msgid "Next track"
-msgstr ""
+msgstr "Следующая дорожка"
 
 #: src/help.cpp:181
 msgid "Previous track"
-msgstr ""
+msgstr "Предыдущая дорожка"
 
 #: src/help.cpp:182
 msgid "Play current track from the beginning"
@@ -180,11 +180,11 @@ msgstr ""
 
 #: src/help.cpp:183
 msgid "Seek forward"
-msgstr ""
+msgstr "Перемотка вперед"
 
 #: src/help.cpp:184
 msgid "Seek backward"
-msgstr ""
+msgstr "Перемотка назад"
 
 #: src/help.cpp:185
 msgid "Decrease volume"
@@ -208,15 +208,15 @@ msgstr ""
 
 #: src/help.cpp:191
 msgid "Reverse selection"
-msgstr ""
+msgstr "Обратить выделение"
 
 #: src/help.cpp:192
 msgid "Deselect all items"
-msgstr ""
+msgstr "Отменить выделение"
 
 #: src/help.cpp:193
 msgid "Select songs of album around cursor"
-msgstr ""
+msgstr "Выбрать все песни из альбома под курсором"
 
 #: src/help.cpp:194
 msgid "Add selected items to playlist/m3u file"
@@ -263,7 +263,7 @@ msgid "Start a music database update"
 msgstr ""
 
 #: src/help.cpp:208
-#: src/ncmpcpp.cpp:1999
+#: src/ncmpcpp.cpp:2004
 msgid "Apply filter"
 msgstr "Применить фильтр"
 
@@ -277,11 +277,11 @@ msgstr "Искать назад"
 
 #: src/help.cpp:211
 msgid "Go to previous found position"
-msgstr ""
+msgstr "К предыдущему результату поиска"
 
 #: src/help.cpp:212
 msgid "Go to next found position"
-msgstr ""
+msgstr "К следующему результату поиска"
 
 #: src/help.cpp:213
 msgid "Toggle find mode (normal/wrapped)"
@@ -301,11 +301,11 @@ msgstr "Перейти к текущей песне в редакторе тег
 
 #: src/help.cpp:219
 msgid "Toggle display mode"
-msgstr ""
+msgstr "Переключить режим отображение"
 
 #: src/help.cpp:220
 msgid "Toggle user interface"
-msgstr ""
+msgstr "Переключить интерфейс"
 
 #: src/help.cpp:221
 msgid "Toggle displaying separators between albums"
@@ -325,7 +325,7 @@ msgstr "Показать информацию об исполнителе"
 
 #: src/help.cpp:226
 msgid "Toggle lyrics database"
-msgstr ""
+msgstr "Переключить базу данных текстов песен"
 
 #: src/help.cpp:228
 msgid "Show/hide song's lyrics"
@@ -338,8 +338,8 @@ msgstr "Выход"
 #: src/help.cpp:233
 #: src/help.cpp:356
 #: src/playlist.cpp:141
-#: src/ncmpcpp.cpp:433
-#: src/ncmpcpp.cpp:1718
+#: src/ncmpcpp.cpp:435
+#: src/ncmpcpp.cpp:1723
 msgid "Playlist"
 msgstr "Плейлист"
 
@@ -367,12 +367,12 @@ msgstr ""
 #: src/help.cpp:239
 #: src/help.cpp:304
 msgid "Move item(s) up"
-msgstr ""
+msgstr "Переместить элемент(ы) вверх"
 
 #: src/help.cpp:240
 #: src/help.cpp:305
 msgid "Move item(s) down"
-msgstr ""
+msgstr "Переместить элемент(ы) вниз"
 
 #: src/help.cpp:241
 msgid "Move selected item(s) to cursor position"
@@ -393,7 +393,7 @@ msgstr "Добавить url/файл/папку в плейлист"
 #: src/help.cpp:246
 #: src/help.cpp:275
 msgid "Edit song's tags"
-msgstr ""
+msgstr "Редактировать теги песни"
 
 #: src/help.cpp:248
 msgid "Save playlist"
@@ -697,7 +697,7 @@ msgstr ""
 #: src/help.cpp:380
 #: src/help.cpp:387
 #: src/help.cpp:390
-#: src/ncmpcpp.cpp:1297
+#: src/ncmpcpp.cpp:1302
 msgid "Add to playlist"
 msgstr "Добавить в плейлист"
 
@@ -756,6 +756,19 @@ msgstr ""
 msgid "Middle column"
 msgstr ""
 
+#: src/status.cpp:204
+msgid "Password"
+msgstr "Пароль"
+
+#: src/status.cpp:207
+msgid "Password accepted!"
+msgstr "Пароль принят!"
+
+#: src/status.cpp:283
+#, fuzzy
+msgid "Cleared playlist!"
+msgstr "Очистить плейлист"
+
 #: src/status.cpp:340
 msgid "[unknown]"
 msgstr "[неизвестно]"
@@ -789,9 +802,9 @@ msgstr "Режим повторения %s"
 #: src/status.cpp:534
 #: src/status.cpp:539
 #: src/status.cpp:544
-#: src/ncmpcpp.cpp:1449
-#: src/ncmpcpp.cpp:1460
-#: src/ncmpcpp.cpp:2087
+#: src/ncmpcpp.cpp:1454
+#: src/ncmpcpp.cpp:1465
+#: src/ncmpcpp.cpp:2092
 #: src/lyrics.cpp:139
 msgid "off"
 msgstr "выключен"
@@ -800,8 +813,8 @@ msgstr "выключен"
 #: src/status.cpp:534
 #: src/status.cpp:539
 #: src/status.cpp:544
-#: src/ncmpcpp.cpp:1449
-#: src/ncmpcpp.cpp:1460
+#: src/ncmpcpp.cpp:1454
+#: src/ncmpcpp.cpp:1465
 #: src/lyrics.cpp:139
 msgid "on"
 msgstr "включен"
@@ -865,7 +878,7 @@ msgstr "Исполнитель"
 #: src/display.cpp:58
 #: src/search_engine.cpp:68
 #: src/song_info.cpp:60
-#: src/ncmpcpp.cpp:1605
+#: src/ncmpcpp.cpp:1610
 msgid "Album"
 msgstr "Альбом"
 
@@ -1007,8 +1020,8 @@ msgstr "Время"
 
 #: src/display.cpp:46
 #: src/song_info.cpp:122
-#: src/ncmpcpp.cpp:1647
-#: src/ncmpcpp.cpp:1677
+#: src/ncmpcpp.cpp:1652
+#: src/ncmpcpp.cpp:1682
 msgid "Directory"
 msgstr "Каталог"
 
@@ -1054,7 +1067,7 @@ msgid "Deleting \"%s\"..."
 msgstr "Удаляется \"%s\"..."
 
 #: src/browser.cpp:508
-#: src/ncmpcpp.cpp:822
+#: src/ncmpcpp.cpp:827
 #: src/lyrics.cpp:310
 #: src/lastfm.cpp:207
 #, c-format
@@ -1134,7 +1147,7 @@ msgid "No results found"
 msgstr "Ничего не найдено"
 
 #: src/search_engine.cpp:416
-#: src/ncmpcpp.cpp:435
+#: src/ncmpcpp.cpp:437
 msgid "Search"
 msgstr "Искать"
 
@@ -1148,7 +1161,7 @@ msgid "y"
 msgstr "г"
 
 #: src/helpers.h:165
-#: src/ncmpcpp.cpp:2174
+#: src/ncmpcpp.cpp:2179
 msgid "year"
 msgid_plural "years"
 msgstr[0] "год"
@@ -1335,9 +1348,9 @@ msgid "Alternative"
 msgstr "Альтернативный"
 
 #: src/ncmpcpp.cpp:204
-#: src/ncmpcpp.cpp:1416
-#: src/ncmpcpp.cpp:1434
-#: src/ncmpcpp.cpp:1441
+#: src/ncmpcpp.cpp:1421
+#: src/ncmpcpp.cpp:1439
+#: src/ncmpcpp.cpp:1446
 msgid "Classic"
 msgstr "Классический"
 
@@ -1345,434 +1358,434 @@ msgstr "Классический"
 msgid "Broken pipe signal caught!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:373
+#: src/ncmpcpp.cpp:375
 msgid "Attempting to reconnect..."
 msgstr ""
 
-#: src/ncmpcpp.cpp:376
+#: src/ncmpcpp.cpp:378
 #, c-format
 msgid "Connected to %s!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:432
+#: src/ncmpcpp.cpp:434
 msgid "Help"
 msgstr "Справка"
 
-#: src/ncmpcpp.cpp:434
+#: src/ncmpcpp.cpp:436
 #, fuzzy
 msgid "Browse"
 msgstr "Обзор"
 
-#: src/ncmpcpp.cpp:436
+#: src/ncmpcpp.cpp:438
 msgid "Library"
 msgstr "Библиотека"
 
-#: src/ncmpcpp.cpp:445
+#: src/ncmpcpp.cpp:450
 msgid "Clock"
 msgstr "Часы"
 
-#: src/ncmpcpp.cpp:706
+#: src/ncmpcpp.cpp:711
 msgid "Selected items deleted!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:742
-#: src/ncmpcpp.cpp:793
+#: src/ncmpcpp.cpp:747
+#: src/ncmpcpp.cpp:798
 msgid "Delete playlist"
 msgstr "Удалить плейлист"
 
-#: src/ncmpcpp.cpp:756
+#: src/ncmpcpp.cpp:761
 #, c-format
 msgid "Playlist \"%s\" deleted!"
 msgstr "Плейлист \"%s\" удален!"
 
-#: src/ncmpcpp.cpp:763
-#: src/ncmpcpp.cpp:837
-#: src/ncmpcpp.cpp:951
-#: src/ncmpcpp.cpp:1892
-#: src/ncmpcpp.cpp:1953
+#: src/ncmpcpp.cpp:768
+#: src/ncmpcpp.cpp:842
+#: src/ncmpcpp.cpp:956
+#: src/ncmpcpp.cpp:1897
+#: src/ncmpcpp.cpp:1958
 #: src/tag_editor.cpp:548
 msgid "Aborted!"
 msgstr "Прервано!"
 
-#: src/ncmpcpp.cpp:777
+#: src/ncmpcpp.cpp:782
 msgid "Deleting files is disabled by default, see man page for more details"
 msgstr ""
 
-#: src/ncmpcpp.cpp:782
+#: src/ncmpcpp.cpp:787
 msgid "Deleting directories is disabled by default, see man page for more details"
 msgstr ""
 
-#: src/ncmpcpp.cpp:791
+#: src/ncmpcpp.cpp:796
 msgid "Delete selected items?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:793
+#: src/ncmpcpp.cpp:798
 msgid "Delete file"
 msgstr ""
 
-#: src/ncmpcpp.cpp:793
+#: src/ncmpcpp.cpp:798
 msgid "Delete directory"
 msgstr "Удалить папку"
 
-#: src/ncmpcpp.cpp:817
+#: src/ncmpcpp.cpp:822
 #, c-format
 msgid "\"%s\" deleted!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:848
+#: src/ncmpcpp.cpp:853
 msgid "Deleting selected items..."
 msgstr "Удаляются выбранные элементы..."
 
-#: src/ncmpcpp.cpp:856
+#: src/ncmpcpp.cpp:861
 #, c-format
 msgid "Selected items deleted from playlist \"%s\"!"
 msgstr "Выбранные элементы удалены из плейлиста \"%s\"!"
 
-#: src/ncmpcpp.cpp:902
+#: src/ncmpcpp.cpp:907
 msgid "Save playlist as"
 msgstr "Сохранить плейлист как"
 
-#: src/ncmpcpp.cpp:908
+#: src/ncmpcpp.cpp:913
 msgid "Playlist name cannot contain slashes!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:920
+#: src/ncmpcpp.cpp:925
 #, c-format
 msgid "Filtered items added to playlist \"%s\""
 msgstr "Отфильтрованные элементы добавлены в плейлист \"%s\""
 
-#: src/ncmpcpp.cpp:927
+#: src/ncmpcpp.cpp:932
 #, c-format
 msgid "Playlist saved as: %s"
 msgstr "Плейлист сохранен как: %s"
 
-#: src/ncmpcpp.cpp:934
+#: src/ncmpcpp.cpp:939
 msgid "Playlist already exists, overwrite"
 msgstr "Плейлист уже существует, перезаписать"
 
-#: src/ncmpcpp.cpp:948
+#: src/ncmpcpp.cpp:953
 msgid "Playlist overwritten!"
 msgstr "Плейлист перезаписан!"
 
-#: src/ncmpcpp.cpp:1247
+#: src/ncmpcpp.cpp:1252
 msgid "No selected items to move!"
 msgstr "Элементы для перемещения не выбраны!"
 
-#: src/ncmpcpp.cpp:1297
-#: src/ncmpcpp.cpp:2105
+#: src/ncmpcpp.cpp:1302
+#: src/ncmpcpp.cpp:2110
 msgid "Add"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1303
+#: src/ncmpcpp.cpp:1308
 msgid "Adding..."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1326
-#: src/ncmpcpp.cpp:1767
+#: src/ncmpcpp.cpp:1331
+#: src/ncmpcpp.cpp:1772
 msgid "Unknown item length!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1416
+#: src/ncmpcpp.cpp:1421
 #, c-format
 msgid "Playlist display mode: %s"
 msgstr "Режим отображения плейлиста: %s"
 
-#: src/ncmpcpp.cpp:1416
-#: src/ncmpcpp.cpp:1434
-#: src/ncmpcpp.cpp:1441
+#: src/ncmpcpp.cpp:1421
+#: src/ncmpcpp.cpp:1439
+#: src/ncmpcpp.cpp:1446
 msgid "Columns"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1434
+#: src/ncmpcpp.cpp:1439
 #, fuzzy, c-format
 msgid "Browser display mode: %s"
 msgstr "Режим отображения обозревателя: %s"
 
-#: src/ncmpcpp.cpp:1441
+#: src/ncmpcpp.cpp:1446
 #, c-format
 msgid "Search engine display mode: %s"
 msgstr "Режим отображения поиска: %s"
 
-#: src/ncmpcpp.cpp:1449
+#: src/ncmpcpp.cpp:1454
 #, c-format
 msgid "Separators between albums in playlist: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1460
+#: src/ncmpcpp.cpp:1465
 #, c-format
 msgid "Auto center mode: %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1542
+#: src/ncmpcpp.cpp:1547
 msgid "Set crossfade to"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1573
-#: src/ncmpcpp.cpp:1611
+#: src/ncmpcpp.cpp:1578
+#: src/ncmpcpp.cpp:1616
 #: src/tiny_tag_editor.cpp:128
 msgid "Updating tags..."
 msgstr "Обновление тегов..."
 
-#: src/ncmpcpp.cpp:1584
-#: src/ncmpcpp.cpp:1615
+#: src/ncmpcpp.cpp:1589
+#: src/ncmpcpp.cpp:1620
 #, c-format
 msgid "Updating tags in \"%s\"..."
 msgstr "Обновление тегов в \"%s\"..."
 
-#: src/ncmpcpp.cpp:1588
+#: src/ncmpcpp.cpp:1593
 #, c-format
 msgid "Error while updating tags in \"%s\"!"
 msgstr "Ошибка при обновлении тегов в \"%s\""
 
-#: src/ncmpcpp.cpp:1597
-#: src/ncmpcpp.cpp:1637
+#: src/ncmpcpp.cpp:1602
+#: src/ncmpcpp.cpp:1642
 msgid "Tags updated successfully!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1620
+#: src/ncmpcpp.cpp:1625
 #, c-format
 msgid "Error while opening file \"%s\"!"
 msgstr "Ошибка при открытии файла \"%s\""
 
-#: src/ncmpcpp.cpp:1628
+#: src/ncmpcpp.cpp:1633
 #: src/tag_editor.cpp:620
 #, c-format
 msgid "Error while writing tags in \"%s\"!"
 msgstr "Ошибка при записи тегов в \"%s\""
 
-#: src/ncmpcpp.cpp:1656
-#: src/ncmpcpp.cpp:1693
+#: src/ncmpcpp.cpp:1661
+#: src/ncmpcpp.cpp:1698
 #, c-format
 msgid "Directory renamed to \"%s\""
 msgstr ""
 
-#: src/ncmpcpp.cpp:1662
-#: src/ncmpcpp.cpp:1701
+#: src/ncmpcpp.cpp:1667
+#: src/ncmpcpp.cpp:1706
 #, c-format
 msgid "Couldn't rename \"%s\": %s"
 msgstr "Не могу переименовать \"%s\": %s"
 
-#: src/ncmpcpp.cpp:1725
+#: src/ncmpcpp.cpp:1730
 #, c-format
 msgid "Playlist renamed to \"%s\""
 msgstr "Плейлист переименован в \"%s\""
 
-#: src/ncmpcpp.cpp:1776
+#: src/ncmpcpp.cpp:1781
 msgid "Position to go (in %/mm:ss/seconds(s))"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1790
+#: src/ncmpcpp.cpp:1795
 #, c-format
 msgid "Out of bounds, 0:00-%s possible for mm:ss, %s given."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1798
+#: src/ncmpcpp.cpp:1803
 #, c-format
 msgid "Out of bounds, 0-%d possible for seconds, %d given."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1806
+#: src/ncmpcpp.cpp:1811
 #, c-format
 msgid "Out of bounds, 0-100 possible for %%, %d given."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1815
+#: src/ncmpcpp.cpp:1820
 msgid "Selection reversed!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1827
+#: src/ncmpcpp.cpp:1832
 msgid "Items deselected!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1862
+#: src/ncmpcpp.cpp:1867
 msgid "Album around cursor position selected."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1877
+#: src/ncmpcpp.cpp:1882
 msgid "Do you really want to crop playlist"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1909
+#: src/ncmpcpp.cpp:1914
 msgid "Deleting all items but selected..."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1911
-#: src/ncmpcpp.cpp:1926
+#: src/ncmpcpp.cpp:1916
+#: src/ncmpcpp.cpp:1931
 msgid "Items deleted!"
 msgstr "Элементы удалены!"
 
-#: src/ncmpcpp.cpp:1917
+#: src/ncmpcpp.cpp:1922
 msgid "Nothing is playing now!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1924
+#: src/ncmpcpp.cpp:1929
 msgid "Deleting all items except now playing one..."
 msgstr ""
 
-#: src/ncmpcpp.cpp:1938
+#: src/ncmpcpp.cpp:1943
 msgid "Do you really want to clear playlist"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1960
+#: src/ncmpcpp.cpp:1965
 msgid "Deleting filtered items..."
 msgstr "Удаляются отфильтрованные элементы..."
 
-#: src/ncmpcpp.cpp:1965
+#: src/ncmpcpp.cpp:1970
 msgid "Filtered items deleted!"
 msgstr ""
 
-#: src/ncmpcpp.cpp:1976
+#: src/ncmpcpp.cpp:1981
 msgid "Clearing playlist..."
 msgstr "Плейлист очищается..."
 
-#: src/ncmpcpp.cpp:2006
+#: src/ncmpcpp.cpp:2011
 #, c-format
 msgid "Using filter \"%s\""
 msgstr ""
 
-#: src/ncmpcpp.cpp:2008
+#: src/ncmpcpp.cpp:2013
 msgid "Filtering disabled"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2024
+#: src/ncmpcpp.cpp:2029
 msgid "Find"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2024
+#: src/ncmpcpp.cpp:2029
 msgid "forward"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2024
+#: src/ncmpcpp.cpp:2029
 msgid "backward"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2030
-#: src/ncmpcpp.cpp:2058
+#: src/ncmpcpp.cpp:2035
+#: src/ncmpcpp.cpp:2063
 msgid "Searching..."
 msgstr "Ищу..."
 
-#: src/ncmpcpp.cpp:2037
+#: src/ncmpcpp.cpp:2042
 msgid "Searching finished!"
 msgstr "Поиск завершен!"
 
-#: src/ncmpcpp.cpp:2037
+#: src/ncmpcpp.cpp:2042
 #, c-format
 msgid "Unable to find \"%s\""
 msgstr ""
 
-#: src/ncmpcpp.cpp:2061
+#: src/ncmpcpp.cpp:2066
 #: src/tag_editor.cpp:644
 #: src/tag_editor.cpp:651
 msgid "Done!"
 msgstr "Готово!"
 
-#: src/ncmpcpp.cpp:2061
+#: src/ncmpcpp.cpp:2066
 msgid "No matching patterns found"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2080
+#: src/ncmpcpp.cpp:2085
 #, c-format
 msgid "Search mode: %s"
 msgstr "Режим поиска: %s"
 
-#: src/ncmpcpp.cpp:2080
+#: src/ncmpcpp.cpp:2085
 msgid "Wrapped"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2080
+#: src/ncmpcpp.cpp:2085
 msgid "Normal"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2086
+#: src/ncmpcpp.cpp:2091
 msgid "Replay gain mode ?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2088
+#: src/ncmpcpp.cpp:2093
 msgid "track"
 msgstr "дорожка"
 
-#: src/ncmpcpp.cpp:2089
+#: src/ncmpcpp.cpp:2094
 msgid "album"
 msgstr "альбом"
 
-#: src/ncmpcpp.cpp:2100
+#: src/ncmpcpp.cpp:2105
 #, fuzzy, c-format
 msgid "Replay gain mode: %s"
 msgstr "Режим повторения: %s"
 
-#: src/ncmpcpp.cpp:2105
+#: src/ncmpcpp.cpp:2110
 #, c-format
 msgid "Space mode: %s item"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2105
+#: src/ncmpcpp.cpp:2110
 msgid "Select/deselect"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2110
+#: src/ncmpcpp.cpp:2115
 #, c-format
 msgid "Add mode: %s"
 msgstr "Режим добавления: %s"
 
-#: src/ncmpcpp.cpp:2110
+#: src/ncmpcpp.cpp:2115
 msgid "Add item to playlist, remove if already added"
 msgstr "Добавить элемент в плейлист, убрать если уже добавлен"
 
-#: src/ncmpcpp.cpp:2110
+#: src/ncmpcpp.cpp:2115
 msgid "Always add item to playlist"
 msgstr "Всегда добавлять элемент в плейлист"
 
-#: src/ncmpcpp.cpp:2116
+#: src/ncmpcpp.cpp:2121
 #, c-format
 msgid "Mouse support %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2116
 #: src/ncmpcpp.cpp:2121
+#: src/ncmpcpp.cpp:2126
 msgid "enabled"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2116
 #: src/ncmpcpp.cpp:2121
+#: src/ncmpcpp.cpp:2126
 msgid "disabled"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2121
+#: src/ncmpcpp.cpp:2126
 #, c-format
 msgid "Bitrate visibility %s"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2129
+#: src/ncmpcpp.cpp:2134
 msgid "Add random ?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2130
+#: src/ncmpcpp.cpp:2135
 msgid "songs"
 msgstr "песни"
 
-#: src/ncmpcpp.cpp:2131
-#: src/ncmpcpp.cpp:2172
+#: src/ncmpcpp.cpp:2136
+#: src/ncmpcpp.cpp:2177
 msgid "artist"
 msgstr "исполнитель"
 
-#: src/ncmpcpp.cpp:2132
+#: src/ncmpcpp.cpp:2137
 #: src/tag_editor.cpp:669
 msgid "albums"
 msgstr "альбомы"
 
-#: src/ncmpcpp.cpp:2146
+#: src/ncmpcpp.cpp:2151
 msgid "Number of random songs"
 msgstr "Число случайных песен:"
 
-#: src/ncmpcpp.cpp:2147
+#: src/ncmpcpp.cpp:2152
 msgid "Number of random artists"
 msgstr "Число случайных исполнителей"
 
-#: src/ncmpcpp.cpp:2148
+#: src/ncmpcpp.cpp:2153
 msgid "Number of random albums"
 msgstr "Число случайных альбомов"
 
-#: src/ncmpcpp.cpp:2154
+#: src/ncmpcpp.cpp:2159
 #, c-format
 msgid "%zu random song added to playlist!"
 msgid_plural "%zu random songs added to playlist!"
@@ -1780,7 +1793,7 @@ msgstr[0] "%zu случайная песня добавлена в плейли�
 msgstr[1] "%zu слуайных песни добавлено в плейлист!"
 msgstr[2] "%zu случайных песен добавлено в плейлист!"
 
-#: src/ncmpcpp.cpp:2155
+#: src/ncmpcpp.cpp:2160
 #, c-format
 msgid "%zu random artist added to playlist!"
 msgid_plural "%zu random artists added to playlist!"
@@ -1788,7 +1801,7 @@ msgstr[0] "%zu случайный исполнитель добавлен в п�
 msgstr[1] "%zu случайных исполнителя добавлено в плейлист!"
 msgstr[2] "%zu случайных исполнителей добавлено в плейлист!"
 
-#: src/ncmpcpp.cpp:2156
+#: src/ncmpcpp.cpp:2161
 #, c-format
 msgid "%zu random album added to playlist!"
 msgid_plural "%zu random albums added to playlist!"
@@ -1796,40 +1809,40 @@ msgstr[0] "%zu случайный альбом добавлен в плейли�
 msgstr[1] "%zu случайных альбома добавлены в плейлист!"
 msgstr[2] "%zu случайных альбомов добавлено в плейлист!"
 
-#: src/ncmpcpp.cpp:2164
+#: src/ncmpcpp.cpp:2169
 #, c-format
 msgid "Sort songs by: %s"
 msgstr "Сортировать песни по: %s"
 
-#: src/ncmpcpp.cpp:2164
+#: src/ncmpcpp.cpp:2169
 msgid "Modification time"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2164
+#: src/ncmpcpp.cpp:2169
 msgid "Name"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2171
+#: src/ncmpcpp.cpp:2176
 msgid "Tag type ?"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2173
+#: src/ncmpcpp.cpp:2178
 msgid "albumArtist"
 msgstr "исполнитель альбома"
 
-#: src/ncmpcpp.cpp:2175
+#: src/ncmpcpp.cpp:2180
 msgid "genre"
 msgstr "жанр"
 
-#: src/ncmpcpp.cpp:2176
+#: src/ncmpcpp.cpp:2181
 msgid "composer"
 msgstr "композитор"
 
-#: src/ncmpcpp.cpp:2177
+#: src/ncmpcpp.cpp:2182
 msgid "performer"
 msgstr "performer"
 
-#: src/ncmpcpp.cpp:2208
+#: src/ncmpcpp.cpp:2213
 #, c-format
 msgid "Switched to list of %s tag"
 msgstr ""
@@ -2031,7 +2044,7 @@ msgstr ""
 
 #: src/tag_editor.cpp:545
 msgid "Tracks numbered!"
-msgstr ""
+msgstr "Дорожки пронумерованы!"
 
 #: src/tag_editor.cpp:584
 msgid "Screen is too small to display additional windows!"
@@ -2140,15 +2153,15 @@ msgstr ""
 #: src/visualizer.cpp:136
 #, c-format
 msgid "Visualization type: %s"
-msgstr ""
+msgstr "Тип визуализации: %s"
 
 #: src/visualizer.cpp:136
 msgid "Sound wave"
-msgstr ""
+msgstr "Звуковая волна"
 
 #: src/visualizer.cpp:136
 msgid "Frequency spectrum"
-msgstr ""
+msgstr "Частотный спектр"
 
 #: src/visualizer.cpp:198
 #, c-format
