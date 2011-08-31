@@ -254,18 +254,20 @@ namespace
 
 int main(int argc, char *argv[])
 {
-	setlocale(LC_ALL, "");
-    bindtextdomain(PACKAGE, LOCALEDIR);
-    textdomain(PACKAGE);
-    SearchEngine::InitTranslation();
-    SongInfo::InitTranslation();
-
 	CreateConfigDir();
 	
 	Config.SetDefaults();
 	Key.SetDefaults();
 	Config.Read();
 	Key.Read();
+
+	setlocale(LC_ALL, Config.interface_language.c_str());
+#ifdef ENABLE_NLS
+	bindtextdomain(PACKAGE, LOCALEDIR);
+	textdomain(PACKAGE);
+#endif // ENABLE_NLS
+	SearchEngine::InitTranslation();
+	SongInfo::InitTranslation();
 	
 	if (getenv("MPD_HOST"))
 		Mpd.SetHostname(getenv("MPD_HOST"));

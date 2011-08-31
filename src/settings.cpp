@@ -799,6 +799,10 @@ void NcmpcppConfig::Read()
 				if (!v.empty() && v != "en")
 					lastfm_preferred_language = v;
 			}
+			else if (cl.find("interface_language") != std::string::npos)
+			{
+				interface_language = v;
+			}
 			else if (cl.find("browser_playlist_prefix") != std::string::npos)
 			{
 				if (!v.empty())

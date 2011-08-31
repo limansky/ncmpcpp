@@ -172,6 +172,7 @@ struct NcmpcppConfig
 	std::string new_header_first_line;
 	std::string new_header_second_line;
 	std::string lastfm_preferred_language;
+	std::string interface_language;
 	std::basic_string<my_char_t> progressbar;
 	
 	std::string pattern;
