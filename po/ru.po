@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-09-01 01:04+0400\n"
-"PO-Revision-Date: 2011-09-01 01:21+0300\n"
+"POT-Creation-Date: 2011-09-03 21:10+0400\n"
+"PO-Revision-Date: 2011-09-03 21:45+0300\n"
 "Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -1474,11 +1474,11 @@ msgstr "Элементы для перемещения не выбраны!"
 #: src/ncmpcpp.cpp:1302
 #: src/ncmpcpp.cpp:2110
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 #: src/ncmpcpp.cpp:1308
 msgid "Adding..."
-msgstr ""
+msgstr "Добавление..."
 
 #: src/ncmpcpp.cpp:1331
 #: src/ncmpcpp.cpp:1772
@@ -1494,7 +1494,7 @@ msgstr "Режим отображения плейлиста: %s"
 #: src/ncmpcpp.cpp:1439
 #: src/ncmpcpp.cpp:1446
 msgid "Columns"
-msgstr ""
+msgstr "Столбцы"
 
 #: src/ncmpcpp.cpp:1439
 #, fuzzy, c-format
@@ -1591,11 +1591,11 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:1820
 msgid "Selection reversed!"
-msgstr ""
+msgstr "Выделение обращено!"
 
 #: src/ncmpcpp.cpp:1832
 msgid "Items deselected!"
-msgstr ""
+msgstr "Выделение снято!"
 
 #: src/ncmpcpp.cpp:1867
 msgid "Album around cursor position selected."
@@ -1607,7 +1607,7 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:1914
 msgid "Deleting all items but selected..."
-msgstr ""
+msgstr "Удаление всех элементов кроме выбранных..."
 
 #: src/ncmpcpp.cpp:1916
 #: src/ncmpcpp.cpp:1931
@@ -1616,7 +1616,7 @@ msgstr "Элементы удалены!"
 
 #: src/ncmpcpp.cpp:1922
 msgid "Nothing is playing now!"
-msgstr ""
+msgstr "Сейчас ничего не играет!"
 
 #: src/ncmpcpp.cpp:1929
 msgid "Deleting all items except now playing one..."
@@ -1632,7 +1632,7 @@ msgstr "Удаляются отфильтрованные элементы..."
 
 #: src/ncmpcpp.cpp:1970
 msgid "Filtered items deleted!"
-msgstr ""
+msgstr "Отфильтрованные элементы удалены!"
 
 #: src/ncmpcpp.cpp:1981
 msgid "Clearing playlist..."
@@ -1641,23 +1641,23 @@ msgstr "Плейлист очищается..."
 #: src/ncmpcpp.cpp:2011
 #, c-format
 msgid "Using filter \"%s\""
-msgstr ""
+msgstr "Используется фильтр \"%s\""
 
 #: src/ncmpcpp.cpp:2013
 msgid "Filtering disabled"
-msgstr ""
+msgstr "Фильтрация отключена"
 
 #: src/ncmpcpp.cpp:2029
 msgid "Find"
-msgstr ""
+msgstr "Поиск"
 
 #: src/ncmpcpp.cpp:2029
 msgid "forward"
-msgstr ""
+msgstr "вперед"
 
 #: src/ncmpcpp.cpp:2029
 msgid "backward"
-msgstr ""
+msgstr "назад"
 
 #: src/ncmpcpp.cpp:2035
 #: src/ncmpcpp.cpp:2063
@@ -1671,7 +1671,7 @@ msgstr "Поиск завершен!"
 #: src/ncmpcpp.cpp:2042
 #, c-format
 msgid "Unable to find \"%s\""
-msgstr ""
+msgstr "Не могу найти \"%s\""
 
 #: src/ncmpcpp.cpp:2066
 #: src/tag_editor.cpp:644
@@ -1720,7 +1720,7 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:2110
 msgid "Select/deselect"
-msgstr ""
+msgstr "Выделить/снять выделение"
 
 #: src/ncmpcpp.cpp:2115
 #, c-format
@@ -1738,22 +1738,22 @@ msgstr "Всегда добавлять элемент в плейлист"
 #: src/ncmpcpp.cpp:2121
 #, c-format
 msgid "Mouse support %s"
-msgstr ""
+msgstr "Поддержка мыши %s"
 
 #: src/ncmpcpp.cpp:2121
 #: src/ncmpcpp.cpp:2126
 msgid "enabled"
-msgstr ""
+msgstr "включено"
 
 #: src/ncmpcpp.cpp:2121
 #: src/ncmpcpp.cpp:2126
 msgid "disabled"
-msgstr ""
+msgstr "выключено"
 
 #: src/ncmpcpp.cpp:2126
 #, c-format
 msgid "Bitrate visibility %s"
-msgstr ""
+msgstr "Отображение битрейта %s"
 
 #: src/ncmpcpp.cpp:2134
 msgid "Add random ?"
@@ -1775,7 +1775,7 @@ msgstr "альбомы"
 
 #: src/ncmpcpp.cpp:2151
 msgid "Number of random songs"
-msgstr "Число случайных песен:"
+msgstr "Число случайных песен"
 
 #: src/ncmpcpp.cpp:2152
 msgid "Number of random artists"
@@ -1816,7 +1816,7 @@ msgstr "Сортировать песни по: %s"
 
 #: src/ncmpcpp.cpp:2169
 msgid "Modification time"
-msgstr ""
+msgstr "Время модификации"
 
 #: src/ncmpcpp.cpp:2169
 msgid "Name"
@@ -1858,11 +1858,11 @@ msgstr ""
 
 #: src/lyrics.cpp:160
 msgid "Fetching lyrics from"
-msgstr ""
+msgstr "Получаем текст песни из"
 
 #: src/lyrics.cpp:179
 msgid "Lyrics weren't found."
-msgstr ""
+msgstr "Текст не был найден."
 
 #: src/lyrics.cpp:275
 msgid "External editor is not set!"
@@ -1875,11 +1875,11 @@ msgstr ""
 #: src/lyrics.cpp:325
 #, c-format
 msgid "Using lyrics database: %s"
-msgstr ""
+msgstr "Используется база данных текстов: %s"
 
 #: src/lyrics.cpp:327
 msgid "Using all lyrics databases"
-msgstr ""
+msgstr "Используются вся базы данных текстов"
 
 #: src/tiny_tag_editor.cpp:67
 msgid "Streams cannot be edited!"
@@ -1911,8 +1911,9 @@ msgid "Directories"
 msgstr "Каталоги"
 
 #: src/tag_editor.cpp:83
+#: src/server_info.cpp:122
 msgid "Tag types"
-msgstr ""
+msgstr "Типы тегов"
 
 #: src/tag_editor.cpp:95
 msgid "Options"
@@ -2040,7 +2041,7 @@ msgstr "Операция завершена!"
 
 #: src/tag_editor.cpp:525
 msgid "Number tracks?"
-msgstr ""
+msgstr "Количество дорожек?"
 
 #: src/tag_editor.cpp:545
 msgid "Tracks numbered!"
@@ -2094,8 +2095,9 @@ msgid "Version"
 msgstr "Версия"
 
 #: src/server_info.cpp:104
+#, fuzzy
 msgid "Uptime"
-msgstr ""
+msgstr "Время работы"
 
 #: src/server_info.cpp:107
 msgid "Time playing"
@@ -2119,19 +2121,15 @@ msgstr "Песен в базе данных"
 
 #: src/server_info.cpp:116
 msgid "Last DB update"
-msgstr ""
+msgstr "Последнее обновление базы данных"
 
 #: src/server_info.cpp:118
 msgid "URL Handlers:"
 msgstr ""
 
-#: src/server_info.cpp:122
-msgid "Tag Types:"
-msgstr ""
-
 #: src/lastfm.cpp:150
 msgid "Fetching informations..."
-msgstr ""
+msgstr "Получение информации..."
 
 #: src/lastfm.cpp:200
 msgid "couldn't save file"
@@ -2173,3 +2171,5 @@ msgstr ""
 msgid "There is no output named \"%s\"!"
 msgstr ""
 
+#~ msgid "Tag Types:"
+#~ msgstr "Типы тегов:"

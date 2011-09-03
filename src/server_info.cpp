@@ -119,7 +119,7 @@ void ServerInfo::Update()
 	for (MPD::TagList::const_iterator it = itsURLHandlers.begin(); it != itsURLHandlers.end(); ++it)
 		*w << (it != itsURLHandlers.begin() ? U(", ") : U(" ")) << *it;
 	*w << U("\n\n");
-	*w << fmtBold << TO_WSTRING(_("Tag Types:")) << fmtBoldEnd;
+	*w << fmtBold << TO_WSTRING(_("Tag types")) << ":" << fmtBoldEnd;
 	for (MPD::TagList::const_iterator it = itsTagTypes.begin(); it != itsTagTypes.end(); ++it)
 		*w << (it != itsTagTypes.begin() ? U(", ") : U(" ")) << *it;
 	
