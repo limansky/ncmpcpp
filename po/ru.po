@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
 "POT-Creation-Date: 2011-09-03 21:10+0400\n"
-"PO-Revision-Date: 2011-09-03 21:45+0300\n"
+"PO-Revision-Date: 2011-09-22 00:39+0300\n"
 "Last-Translator: Mike Limansky <limanski@narod.ru>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -135,14 +135,14 @@ msgstr "Редактор тэгов"
 #: src/help.cpp:337
 #: src/help.cpp:416
 msgid "Outputs"
-msgstr ""
+msgstr "Выходы"
 
 #: src/help.cpp:169
 #: src/help.cpp:343
 #: src/ncmpcpp.cpp:444
 #: src/visualizer.cpp:101
 msgid "Music visualizer"
-msgstr ""
+msgstr "Визуализатор музыки"
 
 #: src/help.cpp:172
 msgid "Clock screen"
@@ -260,7 +260,7 @@ msgstr ""
 
 #: src/help.cpp:206
 msgid "Start a music database update"
-msgstr ""
+msgstr "Обновить базу данных"
 
 #: src/help.cpp:208
 #: src/ncmpcpp.cpp:2004
@@ -293,7 +293,7 @@ msgstr "Открыть песню в браузере"
 
 #: src/help.cpp:215
 msgid "Locate current song in media library"
-msgstr ""
+msgstr "Найти текущую песню в медиа библиотеке"
 
 #: src/help.cpp:217
 msgid "Locate current song in tag editor"
@@ -362,7 +362,7 @@ msgstr "Очистить плейлист"
 
 #: src/help.cpp:238
 msgid "Clear playlist but hold currently playing/selected items"
-msgstr ""
+msgstr "Очистить плейлист, оставив играющий/выбранные элементы"
 
 #: src/help.cpp:239
 #: src/help.cpp:304
@@ -376,15 +376,15 @@ msgstr "Переместить элемент(ы) вниз"
 
 #: src/help.cpp:241
 msgid "Move selected item(s) to cursor position"
-msgstr ""
+msgstr "Поместить выбранный элемент(ы) в позицию курсора"
 
 #: src/help.cpp:242
 msgid "Move selected item(s) before cursor position"
-msgstr ""
+msgstr "Поместить выбранный элемент(ы) перед позицией курсора"
 
 #: src/help.cpp:243
 msgid "Move selected item(s) after cursor position"
-msgstr ""
+msgstr "Поместить выбранный элемент(ы) после позиции курсора"
 
 #: src/help.cpp:244
 msgid "Add url/file/directory to playlist"
@@ -432,7 +432,7 @@ msgstr ""
 
 #: src/help.cpp:260
 msgid "Rename playlist/directory"
-msgstr ""
+msgstr "Переименовать плейлист/папку"
 
 #: src/help.cpp:263
 msgid "Browse MPD database/local filesystem"
@@ -440,7 +440,7 @@ msgstr ""
 
 #: src/help.cpp:264
 msgid "Toggle sort order"
-msgstr ""
+msgstr "Переключить режим сортировки"
 
 #: src/help.cpp:265
 msgid "Locate currently playing song"
@@ -1023,7 +1023,7 @@ msgstr "Время"
 #: src/ncmpcpp.cpp:1652
 #: src/ncmpcpp.cpp:1682
 msgid "Directory"
-msgstr "Каталог"
+msgstr "Папка"
 
 #: src/display.cpp:52
 #: src/song_info.cpp:59
@@ -1283,7 +1283,7 @@ msgstr ""
 
 #: src/media_library.cpp:597
 msgid "Your MPD version is too old to handle this function properly, please upgrade."
-msgstr ""
+msgstr "Ваша версия MPD устарела и не поддерживает эту функцию, рекомендуется обновление."
 
 #: src/media_library.cpp:619
 msgid "Invalid tag type in left column of the media library"
@@ -1296,7 +1296,7 @@ msgstr ""
 
 #: src/media_library.cpp:632
 msgid "Jumping to song..."
-msgstr ""
+msgstr "Переход к песне..."
 
 #: src/media_library.cpp:717
 #, c-format
@@ -1306,15 +1306,15 @@ msgstr ""
 #: src/media_library.cpp:720
 #, c-format
 msgid "Adding songs from album \"%s\""
-msgstr ""
+msgstr "Добавляются песни из альбома \"%s\""
 
 #: src/media_library.cpp:745
 msgid "All tracks"
-msgstr ""
+msgstr "Все песни"
 
 #: src/media_library.cpp:751
 msgid "<no album>"
-msgstr ""
+msgstr "<нет альбома>"
 
 #: src/playlist_editor.cpp:49
 msgid "Playlists"
@@ -1332,7 +1332,7 @@ msgstr "Плейлист пуст."
 
 #: src/ncmpcpp.cpp:71
 msgid "configuration variable mpd_music_dir is not set!"
-msgstr ""
+msgstr "переменная конфигурации mpd_music_dir не задана!"
 
 #: src/ncmpcpp.cpp:108
 msgid "Screen is too small!\n"
@@ -1360,12 +1360,12 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:375
 msgid "Attempting to reconnect..."
-msgstr ""
+msgstr "Попытка переподключения..."
 
 #: src/ncmpcpp.cpp:378
 #, c-format
 msgid "Connected to %s!"
-msgstr ""
+msgstr "Подключен к %s!"
 
 #: src/ncmpcpp.cpp:434
 msgid "Help"
@@ -1386,7 +1386,7 @@ msgstr "Часы"
 
 #: src/ncmpcpp.cpp:711
 msgid "Selected items deleted!"
-msgstr ""
+msgstr "Выбранные элементы были удалены!"
 
 #: src/ncmpcpp.cpp:747
 #: src/ncmpcpp.cpp:798
@@ -1409,19 +1409,19 @@ msgstr "Прервано!"
 
 #: src/ncmpcpp.cpp:782
 msgid "Deleting files is disabled by default, see man page for more details"
-msgstr ""
+msgstr "Удаление файлов по умолчанию запрещено, обратитесь к руководству за подробностями"
 
 #: src/ncmpcpp.cpp:787
 msgid "Deleting directories is disabled by default, see man page for more details"
-msgstr ""
+msgstr "Удаление папок по умолчанию запрещено, обратитесь к руководству за подробностями"
 
 #: src/ncmpcpp.cpp:796
 msgid "Delete selected items?"
-msgstr ""
+msgstr "Удалить выбранные элементы?"
 
 #: src/ncmpcpp.cpp:798
 msgid "Delete file"
-msgstr ""
+msgstr "Удалить файл"
 
 #: src/ncmpcpp.cpp:798
 msgid "Delete directory"
@@ -1430,7 +1430,7 @@ msgstr "Удалить папку"
 #: src/ncmpcpp.cpp:822
 #, c-format
 msgid "\"%s\" deleted!"
-msgstr ""
+msgstr "\"%s\" удален!"
 
 #: src/ncmpcpp.cpp:853
 msgid "Deleting selected items..."
@@ -1540,7 +1540,7 @@ msgstr "Ошибка при обновлении тегов в \"%s\""
 #: src/ncmpcpp.cpp:1602
 #: src/ncmpcpp.cpp:1642
 msgid "Tags updated successfully!"
-msgstr ""
+msgstr "Теги успешно обновлены!"
 
 #: src/ncmpcpp.cpp:1625
 #, c-format
@@ -1557,7 +1557,7 @@ msgstr "Ошибка при записи тегов в \"%s\""
 #: src/ncmpcpp.cpp:1698
 #, c-format
 msgid "Directory renamed to \"%s\""
-msgstr ""
+msgstr "Папка переименована в \"%s\""
 
 #: src/ncmpcpp.cpp:1667
 #: src/ncmpcpp.cpp:1706
@@ -1572,7 +1572,7 @@ msgstr "Плейлист переименован в \"%s\""
 
 #: src/ncmpcpp.cpp:1781
 msgid "Position to go (in %/mm:ss/seconds(s))"
-msgstr ""
+msgstr "Позизия для перехода (в %/мм:сс/секундах)"
 
 #: src/ncmpcpp.cpp:1795
 #, c-format
@@ -1624,7 +1624,7 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:1943
 msgid "Do you really want to clear playlist"
-msgstr ""
+msgstr "Вы действительно хотите очистить плейлист"
 
 #: src/ncmpcpp.cpp:1965
 msgid "Deleting filtered items..."
