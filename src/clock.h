@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -50,10 +50,15 @@ class Clock : public Screen<Window>
 		
 		virtual List *GetList() { return 0; }
 		
+		virtual bool isMergable() { return true; }
+		
 	protected:
 		virtual void Init();
+		virtual bool isLockable() { return false; }
 		
 	private:
+		Window *itsPane;
+		
 		static void Prepare();
 		static void Set(int, int);
 		

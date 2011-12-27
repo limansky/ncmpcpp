@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -178,6 +178,16 @@ struct JustSomeLyricsFetcher : public GoogleLyricsFetcher
 		virtual const char *getSiteKeyword() { return "justsomelyrics"; }
 		virtual const char *getOpenTag() { return "alt=\"phone\" />\n</div>"; }
 		virtual const char *getCloseTag() { return "<div class=\"adsdiv\">"; }
+};
+
+struct LoloLyricsFetcher : public GoogleLyricsFetcher
+{
+	virtual const char *name() { return "lololyrics.com"; }
+	
+	protected:
+		virtual const char *getSiteKeyword() { return "lololyrics"; }
+		virtual const char *getOpenTag() { return "<div class=\"lyrics_txt\" id=\"lyrics_txt\" style=\"font-size:12px; letter-spacing:0.2px; line-height:20px;\">"; }
+		virtual const char *getCloseTag() { return "</div>"; }
 };
 
 struct InternetLyricsFetcher : public GoogleLyricsFetcher

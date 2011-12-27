@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -60,7 +60,7 @@ void Browser::Init()
 {
 	static Display::ScreenFormat sf = { this, &Config.song_list_format };
 	
-	w = new Menu<MPD::Item>(0, MainStartY, COLS, MainHeight, Config.columns_in_browser && Config.titles_visibility ? Display::Columns() : "", Config.main_color, brNone);
+	w = new Menu<MPD::Item>(0, MainStartY, COLS, MainHeight, Config.columns_in_browser && Config.titles_visibility ? Display::Columns(COLS) : "", Config.main_color, brNone);
 	w->HighlightColor(Config.main_highlight_color);
 	w->CyclicScrolling(Config.use_cyclic_scrolling);
 	w->CenteredCursor(Config.centered_cursor);
@@ -74,14 +74,19 @@ void Browser::Init()
 
 void Browser::Resize()
 {
-	w->Resize(COLS, MainHeight);
-	w->MoveTo(0, MainStartY);
-	w->SetTitle(Config.columns_in_browser && Config.titles_visibility ? Display::Columns() : "");
+	size_t x_offset, width;
+	GetWindowResizeParams(x_offset, width);
+	w->Resize(width, MainHeight);
+	w->MoveTo(x_offset, MainStartY);
+	w->SetTitle(Config.columns_in_browser && Config.titles_visibility ? Display::Columns(w->GetWidth()) : "");
 	hasToBeResized = 0;
 }
 
 void Browser::SwitchTo()
 {
+	using Global::myLockedScreen;
+	using Global::myInactiveScreen;
+	
 	if (myScreen == this)
 	{
 #		ifndef WIN32
@@ -92,7 +97,10 @@ void Browser::SwitchTo()
 	if (!isInitialized)
 		Init();
 	
-	if (hasToBeResized)
+	if (myLockedScreen)
+		UpdateInactiveScreen(this);
+	
+	if (hasToBeResized || myLockedScreen)
 		Resize();
 	
 	if (isLocal()) // local browser doesn't support sorting by mtime
@@ -109,7 +117,7 @@ void Browser::SwitchTo()
 my_string_t Browser::Title()
 {
 	my_string_t result = TO_WSTRING(_("Browse: "));
-	result += Scroller(TO_WSTRING(itsBrowsedDir), itsScrollBeginning, w->GetWidth()-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
+	result += Scroller(TO_WSTRING(itsBrowsedDir), itsScrollBeginning, COLS-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
 	return result;
 }
 
@@ -531,7 +539,9 @@ void Browser::ChangeBrowseMode()
 	
 	itsBrowseLocally = !itsBrowseLocally;
 	ShowMessage(_("Browse mode: %s"), itsBrowseLocally ? _("Local filesystem") : _("MPD music dir"));
-	itsBrowsedDir = itsBrowseLocally ? home_path : "/";
+	itsBrowsedDir = itsBrowseLocally ? Config.GetHomeDirectory() : "/";
+	if (itsBrowseLocally && *itsBrowsedDir.rbegin() == '/')
+		itsBrowsedDir.resize(itsBrowsedDir.length()-1);
 	w->Reset();
 	GetDirectory(itsBrowsedDir);
 	RedrawHeader = 1;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,16 +25,7 @@
 
 #include <mpd/client.h>
 
-#include "home.h"
 #include "ncmpcpp.h"
-
-#ifdef WIN32
-# define HOME_FOLDER "\\ncmpcpp\\"
-#else
-# define HOME_FOLDER "/.ncmpcpp/"
-#endif // WIN32
-
-const std::string config_dir = home_path + HOME_FOLDER;
 
 class BasicScreen; // forward declaration for screens sequence
 
@@ -142,6 +133,8 @@ struct NcmpcppKeys
 	int ToggleInterface[2];
 	int ToggleSeparatorsInPlaylist[2];
 	int ToggleLyricsDB[2];
+	int ToggleFetchingLyricsInBackground[2];
+	int ToggleScreenLock[2];
 	int GoToParentDir[2];
 	int SwitchTagTypeList[2];
 	int Quit[2];
@@ -149,8 +142,16 @@ struct NcmpcppKeys
 
 struct NcmpcppConfig
 {
+	NcmpcppConfig();
+	
+	const std::string &GetHomeDirectory();
+	void CheckForCommandLineConfigFilePath(char **argv, int argc);
+	
 	void SetDefaults();
 	void Read();
+	
+	std::string ncmpcpp_directory;
+	std::string lyrics_directory;
 	
 	std::string mpd_host;
 	std::string mpd_music_dir;
@@ -174,6 +175,7 @@ struct NcmpcppConfig
 	std::string lastfm_preferred_language;
 	std::string interface_language;
 	std::basic_string<my_char_t> progressbar;
+	std::basic_string<my_char_t> visualizer_chars;
 	
 	std::string pattern;
 	
@@ -214,6 +216,7 @@ struct NcmpcppConfig
 	bool columns_in_playlist;
 	bool columns_in_browser;
 	bool columns_in_search_engine;
+	bool columns_in_playlist_editor;
 	bool set_window_title;
 	bool header_visibility;
 	bool header_text_scrolling;
@@ -228,6 +231,7 @@ struct NcmpcppConfig
 	bool albums_in_tag_editor;
 	bool incremental_seeking;
 	bool now_playing_lyrics;
+	bool fetch_lyrics_in_background;
 	bool local_browser_show_hidden_files;
 	bool search_in_db;
 	bool display_screens_numbers_on_start;
@@ -247,6 +251,7 @@ struct NcmpcppConfig
 	bool mouse_list_scroll_whole_page;
 	bool new_design;
 	bool visualizer_use_wave;
+	bool visualizer_in_stereo;
 	bool browser_sort_by_mtime;
 	bool tag_editor_extended_numeration;
 	bool media_library_display_date;
@@ -254,6 +259,7 @@ struct NcmpcppConfig
 	bool media_library_disable_two_column_mode;
 	bool discard_colors_if_item_is_selected;
 	bool store_lyrics_in_song_dir;
+	bool ask_for_locked_screen_width_part;
 	
 	int mpd_port;
 	int mpd_connection_timeout;
@@ -268,17 +274,25 @@ struct NcmpcppConfig
 	unsigned search_engine_default_search_mode;
 	unsigned visualizer_sync_interval;
 	
+	double locked_screen_width_part;
+	
 	size_t selected_item_suffix_length;
 	size_t now_playing_suffix_length;
 	
 	BasicScreen *startup_screen;
 	std::list<BasicScreen *> screens_seq;
+	
+	private:
+		void MakeProperPath(std::string &dir);
+		
+		std::string home_directory;
+		std::string config_file_path;
 };
 
 extern NcmpcppKeys Key;
 extern NcmpcppConfig Config;
 
-void CreateConfigDir();
+void CreateDir(const std::string &dir);
 void SetWindowsDimensions(size_t &header_height, size_t &footer_start_y, size_t &footer_height);
 
 #endif

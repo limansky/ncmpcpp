@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -311,13 +311,15 @@ void Trim(std::string &s)
 	size_t b = 0;
 	size_t e = s.length()-1;
 	
-	while (s[b] == ' ' || s[b] == '\n')
-		++b;
 	while (s[e] == ' ' || s[e] == '\n')
 		--e;
 	++e;
+	if (e != s.length())
+		s.resize(e);
 	
-	if (b != 0 || e != s.length()-1)
-		s = s.substr(b, e-b);
+	while (s[b] == ' ' || s[b] == '\n')
+		++b;
+	if (b != 0)
+		 s = s.substr(b);
 }
 

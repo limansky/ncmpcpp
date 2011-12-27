@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -87,15 +87,18 @@ void SearchEngine::InitTranslation()
 
 void SearchEngine::Resize()
 {
-	w->Resize(COLS, MainHeight);
-	w->MoveTo(0, MainStartY);
-	w->SetTitle(Config.columns_in_search_engine && Config.titles_visibility ? Display::Columns() : "");
+	size_t x_offset, width;
+	GetWindowResizeParams(x_offset, width);
+	w->Resize(width, MainHeight);
+	w->MoveTo(x_offset, MainStartY);
+	w->SetTitle(Config.columns_in_search_engine && Config.titles_visibility ? Display::Columns(w->GetWidth()) : "");
 	hasToBeResized = 0;
 }
 
 void SearchEngine::SwitchTo()
 {
 	using Global::myScreen;
+	using Global::myLockedScreen;
 	
 	if (myScreen == this)
 	{
@@ -106,7 +109,10 @@ void SearchEngine::SwitchTo()
 	if (!isInitialized)
 		Init();
 	
-	if (hasToBeResized)
+	if (myLockedScreen)
+		UpdateInactiveScreen(this);
+	
+	if (hasToBeResized || myLockedScreen)
 		Resize();
 	
 	if (w->Empty())
@@ -165,7 +171,7 @@ void SearchEngine::EnterPressed()
 		if (!w->Back().first)
 		{
 			if (Config.columns_in_search_engine)
-				w->SetTitle(Config.titles_visibility ? Display::Columns() : "");
+				w->SetTitle(Config.titles_visibility ? Display::Columns(w->GetWidth()) : "");
 			size_t found = w->Size()-SearchEngine::StaticOptions;
 			found += 3; // don't count options inserted below
 			w->InsertSeparator(ResetButton+1);

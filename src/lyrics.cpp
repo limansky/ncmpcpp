@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,11 +20,6 @@
 
 #include <cassert>
 #include <cerrno>
-#ifdef WIN32
-# include <io.h>
-#else
-# include <sys/stat.h>
-#endif // WIN32
 #include <fstream>
 
 #include "browser.h"
@@ -37,30 +32,30 @@
 #include "settings.h"
 #include "song.h"
 
-#ifdef WIN32
-# define LYRICS_FOLDER HOME_FOLDER"\\lyrics\\"
-#else
-# define LYRICS_FOLDER "/.lyrics"
-#endif // WIN32
-
 using Global::MainHeight;
 using Global::MainStartY;
 using Global::myScreen;
 using Global::myOldScreen;
+
+#ifdef HAVE_CURL_CURL_H
+LyricsFetcher **Lyrics::itsFetcher = 0;
+std::set<MPD::Song *> Lyrics::itsDownloaded;
+#endif // HAVE_CURL_CURL_H
 
 Lyrics *myLyrics = new Lyrics;
 
 void Lyrics::Init()
 {
 	w = new Scrollpad(0, MainStartY, COLS, MainHeight, "", Config.main_color, brNone);
-	itsFolder = home_path + LYRICS_FOLDER;
 	isInitialized = 1;
 }
 
 void Lyrics::Resize()
 {
-	w->Resize(COLS, MainHeight);
-	w->MoveTo(0, MainStartY);
+	size_t x_offset, width;
+	GetWindowResizeParams(x_offset, width);
+	w->Resize(width, MainHeight);
+	w->MoveTo(x_offset, MainStartY);
 	hasToBeResized = 0;
 }
 
@@ -92,6 +87,9 @@ void Lyrics::Update()
 
 void Lyrics::SwitchTo()
 {
+	using Global::myLockedScreen;
+	using Global::myInactiveScreen;
+	
 	if (myScreen == this)
 		return myOldScreen->SwitchTo();
 	
@@ -107,6 +105,12 @@ void Lyrics::SwitchTo()
 	// take lyrics if they were downloaded
 	if (isReadyToTake)
 		Take();
+	
+	if (isDownloadInProgress || !itsDownloaded.empty())
+	{
+		ShowMessage("Lyrics are being downloaded...");
+		return;
+	}
 #	endif // HAVE_CURL_CURL_H
 	
 	if (const MPD::Song *s = myScreen->CurrentSong())
@@ -122,14 +126,25 @@ void Lyrics::SwitchTo()
 			Global::RedrawHeader = 1;
 		}
 		else
+		{
 			ShowMessage(_("Song must have both artist and title tag set!"));
+			return;
+		}
+	}
+	// if we resize for locked screen, we have to do that in the end since
+	// fetching lyrics may fail (eg. if tags are missing) and we don't want
+	// to adjust screen size then.
+	if (myLockedScreen)
+	{
+		UpdateInactiveScreen(this);
+		Resize();
 	}
 }
 
 std::basic_string<my_char_t> Lyrics::Title()
 {
 	std::basic_string<my_char_t> result = TO_WSTRING(_("Lyrics")) + L": ";
-	result += Scroller(TO_WSTRING(itsSong.toString("{%a - %t}")), itsScrollBegin, w->GetWidth()-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
+	result += Scroller(TO_WSTRING(itsSong.toString("{%a - %t}")), itsScrollBegin, COLS-result.length()-(Config.new_design ? 2 : Global::VolumeState.length()));
 	return result;
 }
 
@@ -140,9 +155,55 @@ void Lyrics::SpacePressed()
 }
 
 #ifdef HAVE_CURL_CURL_H
-void *Lyrics::DownloadWrapper(void *this_ptr)
+void Lyrics::DownloadInBackground(const MPD::Song *s)
 {
-	return static_cast<Lyrics *>(this_ptr)->Download();
+	if (!s || s->GetArtist().empty() || s->GetTitle().empty())
+		return;
+	if (!s->Localized())
+		const_cast<MPD::Song *>(s)->Localize();
+	
+	std::string filename = GenerateFilename(*s);
+	std::ifstream f(filename.c_str());
+	if (f.is_open())
+	{
+		f.close();
+		return;
+	}
+	ShowMessage("Fetching lyrics for %s...", s->toString(Config.song_status_format_no_colors).c_str());
+	// we need to copy it and store separetely since this song may get deleted in the meantime.
+	MPD::Song *s_copy = new MPD::Song(*s);
+	itsDownloaded.insert(s_copy);
+	pthread_t t;
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+	pthread_create(&t, &attr, DownloadInBackgroundImpl, s_copy);
+}
+
+void *Lyrics::DownloadInBackgroundImpl(void *void_ptr)
+{
+	MPD::Song *s = static_cast<MPD::Song *>(void_ptr);
+	
+	std::string artist = Curl::escape(locale_to_utf_cpy(s->GetArtist()));
+	std::string title = Curl::escape(locale_to_utf_cpy(s->GetTitle()));
+	
+	LyricsFetcher::Result result;
+	bool fetcher_defined = itsFetcher && *itsFetcher;
+	for (LyricsFetcher **plugin = fetcher_defined ? itsFetcher : lyricsPlugins; *plugin != 0; ++plugin)
+	{
+		result = (*plugin)->fetch(artist, title);
+		if (result.first)
+			break;
+		if (fetcher_defined)
+			break;
+	}
+	if (result.first == true)
+		Save(GenerateFilename(*s), result.second);
+	
+	delete s;
+	itsDownloaded.erase(s);
+	
+	pthread_exit(0);
 }
 
 void *Lyrics::Download()
@@ -169,7 +230,7 @@ void *Lyrics::Download()
 	
 	if (result.first == true)
 	{
-		Save(result.second);
+		Save(itsFilename, result.second);
 		
 		utf_to_locale(result.second);
 		w->Clear();
@@ -181,37 +242,44 @@ void *Lyrics::Download()
 	isReadyToTake = 1;
 	pthread_exit(0);
 }
+
+void *Lyrics::DownloadWrapper(void *this_ptr)
+{
+	return static_cast<Lyrics *>(this_ptr)->Download();
+}
 #endif // HAVE_CURL_CURL_H
 
-void Lyrics::SetFilename()
+std::string Lyrics::GenerateFilename(const MPD::Song &s)
 {
+	std::string filename;
 	if (Config.store_lyrics_in_song_dir)
 	{
-		if (itsSong.isFromDB())
+		if (s.isFromDB())
 		{
-			itsFilename = Config.mpd_music_dir;
-			itsFilename += "/";
-			itsFilename += itsSong.GetFile();
+			filename = Config.mpd_music_dir;
+			filename += "/";
+			filename += s.GetFile();
 		}
 		else
-			itsFilename = itsSong.GetFile();
+			filename = s.GetFile();
 		// replace song's extension with .txt
-		size_t dot = itsFilename.rfind('.');
+		size_t dot = filename.rfind('.');
 		assert(dot != std::string::npos);
-		itsFilename.resize(dot);
-		itsFilename += ".txt";
+		filename.resize(dot);
+		filename += ".txt";
 	}
 	else
 	{
-		std::string file = locale_to_utf_cpy(itsSong.GetArtist());
+		std::string file = locale_to_utf_cpy(s.GetArtist());
 		file += " - ";
-		file += locale_to_utf_cpy(itsSong.GetTitle());
+		file += locale_to_utf_cpy(s.GetTitle());
 		file += ".txt";
 		EscapeUnallowedChars(file);
-		itsFilename = itsFolder;
-		itsFilename += "/";
-		itsFilename += file;
+		filename = Config.lyrics_directory;
+		filename += "/";
+		filename += file;
 	}
+	return filename;
 }
 
 void Lyrics::Load()
@@ -225,13 +293,9 @@ void Lyrics::Load()
 	assert(!itsSong.GetTitle().empty());
 	
 	itsSong.Localize();
-	SetFilename();
+	itsFilename = GenerateFilename(itsSong);
 	
-	mkdir(itsFolder.c_str()
-#	ifndef WIN32
-	, 0755
-#	endif // !WIN32
-	);
+	CreateDir(Config.lyrics_directory);
 	
 	w->Clear();
 	w->Reset();
@@ -292,9 +356,9 @@ void Lyrics::Edit()
 }
 
 #ifdef HAVE_CURL_CURL_H
-void Lyrics::Save(const std::string &lyrics)
+void Lyrics::Save(const std::string &filename, const std::string &lyrics)
 {
-	std::ofstream output(itsFilename.c_str());
+	std::ofstream output(filename.c_str());
 	if (output.is_open())
 	{
 		output << lyrics;

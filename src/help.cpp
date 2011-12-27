@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,14 +42,17 @@ void Help::Init()
 
 void Help::Resize()
 {
-	w->Resize(COLS, MainHeight);
-	w->MoveTo(0, MainStartY);
+	size_t x_offset, width;
+	GetWindowResizeParams(x_offset, width);
+	w->Resize(width, MainHeight);
+	w->MoveTo(x_offset, MainStartY);
 	hasToBeResized = 0;
 }
 
 void Help::SwitchTo()
 {
 	using Global::myScreen;
+	using Global::myLockedScreen;
 	
 	if (myScreen == this)
 		return;
@@ -57,7 +60,10 @@ void Help::SwitchTo()
 	if (!isInitialized)
 		Init();
 	
-	if (hasToBeResized)
+	if (myLockedScreen)
+		UpdateInactiveScreen(this);
+	
+	if (hasToBeResized || myLockedScreen)
 		Resize();
 	
 	if (myScreen != this && myScreen->isTabbable())
@@ -213,6 +219,7 @@ void Help::GetKeybindings()
 	*w << DisplayKeys(Key.ToggleFindMode)		<< _("Toggle find mode (normal/wrapped)") << "\n";
 	*w << DisplayKeys(Key.GoToContainingDir)	<< _("Locate song in browser") << "\n";
 	*w << DisplayKeys(Key.GoToMediaLibrary)		<< _("Locate current song in media library") << "\n";
+	*w << DisplayKeys(Key.ToggleScreenLock)		<< "Lock/unlock current screen\n";
 #	ifdef HAVE_TAGLIB_H
 	*w << DisplayKeys(Key.GoToTagEditor)		<< _("Locate current song in tag editor") << "\n";
 #	endif // HAVE_TAGLIB_H
@@ -224,6 +231,7 @@ void Help::GetKeybindings()
 #	ifdef HAVE_CURL_CURL_H
 	*w << DisplayKeys(Key.ArtistInfo)		<< _("Show artist info") << "\n";
 	*w << DisplayKeys(Key.ToggleLyricsDB)		<< _("Toggle lyrics database") << "\n";
+	*w << DisplayKeys(Key.ToggleFetchingLyricsInBackground) << "Toggle fetching lyrics for current song in background\n";
 #	endif // HAVE_CURL_CURL_H
 	*w << DisplayKeys(Key.Lyrics)			<< _("Show/hide song's lyrics") << "\n";
 	*w << "\n";

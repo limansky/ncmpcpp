@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -66,8 +66,10 @@ class TagEditor : public Screen<Window>
 		
 		virtual List *GetList();
 		
-		void NextColumn();
-		void PrevColumn();
+		virtual bool isMergable() { return true; }
+		
+		bool NextColumn();
+		bool PrevColumn();
 		
 		void LocateSong(const MPD::Song &s);
 		
@@ -85,9 +87,10 @@ class TagEditor : public Screen<Window>
 		
 	protected:
 		virtual void Init();
+		virtual bool isLockable() { return true; }
 		
 	private:
-		void SetDimensions();
+		void SetDimensions(size_t, size_t);
 		
 		MPD::SongList EditedSongs;
 		Menu<std::string> *FParserDialog;
@@ -114,10 +117,11 @@ class TagEditor : public Screen<Window>
 		std::string itsBrowsedDir;
 		std::string itsHighlightedDir;
 		
-		static const std::string PatternsFile;
+		static std::string PatternsFile;
 		static std::list<std::string> Patterns;
 		
 		static size_t MiddleColumnWidth;
+		static size_t LeftColumnStartX;
 		static size_t LeftColumnWidth;
 		static size_t MiddleColumnStartX;
 		static size_t RightColumnWidth;

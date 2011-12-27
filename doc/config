@@ -3,6 +3,25 @@
 ## ~/.ncmpcpp/config and set up your preferences  ##
 ####################################################
 #
+##### directories ######
+##
+## Directory for storing ncmpcpp related files.
+## Changing it is useful if you want to store
+## everything somewhere else and provide command
+## line setting for alternative location to config
+## file which defines that while launching ncmpcpp.
+##
+#
+#ncmpcpp_directory = "~/.ncmpcpp"
+#
+##
+## Directory for storing downloaded lyrics. It
+## defaults to ~/.lyrics since other MPD clients
+## (eg. ncmpc) also use that location.
+##
+#
+#lyrics_directory = "~/.lyrics"
+#
 ##### connection settings #####
 #
 ## set it in order to make tag editor and renaming files work properly
@@ -23,16 +42,23 @@
 ##
 ## Note: In order to make music visualizer work you'll
 ## need to use mpd fifo output, whose format parameter
-## has to be set to 44100:16:1. Example configuration:
-## (it has to be put into mpd.conf)
+## has to be set to 44100:16:1 for mono visualization
+## or 44100:16:2 for stereo visualization. Example
+## configuration (it has to be put into mpd.conf):
 ##
 ## audio_output {
 ##        type            "fifo"
 ##        name            "My FIFO"
 ##        path            "/tmp/mpd.fifo"
-##        format          "44100:16:1"
+##        format          "44100:16:2"
 ## }
 ##
+#
+##
+## If you set format to 44100:16:2, make it 'yes'.
+##
+#
+#visualizer_in_stereo = "no"
 #
 #visualizer_fifo_path = ""
 #
@@ -62,6 +88,8 @@
 ##
 #
 #visualizer_type = "wave" (spectrum/wave)
+#
+#visualizer_look = "◆│"
 #
 ##### system encoding #####
 ##
@@ -251,6 +279,8 @@
 #
 #search_engine_display_mode = "classic" (classic/columns)
 #
+#playlist_editor_display_mode = "classic" (classic/columns)
+#
 #discard_colors_if_item_is_selected = "yes"
 #
 #incremental_seeking = "yes"
@@ -297,6 +327,8 @@
 #
 #follow_now_playing_lyrics = "no"
 #
+#fetch_lyrics_for_current_song_in_background = "no"
+#
 #store_lyrics_in_song_dir = "no"
 #
 ##
@@ -338,6 +370,15 @@
 ## playlist, visualizer and media library screens.
 ##
 #screen_switcher_mode = "sequence: 2 -> 3"
+#
+##
+## Default width of locked screen (in %).
+## Acceptable values are from 20 to 80.
+##
+#
+#locked_screen_width_part = "50"
+#
+#ask_for_locked_screen_width_part = "yes"
 #
 ##
 ## Note: You can define startup screen for ncmpcpp

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,6 +33,7 @@ LyricsFetcher *lyricsPlugins[] =
 	new LyricwikiFetcher(),
 	new LyricsvipFetcher(),
 	new Sing365Fetcher(),
+	new LoloLyricsFetcher(),
 	new LyriczzFetcher(),
 	new SonglyricsFetcher(),
 	new LyricsmaniaFetcher(),

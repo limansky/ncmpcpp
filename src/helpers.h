@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -244,6 +244,9 @@ std::string PathGoDownOneLevel(const std::string &path);
 std::string GetLineValue(std::string &, char = '"', char = '"', bool = 0);
 
 std::basic_string<my_char_t> Scroller(const std::basic_string<my_char_t> &str, size_t &pos, size_t width);
+
+bool SwitchToNextColumn(BasicScreen *);
+bool SwitchToPrevColumn(BasicScreen *);
 
 #endif
 

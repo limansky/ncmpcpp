@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,7 +42,7 @@ bool ConnectToMPD()
 {
 	if (!Mpd.Connect())
 	{
-		std::cout << "Cannot connect to mpd: " << Mpd.GetErrorMessage() << std::endl;
+		std::cout << "Couldn't connect to MPD (host = " << Mpd.GetHostname() << ", port = " << Mpd.GetPort() << "): " << Mpd.GetErrorMessage() << std::endl;
 		return false;
 	}
 	return true;
@@ -125,6 +125,7 @@ void ParseArgv(int argc, char **argv)
 			<< "Usage: ncmpcpp [OPTION]...\n"
 			<< "  -h, --host                connect to server at host [localhost]\n"
 			<< "  -p, --port                connect to server at port [6600]\n"
+			<< "  -c, --config              use alternative configuration file\n"
 			<< "  -s, --screen <name>       specify the startup screen\n"
 			<< "  -?, --help                show this help message\n"
 			<< "  -v, --version             display version information\n"
@@ -142,7 +143,7 @@ void ParseArgv(int argc, char **argv)
 		}
 		
 		if (!ConnectToMPD())
-			exit(0);
+			exit(1);
 		
 		if (!strcmp(argv[i], "-s") || !strcmp(argv[i], "--screen"))
 		{
@@ -257,6 +258,11 @@ void ParseArgv(int argc, char **argv)
 			if (i != argc)
 				Mpd.SetVolume(Mpd.GetVolume()+atoi(argv[i]));
 			quit = 1;
+		}
+		else if (!strcmp(argv[i], "-c") || !strcmp(argv[i], "--config"))
+		{
+			// this is used in NcmpcppConfig::CheckForCommandLineConfigFilePath, ignoring here.
+			++i;
 		}
 		else
 		{
@@ -461,3 +467,28 @@ std::basic_string<my_char_t> Scroller(const std::basic_string<my_char_t> &str, s
 	return result;
 }
 
+bool SwitchToNextColumn(BasicScreen *screen)
+{
+	if (screen == myLibrary)
+		return myLibrary->NextColumn();
+	else if (screen == myPlaylistEditor)
+		return myPlaylistEditor->NextColumn();
+#	ifdef HAVE_TAGLIB_H
+	else if (screen == myTagEditor)
+		return myTagEditor->NextColumn();
+#	endif // HAVE_TAGLIB_H
+	return false;
+}
+
+bool SwitchToPrevColumn(BasicScreen *screen)
+{
+	if (screen == myLibrary)
+		return myLibrary->PrevColumn();
+	else if (screen == myPlaylistEditor)
+		return myPlaylistEditor->PrevColumn();
+#	ifdef HAVE_TAGLIB_H
+	else if (screen == myTagEditor)
+		return myTagEditor->PrevColumn();
+#	endif // HAVE_TAGLIB_H
+	return false;
+}

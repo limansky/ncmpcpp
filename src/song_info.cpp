@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,8 +25,6 @@
 
 using Global::MainHeight;
 using Global::MainStartY;
-using Global::myScreen;
-using Global::myOldScreen;
 
 SongInfo *mySongInfo = new SongInfo;
 
@@ -69,8 +67,10 @@ void SongInfo::InitTranslation()
 
 void SongInfo::Resize()
 {
-	w->Resize(COLS, MainHeight);
-	w->MoveTo(0, MainStartY);
+	size_t x_offset, width;
+	GetWindowResizeParams(x_offset, width);
+	w->Resize(width, MainHeight);
+	w->MoveTo(x_offset, MainStartY);
 	hasToBeResized = 0;
 }
 
@@ -81,18 +81,25 @@ my_string_t SongInfo::Title()
 
 void SongInfo::SwitchTo()
 {
+	using Global::myScreen;
+	using Global::myOldScreen;
+	using Global::myLockedScreen;
+	
 	if (myScreen == this)
 		return myOldScreen->SwitchTo();
 	
 	if (!isInitialized)
 		Init();
 	
+	if (myLockedScreen)
+		UpdateInactiveScreen(this);
+	
 	MPD::Song *s = myScreen->CurrentSong();
 	
 	if (!s)
 		return;
 	
-	if (hasToBeResized)
+	if (hasToBeResized || myLockedScreen)
 		Resize();
 	
 	myOldScreen = myScreen;

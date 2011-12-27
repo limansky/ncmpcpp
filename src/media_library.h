@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -66,9 +66,11 @@ class MediaLibrary : public Screen<Window>
 		
 		virtual List *GetList();
 		
+		virtual bool isMergable() { return true; }
+		
 		int Columns() { return hasTwoColumns ? 2 : 3; }
-		void NextColumn();
-		void PrevColumn();
+		bool NextColumn();
+		bool PrevColumn();
 		
 		void LocateSong(const MPD::Song &);
 		
@@ -78,6 +80,7 @@ class MediaLibrary : public Screen<Window>
 		
 	protected:
 		virtual void Init();
+		virtual bool isLockable() { return true; }
 		
 	private:
 		void AddToPlaylist(bool);
@@ -92,6 +95,7 @@ class MediaLibrary : public Screen<Window>
 		static bool SortAllTracks(MPD::Song *, MPD::Song *);
 		
 		static bool hasTwoColumns;
+		static size_t itsLeftColStartX;
 		static size_t itsLeftColWidth;
 		static size_t itsMiddleColWidth;
 		static size_t itsMiddleColStartX;

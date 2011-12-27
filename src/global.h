@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,6 +21,8 @@
 #ifndef _GLOBAL_H
 #define _GLOBAL_H
 
+#include <sys/time.h>
+
 #include "ncmpcpp.h"
 #include "mpdpp.h"
 #include "screen.h"
@@ -30,6 +32,8 @@ namespace Global
 	extern BasicScreen *myScreen;
 	extern BasicScreen *myOldScreen;	// for info, lyrics, popups
 	extern BasicScreen *myPrevScreen;	// "real" screen switching (browser, search, etc.)
+	extern BasicScreen *myLockedScreen;     // points at the screen that was locked (or is null if no screen is locked)
+	extern BasicScreen *myInactiveScreen;   // points at inactive screen, if locking was enabled and two screens are displayed
 	
 	extern Window *wHeader;
 	extern Window *wFooter;

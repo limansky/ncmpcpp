@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -46,12 +46,14 @@ class SongInfo : public Screen<Scrollpad>
 		
 		virtual List *GetList() { return 0; }
 
-        static void InitTranslation();
+		static void InitTranslation();
+		virtual bool isMergable() { return true; }
 		
 		static Metadata Tags[];
 		
 	protected:
 		virtual void Init();
+		virtual bool isLockable() { return false; }
 		
 	private:
 		void PrepareSong(MPD::Song &);

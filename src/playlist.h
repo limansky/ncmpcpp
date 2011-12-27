@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -55,6 +55,8 @@ class Playlist : public Screen<Window>
 		
 		virtual List *GetList() { return w == Items ? Items : 0; }
 		
+		virtual bool isMergable() { return true; }
+		
 		bool isPlaying() { return NowPlaying >= 0 && !Items->Empty(); }
 		const MPD::Song *NowPlayingSong();
 		
@@ -85,6 +87,7 @@ class Playlist : public Screen<Window>
 		
 	protected:
 		virtual void Init();
+		virtual bool isLockable() { return true; }
 		
 	private:
 		std::string TotalLength();
