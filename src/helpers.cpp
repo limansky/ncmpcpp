@@ -492,3 +492,36 @@ bool SwitchToPrevColumn(BasicScreen *screen)
 #	endif // HAVE_TAGLIB_H
 	return false;
 }
+
+std::string PluralString(const char* single, const char* plural, unsigned long value, ...)
+{
+	const char* format = ngettext(single, plural, value);
+
+	size_t bufsize = 1024;
+	char* buf = 0;
+
+	va_list list;
+	va_start(list, value);
+
+	while (true)
+	{
+		delete [] buf;
+		buf = new char[bufsize];
+
+		int n = vsnprintf(buf, bufsize, format, list);
+
+		if (n >= 0 && n < bufsize) break;
+
+		if (n >= 0)
+			bufsize = n + 1;
+		else
+			bufsize <<= 1;
+	}
+
+	va_end(list);
+
+	std::string result(buf);
+	delete [] buf;
+
+	return result;
+}

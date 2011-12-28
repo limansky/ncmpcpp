@@ -150,7 +150,7 @@ void PlaylistEditor::Update()
 		Mpd.GetPlaylistContent(locale_to_utf_cpy(Playlists->Current()), list);
 		if (!list.empty())
 		{
-			std::string title = Config.titles_visibility ? "Playlist's content (" + IntoStr(list.size()) + " item" + (list.size() == 1 ? ")" : "s)") : "";
+			std::string title = Config.titles_visibility ? PluralString("Playlist's content (%u item)", "Playlist's content (%u items)", list.size()) : "";
 			title.resize(Content->GetWidth());
 			Content->SetTitle(title);
 		}
