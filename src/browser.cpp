@@ -215,10 +215,10 @@ void Browser::SpacePressed()
 		case itPlaylist:
 		{
 			std::string name = itsBrowsedDir == "/" ? item.name : itsBrowsedDir + "/" + item.name;
-			ShowMessage("Loading playlist %s...", name.c_str());
+			ShowMessage(_("Loading playlist %s..."), name.c_str());
 			locale_to_utf(name);
 			if (Mpd.LoadPlaylist(name))
-				ShowMessage("Playlist loaded.");
+				ShowMessage(_("Playlist loaded."));
 			break;
 		}
 	}

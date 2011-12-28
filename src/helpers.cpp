@@ -493,22 +493,17 @@ bool SwitchToPrevColumn(BasicScreen *screen)
 	return false;
 }
 
-std::string PluralString(const char* single, const char* plural, unsigned long value, ...)
+std::string FormatString(const char* format, va_list args)
 {
-	const char* format = ngettext(single, plural, value);
-
 	size_t bufsize = 1024;
 	char* buf = 0;
-
-	va_list list;
-	va_start(list, value);
 
 	while (true)
 	{
 		delete [] buf;
 		buf = new char[bufsize];
 
-		int n = vsnprintf(buf, bufsize, format, list);
+		int n = vsnprintf(buf, bufsize, format, args);
 
 		if (n >= 0 && n < bufsize) break;
 
@@ -518,10 +513,32 @@ std::string PluralString(const char* single, const char* plural, unsigned long v
 			bufsize <<= 1;
 	}
 
-	va_end(list);
-
 	std::string result(buf);
 	delete [] buf;
 
 	return result;
 }
+
+std::string PluralString(const char* single, const char* plural, unsigned long value, ...)
+{
+	const char* format = ngettext(single, plural, value);
+
+	va_list list;
+	va_start(list, value);
+	const std::string& result = FormatString(format, list);
+	va_end(list);
+
+	return result;
+}
+
+std::string FormatString(const char* format, ...)
+{
+	va_list list;
+	va_start(list, format);
+
+	const std::string& result = FormatString(format, list);
+	va_end(list);
+
+	return result;
+}
+

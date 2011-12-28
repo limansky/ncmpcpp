@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.9_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-12-28 14:45+0400\n"
+"POT-Creation-Date: 2011-12-28 16:00+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -712,13 +712,14 @@ msgid "Repeat mode is %s"
 msgstr ""
 
 #: src/status.cpp:536 src/status.cpp:541 src/status.cpp:546 src/status.cpp:551
-#: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1470 src/ncmpcpp.cpp:2130
-#: src/lyrics.cpp:154
+#: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1464 src/ncmpcpp.cpp:1470
+#: src/ncmpcpp.cpp:2130 src/lyrics.cpp:154
 msgid "off"
 msgstr ""
 
 #: src/status.cpp:536 src/status.cpp:541 src/status.cpp:546 src/status.cpp:551
-#: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1470 src/lyrics.cpp:154
+#: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1464 src/ncmpcpp.cpp:1470
+#: src/lyrics.cpp:154
 msgid "on"
 msgstr ""
 
@@ -829,7 +830,8 @@ msgid "Reverse"
 msgstr ""
 
 #: src/playlist.cpp:87 src/tiny_tag_editor.cpp:249 src/tag_editor.cpp:123
-#: src/tag_editor.cpp:396
+#: src/tag_editor.cpp:396 src/sel_items_adder.cpp:58
+#: src/sel_items_adder.cpp:112
 msgid "Cancel"
 msgstr ""
 
@@ -914,12 +916,12 @@ msgstr ""
 msgid "Loading and playing playlist %s..."
 msgstr ""
 
-#: src/browser.cpp:156 src/playlist_editor.cpp:226
+#: src/browser.cpp:156 src/browser.cpp:218 src/playlist_editor.cpp:226
 #, c-format
 msgid "Loading playlist %s..."
 msgstr ""
 
-#: src/browser.cpp:159
+#: src/browser.cpp:159 src/browser.cpp:221
 msgid "Playlist loaded."
 msgstr ""
 
@@ -993,6 +995,10 @@ msgstr ""
 msgid "Search mode:"
 msgstr ""
 
+#: src/search_engine.cpp:167 src/ncmpcpp.cpp:2073 src/ncmpcpp.cpp:2101
+msgid "Searching..."
+msgstr ""
+
 #: src/search_engine.cpp:180
 msgid "Search results: "
 msgstr ""
@@ -1007,6 +1013,10 @@ msgid_plural "songs"
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/search_engine.cpp:184 src/ncmpcpp.cpp:2080
+msgid "Searching finished!"
+msgstr ""
+
 #: src/search_engine.cpp:192
 msgid "No results found"
 msgstr ""
@@ -1017,6 +1027,10 @@ msgstr ""
 
 #: src/search_engine.cpp:424 src/tag_editor.cpp:99
 msgid "Reset"
+msgstr ""
+
+#: src/search_engine.cpp:433
+msgid "Search state reset"
 msgstr ""
 
 #: src/helpers.h:163
@@ -1199,7 +1213,7 @@ msgid "Alternative"
 msgstr ""
 
 #: src/ncmpcpp.cpp:211 src/ncmpcpp.cpp:1406 src/ncmpcpp.cpp:1424
-#: src/ncmpcpp.cpp:1431
+#: src/ncmpcpp.cpp:1431 src/ncmpcpp.cpp:1438
 msgid "Classic"
 msgstr ""
 
@@ -1333,6 +1347,7 @@ msgid "Playlist display mode: %s"
 msgstr ""
 
 #: src/ncmpcpp.cpp:1406 src/ncmpcpp.cpp:1424 src/ncmpcpp.cpp:1431
+#: src/ncmpcpp.cpp:1438
 msgid "Columns"
 msgstr ""
 
@@ -1346,9 +1361,19 @@ msgstr ""
 msgid "Search engine display mode: %s"
 msgstr ""
 
+#: src/ncmpcpp.cpp:1438
+#, c-format
+msgid "Playlist editor display mode: %s"
+msgstr ""
+
 #: src/ncmpcpp.cpp:1454
 #, c-format
 msgid "Separators between albums in playlist: %s"
+msgstr ""
+
+#: src/ncmpcpp.cpp:1464
+#, c-format
+msgid "Fetching lyrics for currently playing song in background: %s"
 msgstr ""
 
 #: src/ncmpcpp.cpp:1470
@@ -1401,6 +1426,29 @@ msgstr ""
 #: src/ncmpcpp.cpp:1735
 #, c-format
 msgid "Playlist renamed to \"%s\""
+msgstr ""
+
+#: src/ncmpcpp.cpp:1771
+msgid "Screen unlocked"
+msgstr ""
+
+#: src/ncmpcpp.cpp:1779
+#, c-format
+msgid "% of the locked screen's width to be reserved (20-80): "
+msgstr ""
+
+#: src/ncmpcpp.cpp:1788
+#, c-format
+msgid "Invalid number (%d)!"
+msgstr ""
+
+#: src/ncmpcpp.cpp:1793
+#, c-format
+msgid "Screen locked (with %d%% width)"
+msgstr ""
+
+#: src/ncmpcpp.cpp:1795
+msgid "Screen cannot be locked"
 msgstr ""
 
 #: src/ncmpcpp.cpp:1819
@@ -1489,14 +1537,6 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:2067
 msgid "backward"
-msgstr ""
-
-#: src/ncmpcpp.cpp:2073 src/ncmpcpp.cpp:2101
-msgid "Searching..."
-msgstr ""
-
-#: src/ncmpcpp.cpp:2080
-msgid "Searching finished!"
 msgstr ""
 
 #: src/ncmpcpp.cpp:2080
@@ -1669,6 +1709,10 @@ msgstr ""
 msgid "Switched to list of %s tag"
 msgstr ""
 
+#: src/lyrics.cpp:111
+msgid "Lyrics are being downloaded..."
+msgstr ""
+
 #: src/lyrics.cpp:130
 msgid "Song must have both artist and title tag set!"
 msgstr ""
@@ -1678,12 +1722,25 @@ msgstr ""
 msgid "Reload lyrics if song changes: %s"
 msgstr ""
 
+#: src/lyrics.cpp:172
+#, c-format
+msgid "Fetching lyrics for %s..."
+msgstr ""
+
 #: src/lyrics.cpp:221
 msgid "Fetching lyrics from"
 msgstr ""
 
 #: src/lyrics.cpp:240
 msgid "Lyrics weren't found."
+msgstr ""
+
+#: src/lyrics.cpp:326
+#, c-format
+msgid ""
+"Local lyrics not found. As ncmpcpp has been compiled without curl support, "
+"you can put appropriate lyrics into %s directory (file syntax is \"$ARTIST - "
+"$TITLE.txt\") or recompile ncmpcpp with curl support."
 msgstr ""
 
 #: src/lyrics.cpp:339
@@ -1899,7 +1956,7 @@ msgstr ""
 msgid "Error while parsing filename!"
 msgstr ""
 
-#: src/server_info.cpp:56
+#: src/server_info.cpp:56 src/sel_items_adder.cpp:76
 msgid "Screen is too small to display this window!"
 msgstr ""
 
@@ -1980,4 +2037,61 @@ msgstr ""
 #: src/visualizer.cpp:244
 #, c-format
 msgid "There is no output named \"%s\"!"
+msgstr ""
+
+#: src/sel_items_adder.cpp:41
+msgid "Add selected item(s) to..."
+msgstr ""
+
+#: src/sel_items_adder.cpp:47
+msgid "Where?"
+msgstr ""
+
+#: src/sel_items_adder.cpp:52
+msgid "At the end of playlist"
+msgstr ""
+
+#: src/sel_items_adder.cpp:53
+msgid "At the beginning of playlist"
+msgstr ""
+
+#: src/sel_items_adder.cpp:54
+msgid "After current track"
+msgstr ""
+
+#: src/sel_items_adder.cpp:55
+msgid "After current album"
+msgstr ""
+
+#: src/sel_items_adder.cpp:56
+msgid "After highlighted item"
+msgstr ""
+
+#: src/sel_items_adder.cpp:94
+msgid "Local items cannot be added to m3u playlist!"
+msgstr ""
+
+#: src/sel_items_adder.cpp:99
+msgid "Current MPD playlist"
+msgstr ""
+
+#: src/sel_items_adder.cpp:100
+msgid "New playlist"
+msgstr ""
+
+#: src/sel_items_adder.cpp:176
+msgid "Save playlist as: "
+msgstr ""
+
+#: src/sel_items_adder.cpp:186 src/sel_items_adder.cpp:196
+#, c-format
+msgid "Selected item(s) added to playlist \"%s\"!"
+msgstr ""
+
+#: src/sel_items_adder.cpp:212
+msgid "Player is stopped!"
+msgstr ""
+
+#: src/sel_items_adder.cpp:249
+msgid "Selected item(s) added!"
 msgstr ""

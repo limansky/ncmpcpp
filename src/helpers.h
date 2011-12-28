@@ -243,6 +243,7 @@ std::string PathGoDownOneLevel(const std::string &path);
 
 std::string GetLineValue(std::string &, char = '"', char = '"', bool = 0);
 std::string PluralString(const char* single, const char* plural, unsigned long value, ...);
+std::string FormatString(const char* format, ...);
 
 std::basic_string<my_char_t> Scroller(const std::basic_string<my_char_t> &str, size_t &pos, size_t width);
 

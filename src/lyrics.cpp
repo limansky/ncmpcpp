@@ -108,7 +108,7 @@ void Lyrics::SwitchTo()
 	
 	if (isDownloadInProgress || !itsDownloaded.empty())
 	{
-		ShowMessage("Lyrics are being downloaded...");
+		ShowMessage(_("Lyrics are being downloaded..."));
 		return;
 	}
 #	endif // HAVE_CURL_CURL_H
@@ -169,7 +169,7 @@ void Lyrics::DownloadInBackground(const MPD::Song *s)
 		f.close();
 		return;
 	}
-	ShowMessage("Fetching lyrics for %s...", s->toString(Config.song_status_format_no_colors).c_str());
+	ShowMessage(_("Fetching lyrics for %s..."), s->toString(Config.song_status_format_no_colors).c_str());
 	// we need to copy it and store separetely since this song may get deleted in the meantime.
 	MPD::Song *s_copy = new MPD::Song(*s);
 	itsDownloaded.insert(s_copy);
@@ -323,7 +323,7 @@ void Lyrics::Load()
 		pthread_create(&itsDownloader, 0, DownloadWrapper, this);
 		isDownloadInProgress = 1;
 #		else
-		*w << "Local lyrics not found. As ncmpcpp has been compiled without curl support, you can put appropriate lyrics into " << itsFolder << " directory (file syntax is \"$ARTIST - $TITLE.txt\") or recompile ncmpcpp with curl support.";
+		*w << FormatString(_("Local lyrics not found. As ncmpcpp has been compiled without curl support, you can put appropriate lyrics into %s directory (file syntax is \"$ARTIST - $TITLE.txt\") or recompile ncmpcpp with curl support."), itsFolder.c_str());
 		w->Flush();
 #		endif
 	}

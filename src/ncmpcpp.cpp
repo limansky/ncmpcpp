@@ -1435,7 +1435,7 @@ int main(int argc, char **argv)
 			else if (myScreen->ActiveWindow() == myPlaylistEditor->Content)
 			{
 				Config.columns_in_playlist_editor = !Config.columns_in_playlist_editor;
-				ShowMessage("Playlist editor display mode: %s", Config.columns_in_playlist_editor ? "Columns" : "Classic");
+				ShowMessage(_("Playlist editor display mode: %s"), Config.columns_in_playlist_editor ? _("Columns") : _("Classic"));
 				if (Config.columns_in_playlist_editor)
 				{
 					myPlaylistEditor->Content->SetItemDisplayer(Display::SongsInColumns);
@@ -1461,7 +1461,7 @@ int main(int argc, char **argv)
 		else if (Keypressed(input, Key.ToggleFetchingLyricsInBackground))
 		{
 			Config.fetch_lyrics_in_background = !Config.fetch_lyrics_in_background;
-			ShowMessage("Fetching lyrics for currently playing song in background: %s", Config.fetch_lyrics_in_background ? "On" : "Off");
+			ShowMessage(_("Fetching lyrics for currently playing song in background: %s"), Config.fetch_lyrics_in_background ? _("on") : _("off"));
 		}
 #		endif // HAVE_CURL_CURL_H
 		else if (Keypressed(input, Key.ToggleAutoCenter))
@@ -1768,7 +1768,7 @@ int main(int argc, char **argv)
 			{
 				BasicScreen::Unlock();
 				set_resize_flags();
-				ShowMessage("Screen unlocked");
+				ShowMessage(_("Screen unlocked"));
 			}
 			else
 			{
@@ -1776,7 +1776,7 @@ int main(int argc, char **argv)
 				if (Config.ask_for_locked_screen_width_part)
 				{
 					LockStatusbar();
-					Statusbar() << "% of the locked screen's width to be reserved (20-80): ";
+					Statusbar() << _("% of the locked screen's width to be reserved (20-80): ");
 					std::string str_part = wFooter->GetString(IntoStr(Config.locked_screen_width_part*100));
 					UnlockStatusbar();
 					if (str_part.empty())
@@ -1785,14 +1785,14 @@ int main(int argc, char **argv)
 				}
 				if (part < 20 || part > 80)
 				{
-					ShowMessage("Invalid number (%d)!", part);
+					ShowMessage(_("Invalid number (%d)!"), part);
 					continue;
 				}
 				Config.locked_screen_width_part = part/100.0;
 				if (myScreen->Lock())
-					ShowMessage("Screen locked (with %d%% width)", part);
+					ShowMessage(_("Screen locked (with %d%% width)"), part);
 				else
-					ShowMessage("Screen cannot be locked");
+					ShowMessage(_("Screen cannot be locked"));
 			}
 		}
 #		ifdef HAVE_TAGLIB_H

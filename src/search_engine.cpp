@@ -164,7 +164,7 @@ void SearchEngine::EnterPressed()
 	}
 	else if (option == SearchButton)
 	{
-		ShowMessage("Searching...");
+		ShowMessage(_("Searching..."));
 		if (w->Size() > StaticOptions)
 			Prepare();
 		Search();
@@ -181,7 +181,7 @@ void SearchEngine::EnterPressed()
                                                          << ' ' << ngettext("song", "songs", found) << clDefault;
 			w->InsertSeparator(ResetButton+3);
 			UpdateFoundList();
-			ShowMessage("Searching finished!");
+			ShowMessage(_("Searching finished!"));
 			if (Config.block_search_constraints_change)
 				for (size_t i = 0; i < StaticOptions-4; ++i)
 					w->Static(i, 1);
@@ -430,7 +430,7 @@ void SearchEngine::Reset()
 		itsConstraints[i].clear();
 	w->Reset();
 	Prepare();
-	ShowMessage("Search state reset");
+	ShowMessage(_("Search state reset"));
 }
 
 void SearchEngine::Search()
