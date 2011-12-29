@@ -19,3 +19,4 @@ src/lastfm.cpp
 src/lastfm_service.cpp
 src/visualizer.cpp
 src/sel_items_adder.cpp
+src/conv.cpp

@@ -44,7 +44,7 @@ long StrToLong(const std::string &);
 
 std::string IntoStr(int);
 
-std::string IntoStr(mpd_tag_type);
+std::string IntoStr(mpd_tag_type, bool plural = false);
 
 std::string IntoStr(NCurses::Color);
 

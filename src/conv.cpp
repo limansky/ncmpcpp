@@ -22,6 +22,7 @@
 #include <sstream>
 
 #include "conv.h"
+#include "i18n.h"
 
 int StrToInt(const std::string &str)
 {
@@ -40,32 +41,32 @@ std::string IntoStr(int l)
 	return ss.str();
 }
 
-std::string IntoStr(mpd_tag_type tag) // this is only for left column's title in media library
+std::string IntoStr(mpd_tag_type tag, bool plural /*=false */) // this is only for left column's title in media library
 {
 	switch (tag)
 	{
 		case MPD_TAG_ARTIST:
-			return "Artist";
+			return plural ? _("Artists") : _("Artist");
 		case MPD_TAG_ALBUM:
-			return "Album";
+			return plural ? _("Albums") : _("Album");
 		case MPD_TAG_ALBUM_ARTIST:
-			return "Album Artist";
+			return plural ? _("Album Artists") : _("Album Artist");
 		case MPD_TAG_TITLE:
-			return "Title";
+			return plural ? _("Titles") : _("Title");
 		case MPD_TAG_TRACK:
-			return "Track";
+			return plural ? _("Tracks") : _("Track");
 		case MPD_TAG_GENRE:
-			return "Genre";
+			return plural ? _("Genres") : _("Genre");
 		case MPD_TAG_DATE:
-			return "Year";
+			return plural ? _("Years") : _("Year");
 		case MPD_TAG_COMPOSER:
-			return "Composer";
+			return plural ? _("Composers") : _("Composer");
 		case MPD_TAG_PERFORMER:
-			return "Performer";
+			return plural ? _("Performers") : _("Performer");
 		case MPD_TAG_COMMENT:
-			return "Comment";
+			return plural ? _("Comments") : _("Comment");
 		case MPD_TAG_DISC:
-			return "Disc";
+			return plural ? _("Discs") : _("Disc");
 		default:
 			return "";
 	}

@@ -59,7 +59,7 @@ void MediaLibrary::Init()
 	itsRightColWidth = COLS-COLS/3*2-1;
 	itsRightColStartX = itsLeftColWidth+itsMiddleColWidth+2;
 	
-	Artists = new Menu<std::string>(0, MainStartY, itsLeftColWidth, MainHeight, Config.titles_visibility ? IntoStr(Config.media_lib_primary_tag) + "s" : "", Config.main_color, brNone);
+	Artists = new Menu<std::string>(0, MainStartY, itsLeftColWidth, MainHeight, Config.titles_visibility ? IntoStr(Config.media_lib_primary_tag, true) : "", Config.main_color, brNone);
 	Artists->HighlightColor(Config.active_column_color);
 	Artists->CyclicScrolling(Config.use_cyclic_scrolling);
 	Artists->CenteredCursor(Config.centered_cursor);
@@ -163,7 +163,7 @@ void MediaLibrary::SwitchTo()
 				{
 					std::string item_type = IntoStr(Config.media_lib_primary_tag);
 					ToLower(item_type);
-					Albums->SetTitle(std::string(_("Albums")) + "(" + _("sorted by") + " " + item_type + ")");
+					Albums->SetTitle(FormatString(_("Albums (sorted by %s)"), item_type.c_str()));
 				}
 				else
 					Albums->SetTitle("");

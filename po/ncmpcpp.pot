@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.9_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-12-28 16:00+0400\n"
+"POT-Creation-Date: 2011-12-29 15:22+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -772,45 +772,45 @@ msgid "Sort songs by..."
 msgstr ""
 
 #: src/playlist.cpp:74 src/display.cpp:49 src/search_engine.cpp:66
-#: src/song_info.cpp:56
+#: src/song_info.cpp:56 src/conv.cpp:49
 msgid "Artist"
 msgstr ""
 
 #: src/playlist.cpp:75 src/display.cpp:58 src/search_engine.cpp:68
-#: src/song_info.cpp:58 src/ncmpcpp.cpp:1615
+#: src/song_info.cpp:58 src/ncmpcpp.cpp:1615 src/conv.cpp:51
 msgid "Album"
 msgstr ""
 
-#: src/playlist.cpp:76 src/display.cpp:77 src/song_info.cpp:64
+#: src/playlist.cpp:76 src/display.cpp:77 src/song_info.cpp:64 src/conv.cpp:69
 msgid "Disc"
 msgstr ""
 
-#: src/playlist.cpp:77 src/display.cpp:65 src/song_info.cpp:60
+#: src/playlist.cpp:77 src/display.cpp:65 src/song_info.cpp:60 src/conv.cpp:57
 msgid "Track"
 msgstr ""
 
 #: src/playlist.cpp:78 src/display.cpp:68 src/search_engine.cpp:72
-#: src/song_info.cpp:61
+#: src/song_info.cpp:61 src/conv.cpp:59
 msgid "Genre"
 msgstr ""
 
 #: src/playlist.cpp:79 src/display.cpp:61 src/search_engine.cpp:73
-#: src/song_info.cpp:59
+#: src/song_info.cpp:59 src/conv.cpp:61
 msgid "Year"
 msgstr ""
 
 #: src/playlist.cpp:80 src/display.cpp:71 src/search_engine.cpp:70
-#: src/song_info.cpp:62
+#: src/song_info.cpp:62 src/conv.cpp:63
 msgid "Composer"
 msgstr ""
 
 #: src/playlist.cpp:81 src/display.cpp:74 src/search_engine.cpp:71
-#: src/song_info.cpp:63
+#: src/song_info.cpp:63 src/conv.cpp:65
 msgid "Performer"
 msgstr ""
 
 #: src/playlist.cpp:82 src/display.cpp:55 src/search_engine.cpp:67
-#: src/song_info.cpp:55
+#: src/song_info.cpp:55 src/conv.cpp:55
 msgid "Title"
 msgstr ""
 
@@ -899,11 +899,12 @@ msgstr ""
 msgid "Directory"
 msgstr ""
 
-#: src/display.cpp:52 src/song_info.cpp:57
+#: src/display.cpp:52 src/song_info.cpp:57 src/conv.cpp:53
 msgid "Album Artist"
 msgstr ""
 
 #: src/display.cpp:80 src/search_engine.cpp:74 src/song_info.cpp:65
+#: src/conv.cpp:67
 msgid "Comment"
 msgstr ""
 
@@ -1119,8 +1120,8 @@ msgstr ""
 msgid "Stereo"
 msgstr ""
 
-#: src/media_library.cpp:70 src/media_library.cpp:166
-#: src/media_library.cpp:172 src/tag_editor.cpp:69
+#: src/media_library.cpp:70 src/media_library.cpp:172 src/tag_editor.cpp:69
+#: src/conv.cpp:51
 msgid "Albums"
 msgstr ""
 
@@ -1132,8 +1133,9 @@ msgstr ""
 msgid "No albums found."
 msgstr ""
 
-#: src/media_library.cpp:166
-msgid "sorted by"
+#: src/media_library.cpp:166 src/ncmpcpp.cpp:2243
+#, c-format
+msgid "Albums (sorted by %s)"
 msgstr ""
 
 #: src/media_library.cpp:268 src/tag_editor.cpp:243
@@ -2094,4 +2096,44 @@ msgstr ""
 
 #: src/sel_items_adder.cpp:249
 msgid "Selected item(s) added!"
+msgstr ""
+
+#: src/conv.cpp:49
+msgid "Artists"
+msgstr ""
+
+#: src/conv.cpp:53
+msgid "Album Artists"
+msgstr ""
+
+#: src/conv.cpp:55
+msgid "Titles"
+msgstr ""
+
+#: src/conv.cpp:57
+msgid "Tracks"
+msgstr ""
+
+#: src/conv.cpp:59
+msgid "Genres"
+msgstr ""
+
+#: src/conv.cpp:61
+msgid "Years"
+msgstr ""
+
+#: src/conv.cpp:63
+msgid "Composers"
+msgstr ""
+
+#: src/conv.cpp:65
+msgid "Performers"
+msgstr ""
+
+#: src/conv.cpp:67
+msgid "Comments"
+msgstr ""
+
+#: src/conv.cpp:69
+msgid "Discs"
 msgstr ""

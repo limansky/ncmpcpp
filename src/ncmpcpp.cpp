@@ -2240,7 +2240,7 @@ int main(int argc, char **argv)
 						myLibrary->Songs->Clear();
 						myLibrary->Albums->Reset();
 						myLibrary->Albums->Clear();
-						myLibrary->Albums->SetTitle(Config.titles_visibility ? "Albums (sorted by " + item_type + ")" : "");
+						myLibrary->Albums->SetTitle(Config.titles_visibility ? FormatString(_("Albums (sorted by %s)"), item_type.c_str()) : "");
 						myLibrary->Albums->Display();
 					}
 					else
