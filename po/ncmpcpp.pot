@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.9_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-12-29 15:22+0400\n"
+"POT-Creation-Date: 2012-01-14 14:04+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -486,7 +486,7 @@ msgstr ""
 msgid "Clear current playlist"
 msgstr ""
 
-#: src/help.cpp:317 src/lyrics.cpp:146
+#: src/help.cpp:317 src/lyrics.cpp:148
 msgid "Lyrics"
 msgstr ""
 
@@ -713,13 +713,13 @@ msgstr ""
 
 #: src/status.cpp:536 src/status.cpp:541 src/status.cpp:546 src/status.cpp:551
 #: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1464 src/ncmpcpp.cpp:1470
-#: src/ncmpcpp.cpp:2130 src/lyrics.cpp:154
+#: src/ncmpcpp.cpp:2130 src/lyrics.cpp:156
 msgid "off"
 msgstr ""
 
 #: src/status.cpp:536 src/status.cpp:541 src/status.cpp:546 src/status.cpp:551
 #: src/ncmpcpp.cpp:1454 src/ncmpcpp.cpp:1464 src/ncmpcpp.cpp:1470
-#: src/lyrics.cpp:154
+#: src/lyrics.cpp:156
 msgid "on"
 msgstr ""
 
@@ -923,7 +923,7 @@ msgid "Loading playlist %s..."
 msgstr ""
 
 #: src/browser.cpp:159 src/browser.cpp:221
-msgid "Playlist loaded."
+msgid "Couldn't load playlist."
 msgstr ""
 
 #: src/browser.cpp:194
@@ -941,7 +941,7 @@ msgstr ""
 msgid "Deleting \"%s\"..."
 msgstr ""
 
-#: src/browser.cpp:528 src/ncmpcpp.cpp:808 src/lyrics.cpp:374
+#: src/browser.cpp:528 src/ncmpcpp.cpp:808 src/lyrics.cpp:407
 #: src/lastfm.cpp:214
 #, c-format
 msgid "Couldn't remove \"%s\": %s"
@@ -1711,33 +1711,33 @@ msgstr ""
 msgid "Switched to list of %s tag"
 msgstr ""
 
-#: src/lyrics.cpp:111
+#: src/lyrics.cpp:113
 msgid "Lyrics are being downloaded..."
 msgstr ""
 
-#: src/lyrics.cpp:130
+#: src/lyrics.cpp:132
 msgid "Song must have both artist and title tag set!"
 msgstr ""
 
-#: src/lyrics.cpp:154
+#: src/lyrics.cpp:156
 #, c-format
 msgid "Reload lyrics if song changes: %s"
 msgstr ""
 
-#: src/lyrics.cpp:172
+#: src/lyrics.cpp:174
 #, c-format
 msgid "Fetching lyrics for %s..."
 msgstr ""
 
-#: src/lyrics.cpp:221
+#: src/lyrics.cpp:254
 msgid "Fetching lyrics from"
 msgstr ""
 
-#: src/lyrics.cpp:240
+#: src/lyrics.cpp:273
 msgid "Lyrics weren't found."
 msgstr ""
 
-#: src/lyrics.cpp:326
+#: src/lyrics.cpp:359
 #, c-format
 msgid ""
 "Local lyrics not found. As ncmpcpp has been compiled without curl support, "
@@ -1745,20 +1745,20 @@ msgid ""
 "$TITLE.txt\") or recompile ncmpcpp with curl support."
 msgstr ""
 
-#: src/lyrics.cpp:339
+#: src/lyrics.cpp:372
 msgid "External editor is not set!"
 msgstr ""
 
-#: src/lyrics.cpp:343
+#: src/lyrics.cpp:376
 msgid "Opening lyrics in external editor..."
 msgstr ""
 
-#: src/lyrics.cpp:389
+#: src/lyrics.cpp:422
 #, c-format
 msgid "Using lyrics database: %s"
 msgstr ""
 
-#: src/lyrics.cpp:391
+#: src/lyrics.cpp:424
 msgid "Using all lyrics databases"
 msgstr ""
 

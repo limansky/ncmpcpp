@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2011-12-29 15:22+0400\n"
-"PO-Revision-Date: 2011-12-29 15:26+0300\n"
+"POT-Creation-Date: 2012-01-14 14:04+0400\n"
+"PO-Revision-Date: 2012-01-14 16:03+0300\n"
 "Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -114,7 +114,7 @@ msgstr "Поисковая машина"
 #: src/help.cpp:289
 #: src/help.cpp:382
 msgid "Media library"
-msgstr ""
+msgstr "Библиотека"
 
 #: src/help.cpp:167
 #: src/help.cpp:392
@@ -129,7 +129,7 @@ msgstr "Редактор плейлистов"
 #: src/ncmpcpp.cpp:450
 #: src/tag_editor.cpp:188
 msgid "Tag editor"
-msgstr "Редактор тэгов"
+msgstr "Редактор тегов"
 
 #: src/help.cpp:172
 #: src/help.cpp:345
@@ -196,15 +196,15 @@ msgstr "Увеличить громкость"
 
 #: src/help.cpp:194
 msgid "Toggle space mode (select/add)"
-msgstr ""
+msgstr "Переключить режим пробела (выбрать/добавить)"
 
 #: src/help.cpp:195
 msgid "Toggle add mode"
-msgstr ""
+msgstr "Переключить режим добавления"
 
 #: src/help.cpp:196
 msgid "Toggle mouse support"
-msgstr ""
+msgstr "Вкл/выкл поддержку мыши"
 
 #: src/help.cpp:197
 msgid "Reverse selection"
@@ -224,27 +224,27 @@ msgstr "Добавить выделенные элементы в плейлис
 
 #: src/help.cpp:202
 msgid "Toggle repeat mode"
-msgstr ""
+msgstr "Вкл/выкл режим повторения"
 
 #: src/help.cpp:203
 msgid "Toggle random mode"
-msgstr ""
+msgstr "Вкл/выкл режим случайного воспроизведения"
 
 #: src/help.cpp:204
 msgid "Toggle single mode"
-msgstr ""
+msgstr "Вкл/выкл одиночный режим"
 
 #: src/help.cpp:205
 msgid "Toggle consume mode"
-msgstr ""
+msgstr "Вкл/выкл режим удаления после проигрывания"
 
 #: src/help.cpp:207
 msgid "Toggle replay gain mode"
-msgstr ""
+msgstr "Переключить режим выравнивания громкости"
 
 #: src/help.cpp:208
 msgid "Toggle bitrate visibility"
-msgstr ""
+msgstr "Показывать битрейт"
 
 #: src/help.cpp:209
 msgid "Shuffle playlist"
@@ -252,11 +252,11 @@ msgstr "Перемешать плейлист"
 
 #: src/help.cpp:210
 msgid "Toggle crossfade mode"
-msgstr ""
+msgstr "Вкл/выкл режим плавного перехода"
 
 #: src/help.cpp:211
 msgid "Set crossfade"
-msgstr ""
+msgstr "Установить длительность плавного перехода"
 
 #: src/help.cpp:212
 msgid "Start a music database update"
@@ -285,7 +285,7 @@ msgstr "К следующему результату поиска"
 
 #: src/help.cpp:219
 msgid "Toggle find mode (normal/wrapped)"
-msgstr ""
+msgstr "Переключить режим поиска (нормальный/циклический)"
 
 #: src/help.cpp:220
 msgid "Locate song in browser"
@@ -309,7 +309,7 @@ msgstr "Переключить интерфейс"
 
 #: src/help.cpp:228
 msgid "Toggle displaying separators between albums"
-msgstr ""
+msgstr "Показывать разделители между альбомами"
 
 #: src/help.cpp:229
 msgid "Go to given position in current song (in % by default)"
@@ -354,7 +354,7 @@ msgstr "Добавить случайные песни/исполнителей/
 
 #: src/help.cpp:244
 msgid "Delete item/selected items from playlist"
-msgstr ""
+msgstr "Удалить элемент/выделенные элементы из плейлиста"
 
 #: src/help.cpp:245
 msgid "Clear playlist"
@@ -405,11 +405,11 @@ msgstr "Сортировать/обратить плейлист"
 
 #: src/help.cpp:258
 msgid "Go to currently playing position"
-msgstr ""
+msgstr "Перейти к проигрываемой песне"
 
 #: src/help.cpp:259
 msgid "Toggle auto center mode"
-msgstr ""
+msgstr "Вкл/выкл автоматическое центрирование"
 
 #: src/help.cpp:262
 #: src/help.cpp:369
@@ -419,7 +419,7 @@ msgstr "Обозреватель"
 
 #: src/help.cpp:263
 msgid "Enter directory/Add item to playlist and play"
-msgstr ""
+msgstr "Редактировать каталог / Добавить элемент в плейлист и воспроизвести"
 
 #: src/help.cpp:264
 #: src/help.cpp:281
@@ -428,7 +428,7 @@ msgstr "Добавить элемент в плейлист"
 
 #: src/help.cpp:266
 msgid "Edit song's tags/Rename playlist/directory"
-msgstr ""
+msgstr "Редактировать теги песни / Переименовать плейлист/каталог"
 
 #: src/help.cpp:268
 msgid "Rename playlist/directory"
@@ -436,7 +436,7 @@ msgstr "Переименовать плейлист/папку"
 
 #: src/help.cpp:271
 msgid "Browse MPD database/local filesystem"
-msgstr ""
+msgstr "Просмотр базы данных / файловой системы"
 
 #: src/help.cpp:272
 msgid "Toggle sort order"
@@ -448,7 +448,7 @@ msgstr "Перейти к воспроизводимой песне"
 
 #: src/help.cpp:274
 msgid "Go to parent directory"
-msgstr ""
+msgstr "Перейти в родительский каталог"
 
 #: src/help.cpp:275
 msgid "Delete playlist/file/directory"
@@ -516,18 +516,18 @@ msgstr ""
 
 #: src/help.cpp:308
 msgid "Edit playlist's name/song's tags"
-msgstr ""
+msgstr "Редактировать название плейлиста/теги песни"
 
 #: src/help.cpp:310
 msgid "Edit playlist's name"
-msgstr ""
+msgstr "Редактировать название плейлиста"
 
 #: src/help.cpp:314
 msgid "Clear current playlist"
 msgstr "Очистить текущий плейлист"
 
 #: src/help.cpp:317
-#: src/lyrics.cpp:146
+#: src/lyrics.cpp:148
 msgid "Lyrics"
 msgstr "Текст песни"
 
@@ -595,7 +595,7 @@ msgstr ""
 
 #: src/help.cpp:352
 msgid "Toggle visualization type"
-msgstr ""
+msgstr "Переключить режим визуализации"
 
 #: src/help.cpp:356
 #: src/help.cpp:364
@@ -619,11 +619,11 @@ msgstr "Играть/пауза"
 
 #: src/help.cpp:358
 msgid "Left click on progressbar"
-msgstr ""
+msgstr "Левый щелчок на индикаторе прогресса"
 
 #: src/help.cpp:358
 msgid "Go to chosen position in played track"
-msgstr ""
+msgstr "Перейти к выбранной позиции в проигрываемой песне"
 
 #: src/help.cpp:360
 msgid "Mouse wheel on \"Volume: xx\""
@@ -805,7 +805,7 @@ msgstr "Режим повторения %s"
 #: src/ncmpcpp.cpp:1464
 #: src/ncmpcpp.cpp:1470
 #: src/ncmpcpp.cpp:2130
-#: src/lyrics.cpp:154
+#: src/lyrics.cpp:156
 msgid "off"
 msgstr "выключен"
 
@@ -816,7 +816,7 @@ msgstr "выключен"
 #: src/ncmpcpp.cpp:1454
 #: src/ncmpcpp.cpp:1464
 #: src/ncmpcpp.cpp:1470
-#: src/lyrics.cpp:154
+#: src/lyrics.cpp:156
 msgid "on"
 msgstr "включен"
 
@@ -828,12 +828,12 @@ msgstr "Режим случайного воспроизведения %s"
 #: src/status.cpp:546
 #, c-format
 msgid "Single mode is %s"
-msgstr ""
+msgstr "Одиночный режим %s"
 
 #: src/status.cpp:551
 #, c-format
 msgid "Consume mode is %s"
-msgstr ""
+msgstr "Режим удаления после проигрывания %s"
 
 #: src/status.cpp:557
 #, c-format
@@ -850,7 +850,7 @@ msgstr "Обновление базы данных закончилось!"
 
 #: src/status.cpp:569
 msgid "Database has changed, you need to select your item(s) once again!"
-msgstr ""
+msgstr "База данных изменилась, необходимо выбрать элементы заново!"
 
 #: src/status.cpp:630
 msgid "Vol"
@@ -1067,8 +1067,9 @@ msgstr "Загружается плейлист %s"
 
 #: src/browser.cpp:159
 #: src/browser.cpp:221
-msgid "Playlist loaded."
-msgstr "Плейлист загружен."
+#, fuzzy
+msgid "Couldn't load playlist."
+msgstr "Текущий плейлист"
 
 #: src/browser.cpp:194
 #, c-format
@@ -1087,7 +1088,7 @@ msgstr "Удаляется \"%s\"..."
 
 #: src/browser.cpp:528
 #: src/ncmpcpp.cpp:808
-#: src/lyrics.cpp:374
+#: src/lyrics.cpp:407
 #: src/lastfm.cpp:214
 #, c-format
 msgid "Couldn't remove \"%s\": %s"
@@ -1768,7 +1769,7 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:2129
 msgid "Replay gain mode ?"
-msgstr ""
+msgstr "Режим выравнивания громкости?"
 
 #: src/ncmpcpp.cpp:2131
 msgid "track"
@@ -1779,9 +1780,9 @@ msgid "album"
 msgstr "альбом"
 
 #: src/ncmpcpp.cpp:2143
-#, fuzzy, c-format
+#, c-format
 msgid "Replay gain mode: %s"
-msgstr "Режим повторения: %s"
+msgstr "Режим выравнивания громкости: %s"
 
 #: src/ncmpcpp.cpp:2148
 #, c-format
@@ -1917,51 +1918,51 @@ msgstr "performer"
 msgid "Switched to list of %s tag"
 msgstr ""
 
-#: src/lyrics.cpp:111
+#: src/lyrics.cpp:113
 msgid "Lyrics are being downloaded..."
 msgstr ""
 
-#: src/lyrics.cpp:130
+#: src/lyrics.cpp:132
 msgid "Song must have both artist and title tag set!"
 msgstr ""
 
-#: src/lyrics.cpp:154
+#: src/lyrics.cpp:156
 #, c-format
 msgid "Reload lyrics if song changes: %s"
 msgstr ""
 
-#: src/lyrics.cpp:172
+#: src/lyrics.cpp:174
 #, c-format
 msgid "Fetching lyrics for %s..."
 msgstr "Получаем текст песни для %s..."
 
-#: src/lyrics.cpp:221
+#: src/lyrics.cpp:254
 msgid "Fetching lyrics from"
 msgstr "Получаем текст песни из"
 
-#: src/lyrics.cpp:240
+#: src/lyrics.cpp:273
 msgid "Lyrics weren't found."
 msgstr "Текст не был найден."
 
-#: src/lyrics.cpp:326
+#: src/lyrics.cpp:359
 #, c-format
 msgid "Local lyrics not found. As ncmpcpp has been compiled without curl support, you can put appropriate lyrics into %s directory (file syntax is \"$ARTIST - $TITLE.txt\") or recompile ncmpcpp with curl support."
 msgstr ""
 
-#: src/lyrics.cpp:339
+#: src/lyrics.cpp:372
 msgid "External editor is not set!"
 msgstr "Внешний редактор не выбран!"
 
-#: src/lyrics.cpp:343
+#: src/lyrics.cpp:376
 msgid "Opening lyrics in external editor..."
 msgstr ""
 
-#: src/lyrics.cpp:389
+#: src/lyrics.cpp:422
 #, c-format
 msgid "Using lyrics database: %s"
 msgstr "Используется база данных текстов: %s"
 
-#: src/lyrics.cpp:391
+#: src/lyrics.cpp:424
 msgid "Using all lyrics databases"
 msgstr "Используются вся базы данных текстов"
 
@@ -2355,6 +2356,9 @@ msgstr "Коментарии"
 #: src/conv.cpp:69
 msgid "Discs"
 msgstr "Диски"
+
+#~ msgid "Playlist loaded."
+#~ msgstr "Плейлист загружен."
 
 #~ msgid "Tag Types:"
 #~ msgstr "Типы тегов:"
