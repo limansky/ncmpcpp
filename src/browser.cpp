@@ -152,11 +152,11 @@ void Browser::EnterPressed()
 			}
 			else
 			{
-				std::string name = itsBrowsedDir + "/" + item.name;
+				std::string name = item.name;
 				ShowMessage(_("Loading playlist %s..."), name.c_str());
 				locale_to_utf(name);
-				if (Mpd.LoadPlaylist(name))
-					ShowMessage(_("Playlist loaded."));
+				if (!Mpd.LoadPlaylist(name))
+					ShowMessage(_("Couldn't load playlist."));
 			}
 			break;
 		}
@@ -214,11 +214,11 @@ void Browser::SpacePressed()
 		}
 		case itPlaylist:
 		{
-			std::string name = itsBrowsedDir == "/" ? item.name : itsBrowsedDir + "/" + item.name;
+			std::string name = item.name;
 			ShowMessage(_("Loading playlist %s..."), name.c_str());
 			locale_to_utf(name);
-			if (Mpd.LoadPlaylist(name))
-				ShowMessage(_("Playlist loaded."));
+			if (!Mpd.LoadPlaylist(name))
+				ShowMessage(_("Couldn't load playlist."));
 			break;
 		}
 	}
