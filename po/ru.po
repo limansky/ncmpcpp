@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.8_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2012-01-14 14:04+0400\n"
-"PO-Revision-Date: 2012-01-14 16:03+0300\n"
+"POT-Creation-Date: 2012-01-15 16:42+0400\n"
+"PO-Revision-Date: 2012-01-15 20:23+0300\n"
 "Last-Translator: Mike Limansky <mike.limansky@gmail.com>\n"
 "Language-Team: Mike Limanskiy <mike.limansky@gmail.com>\n"
 "Language: ru\n"
@@ -81,15 +81,17 @@ msgstr "В конец"
 
 #: src/help.cpp:156
 msgid "Switch between current and last screen"
-msgstr ""
+msgstr "Переключиться между текущим и предыдущим экраном"
 
 #: src/help.cpp:159
+#, fuzzy
 msgid "Switch to next screen in sequence"
-msgstr ""
+msgstr "Перейти к следующему экрану"
 
 #: src/help.cpp:160
+#, fuzzy
 msgid "Switch to previous screen in sequence"
-msgstr ""
+msgstr "Перейти к предыдущему экрану"
 
 #: src/help.cpp:162
 msgid "Help screen"
@@ -582,7 +584,7 @@ msgstr ""
 
 #: src/help.cpp:337
 msgid "Select/deselect song (right column)"
-msgstr ""
+msgstr "Выделить/снять выделение с песни (правый столбец)"
 
 #: src/help.cpp:340
 msgid "Go to parent directory (left column, directories view)"
@@ -746,7 +748,7 @@ msgstr ""
 
 #: src/help.cpp:410
 msgid "Enter directory/highlight album"
-msgstr ""
+msgstr "Войти в каталог/выделить альбом"
 
 #: src/help.cpp:411
 msgid "Switch to directories/albums view"
@@ -838,7 +840,7 @@ msgstr "Режим удаления после проигрывания %s"
 #: src/status.cpp:557
 #, c-format
 msgid "Crossfade set to %d seconds"
-msgstr ""
+msgstr "Длительность плавного перехода %d секунд"
 
 #: src/status.cpp:565
 msgid "Database update started!"
@@ -1113,15 +1115,15 @@ msgstr ""
 
 #: src/search_engine.cpp:83
 msgid "Match if tag contains searched phrase (no regexes)"
-msgstr ""
+msgstr "Совпадение если тег содержит искомый текст (без регулярных выражений)"
 
 #: src/search_engine.cpp:84
 msgid "Match if tag contains searched phrase (regexes supported)"
-msgstr ""
+msgstr "Совпадение если тег содержит искомый текст (с регулярными выражениями)"
 
 #: src/search_engine.cpp:85
 msgid "Match only if both values are the same"
-msgstr ""
+msgstr "Совпадение только если оба значения идентичны"
 
 #: src/search_engine.cpp:128
 msgid "Updating list..."
@@ -1544,7 +1546,7 @@ msgid "Columns"
 msgstr "Столбцы"
 
 #: src/ncmpcpp.cpp:1424
-#, fuzzy, c-format
+#, c-format
 msgid "Browser display mode: %s"
 msgstr "Режим отображения обозревателя: %s"
 
@@ -1554,28 +1556,28 @@ msgid "Search engine display mode: %s"
 msgstr "Режим отображения поиска: %s"
 
 #: src/ncmpcpp.cpp:1438
-#, fuzzy, c-format
+#, c-format
 msgid "Playlist editor display mode: %s"
-msgstr "Режим отображения плейлиста: %s"
+msgstr "Режим отображения редактора плейлистов: %s"
 
 #: src/ncmpcpp.cpp:1454
 #, c-format
 msgid "Separators between albums in playlist: %s"
-msgstr ""
+msgstr "Разделители альбомов в плейлисте: %s"
 
 #: src/ncmpcpp.cpp:1464
 #, c-format
 msgid "Fetching lyrics for currently playing song in background: %s"
-msgstr ""
+msgstr "Скачивание текста текущей песни в фоновом режиме: %s"
 
 #: src/ncmpcpp.cpp:1470
 #, c-format
 msgid "Auto center mode: %s"
-msgstr ""
+msgstr "Режим автоматического центрирование: %s"
 
 #: src/ncmpcpp.cpp:1552
 msgid "Set crossfade to"
-msgstr ""
+msgstr "Введите длительность перехода"
 
 #: src/ncmpcpp.cpp:1583
 #: src/ncmpcpp.cpp:1621
@@ -1639,7 +1641,7 @@ msgstr ""
 #: src/ncmpcpp.cpp:1788
 #, c-format
 msgid "Invalid number (%d)!"
-msgstr ""
+msgstr "Неверное число (%d)!"
 
 #: src/ncmpcpp.cpp:1793
 #, c-format
@@ -1761,11 +1763,11 @@ msgstr "Режим поиска: %s"
 
 #: src/ncmpcpp.cpp:2123
 msgid "Wrapped"
-msgstr ""
+msgstr "циклический"
 
 #: src/ncmpcpp.cpp:2123
 msgid "Normal"
-msgstr ""
+msgstr "нормальный"
 
 #: src/ncmpcpp.cpp:2129
 msgid "Replay gain mode ?"
@@ -1828,16 +1830,15 @@ msgstr "Отображение битрейта %s"
 
 #: src/ncmpcpp.cpp:2172
 msgid "Add random ?"
-msgstr ""
+msgstr "Добавить случайно ?"
 
 #: src/ncmpcpp.cpp:2173
 msgid "songs"
 msgstr "песни"
 
 #: src/ncmpcpp.cpp:2174
-#: src/ncmpcpp.cpp:2215
-msgid "artist"
-msgstr "исполнитель"
+msgid "artists"
+msgstr "исполнители"
 
 #: src/ncmpcpp.cpp:2175
 #: src/tag_editor.cpp:678
@@ -1895,7 +1896,11 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:2214
 msgid "Tag type ?"
-msgstr ""
+msgstr "Тип тега ?"
+
+#: src/ncmpcpp.cpp:2215
+msgid "artist"
+msgstr "исполнитель"
 
 #: src/ncmpcpp.cpp:2216
 msgid "albumArtist"
@@ -2232,7 +2237,7 @@ msgstr "Похожие исполнители:"
 
 #: src/lastfm_service.cpp:139
 msgid "No description available for this artist."
-msgstr ""
+msgstr "Нет описания для этого исполнителя."
 
 #: src/visualizer.cpp:157
 #, c-format
@@ -2290,9 +2295,8 @@ msgid "Local items cannot be added to m3u playlist!"
 msgstr "Невозможно добавить локальные элементы в m3u-плейлист!"
 
 #: src/sel_items_adder.cpp:99
-#, fuzzy
 msgid "Current MPD playlist"
-msgstr "Текущий плейлист"
+msgstr "Текущий плейлист MPD"
 
 #: src/sel_items_adder.cpp:100
 msgid "New playlist"

@@ -2171,7 +2171,7 @@ int main(int argc, char **argv)
 				Window& w = Statusbar();
 				w << _("Add random ?") << " ["; 
 				add_selector(w, _("songs"), 's') << "/";
-				add_selector(w, _("artist"), 'a') << "/";
+				add_selector(w, _("artists"), 'a') << "/";
 				add_selector(w, _("albums"), 'b') << "] ";
 				wFooter->Refresh();
 				int answer = 0;

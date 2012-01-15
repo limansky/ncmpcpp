@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ncmpcpp 0.5.9_pre\n"
 "Report-Msgid-Bugs-To: electricityispower@gmail.com\n"
-"POT-Creation-Date: 2012-01-14 14:04+0400\n"
+"POT-Creation-Date: 2012-01-15 16:42+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1632,8 +1632,8 @@ msgstr ""
 msgid "songs"
 msgstr ""
 
-#: src/ncmpcpp.cpp:2174 src/ncmpcpp.cpp:2215
-msgid "artist"
+#: src/ncmpcpp.cpp:2174
+msgid "artists"
 msgstr ""
 
 #: src/ncmpcpp.cpp:2175 src/tag_editor.cpp:678
@@ -1688,6 +1688,10 @@ msgstr ""
 
 #: src/ncmpcpp.cpp:2214
 msgid "Tag type ?"
+msgstr ""
+
+#: src/ncmpcpp.cpp:2215
+msgid "artist"
 msgstr ""
 
 #: src/ncmpcpp.cpp:2216
