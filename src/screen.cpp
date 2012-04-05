@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Andrzej Rybczak                            *
+ *   Copyright (C) 2008-2012 by Andrzej Rybczak                            *
  *   electricityispower@gmail.com                                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -51,7 +51,7 @@ bool isVisible(BasicScreen *screen)
 {
 	assert(screen != 0);
 	if (myLockedScreen && myScreen->isMergable())
-		return screen == myInactiveScreen || screen == myLockedScreen;
+		return screen == myScreen || screen == myInactiveScreen || screen == myLockedScreen;
 	else
 		return screen == myScreen;
 }
