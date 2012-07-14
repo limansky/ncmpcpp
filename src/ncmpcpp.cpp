@@ -371,8 +371,9 @@ int main(int argc, char **argv)
 	if (Config.jump_to_now_playing_song_at_start)
 	{
 		TraceMpdStatus();
-		if (myPlaylist->isPlaying())
-			myPlaylist->Items->Highlight(myPlaylist->NowPlaying);
+		int curr_pos = Mpd.GetCurrentSongPos();
+		if  (curr_pos >= 0)
+			myPlaylist->Items->Highlight(curr_pos);
 	}
 	
 	while (!main_exit)
@@ -2057,6 +2058,24 @@ int main(int argc, char **argv)
 				RedrawHeader = 1;
 			}
 		}
+		else if (Keypressed(input, Key.DisableFilter))
+		{
+			List *mList = myScreen->GetList();
+			
+			if (!mList)
+				continue;
+			
+			mList->ApplyFilter("");
+			
+			ShowMessage("Filtering disabled");
+			
+			if (myScreen == myPlaylist)
+			{
+				myPlaylist->EnableHighlighting();
+				Playlist::ReloadTotalLength = 1;
+				RedrawHeader = 1;
+			}
+		}
 		else if (Keypressed(input, Key.FindForward) || Keypressed(input, Key.FindBackward))
 		{
 			List *mList = myScreen->GetList();
@@ -2406,6 +2425,7 @@ int main(int argc, char **argv)
 			||  Keypressed(input, Key.Home)
 			||  Keypressed(input, Key.End)
 			||  Keypressed(input, Key.ApplyFilter)
+			||  Keypressed(input, Key.DisableFilter)
 			||  Keypressed(input, Key.FindForward)
 			||  Keypressed(input, Key.FindBackward)
 			||  Keypressed(input, Key.NextFoundPosition)

@@ -212,6 +212,7 @@ void Help::GetKeybindings()
 	*w << DisplayKeys(Key.UpdateDB)			<< _("Start a music database update") << "\n";
 	*w << "\n";
 	*w << DisplayKeys(Key.ApplyFilter)		<< _("Apply filter") << "\n";
+	*w << DisplayKeys(Key.DisableFilter)		<< _("Disable filter") << "\n";
 	*w << DisplayKeys(Key.FindForward)		<< _("Forward find") << "\n";
 	*w << DisplayKeys(Key.FindBackward)		<< _("Backward find") << "\n";
 	*w << DisplayKeys(Key.PrevFoundPosition)	<< _("Go to previous found position") << "\n";

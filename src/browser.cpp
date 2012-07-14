@@ -140,23 +140,18 @@ void Browser::EnterPressed()
 		}
 		case itPlaylist:
 		{
-			if (itsBrowsedDir == "/")
-			{
-				MPD::SongList list;
-				Mpd.GetPlaylistContent(locale_to_utf_cpy(item.name), list);
-				if (myPlaylist->Add(list, 1))
-					ShowMessage(_("Loading and playing playlist %s..."), item.name.c_str());
-				FreeSongList(list);
-			}
+			std::string name = item.name;
+			ShowMessage(_("Loading and playing playlist %s..."), name.c_str());
+			locale_to_utf(name);
+			if (!Mpd.LoadPlaylist(name))
+				ShowMessage(_("Couldn't load playlist."));
 			else
 			{
-				std::string name = item.name;
-				ShowMessage(_("Loading playlist %s..."), name.c_str());
-				locale_to_utf(name);
-				if (!Mpd.LoadPlaylist(name))
-					ShowMessage(_("Couldn't load playlist."));
+				size_t old_size = myPlaylist->Items->Size();
+				Mpd.UpdateStatus();
+				if (old_size < myPlaylist->Items->Size())
+					Mpd.Play(old_size);
 			}
-			break;
 		}
 	}
 }

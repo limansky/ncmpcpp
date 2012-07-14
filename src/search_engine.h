@@ -75,7 +75,7 @@ class SearchEngine : public Screen< Menu< std::pair<Buffer *, MPD::Song *> > >
 		
 		static const char *SearchModes[];
 		
-		static const size_t ConstraintsNumber = 10;
+		static const size_t ConstraintsNumber = 11;
 		static const char *ConstraintsNames[];
 		static size_t ConstraintsNamesMaxWidth;
 		std::string itsConstraints[ConstraintsNumber];

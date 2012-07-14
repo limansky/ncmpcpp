@@ -97,11 +97,11 @@ void TagEditor::Init()
 	if (Config.titles_visibility)
 		TagTypes->AddOption(_("Options"), 1, 1);
 	TagTypes->AddSeparator();
-	TagTypes->AddOption(_("Reset"));
-	TagTypes->AddOption(_("Save"));
-	TagTypes->AddSeparator();
 	TagTypes->AddOption(_("Capitalize First Letters"));
 	TagTypes->AddOption(_("lower all letters"));
+	TagTypes->AddSeparator();
+	TagTypes->AddOption(_("Reset"));
+	TagTypes->AddOption(_("Save"));
 	
 	Tags = new Menu<MPD::Song>(RightColumnStartX, MainStartY, RightColumnWidth, MainHeight, Config.titles_visibility ? _("Tags") : "", Config.main_color, brNone);
 	Tags->HighlightColor(Config.main_highlight_color);
@@ -612,12 +612,26 @@ void TagEditor::EnterPressed()
 				Tags->Scroll(wDown);
 			}
 		}
-		else if (id == 12) // reset
+		else if (id == 12) // capitalize first letters
+		{
+			ShowMessage(_("Processing..."));
+			for (MPD::SongList::iterator it = EditedSongs.begin(); it != EditedSongs.end(); ++it)
+				CapitalizeFirstLetters(**it);
+			ShowMessage(_("Done!"));
+		}
+		else if (id == 13) // lower all letters
+		{
+			ShowMessage(_("Processing..."));
+			for (MPD::SongList::iterator it = EditedSongs.begin(); it != EditedSongs.end(); ++it)
+				LowerAllLetters(**it);
+			ShowMessage(_("Done!"));
+		}
+		else if (id == 14) // reset
 		{
 			Tags->Clear();
 			ShowMessage(_("Changes reset"));
 		}
-		else if (id == 13) // save
+		else if (id == 15) // save
 		{
 			bool success = 1;
 			ShowMessage(_("Writing changes..."));
@@ -644,20 +658,6 @@ void TagEditor::EnterPressed()
 			}
 			else
 				Tags->Clear();
-		}
-		else if (id == 14) // capitalize first letters
-		{
-			ShowMessage(_("Processing..."));
-			for (MPD::SongList::iterator it = EditedSongs.begin(); it != EditedSongs.end(); ++it)
-				CapitalizeFirstLetters(**it);
-			ShowMessage(_("Done!"));
-		}
-		else if (id == 15) // lower all letters
-		{
-			ShowMessage(_("Processing..."));
-			for (MPD::SongList::iterator it = EditedSongs.begin(); it != EditedSongs.end(); ++it)
-				LowerAllLetters(**it);
-			ShowMessage(_("Done!"));
 		}
 	}
 }
