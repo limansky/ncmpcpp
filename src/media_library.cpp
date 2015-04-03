@@ -628,6 +628,8 @@ void MediaLibrary::LocateSong(const MPD::Song &s)
 		case MPD_TAG_PERFORMER:
 			primary_tag = s.GetPerformer();
 			break;
+		case MPD_TAG_ALBUM_ARTIST:
+			primary_tag = s.GetAlbumArtist();
 		default:
 			ShowMessage(_("Invalid tag type in left column of the media library"));
 			return;
